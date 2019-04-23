@@ -1,0 +1,46 @@
+.app {
+  text-align: center;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.app__header {
+  color: #6067f1;
+  font-weight: 700;
+  text-align: center;
+  font-size: 40px;
+  line-height: 1.3;
+}
+
+.app__description {
+  display: block;
+  color: #9396b9;
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.8;
+}
+
+.app__request-element-container {
+  margin-bottom: 16px;
+}
+
+.app__request-element-container > canvas {
+  display: block;
+  margin: auto;
+}
+
+.app__request-element-container > a {
+  display: block;
+  max-width: 335px;
+  margin: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .app__header {
+    font-size: 60px;
+  }
+
+  .app__description {
+    font-size: 30px;
+  }
+}

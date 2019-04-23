@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Cleaning old server"
+
+if [ -d "build/server" ]; then
+  rm -rf build/server
+fi
+
+echo "Building server"
+
+node_modules/.bin/tsc -p tsconfig.debug.json
+
+echo "Done building server"

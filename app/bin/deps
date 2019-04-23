@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Installing server deps"
+
+npm install
+
+echo "Installing client deps"
+
+(cd client && npm install)

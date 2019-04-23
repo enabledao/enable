@@ -1,7 +1,6 @@
-# Enable
-Borderless peer-to-peer loans with social attestation
+# bloom-starter-react
 
-Built using [bloom-starter-react](https://github.com/hellobloom/bloom-starter/tree/master/bloom-starter-react/)
+> Bloom Starter written in React + Express
 
 ## Development
 

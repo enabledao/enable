@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Set HOST to current local IP address so when the Bloom mobile app redirects it connects to the correct host
+HOST=$(ifconfig en0 | grep inet | grep -v inet6 | awk '{print $2}') PORT=3006 ./node_modules/.bin/react-scripts start
