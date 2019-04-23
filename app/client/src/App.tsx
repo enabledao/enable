@@ -1,7 +1,8 @@
 import React from "react";
 import { RequestElement, Action } from "@bloomprotocol/share-kit-react";
 import { DismissibleAlert } from "./components/DismissableAlert";
-import { BrowserRouter as Router } from "react-router-dom";
+import { LandingPage } from "./components/pages/LandingPage";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css"
@@ -115,24 +116,13 @@ class App extends React.Component<{}, AppState> {
   render() {
     return (
       <div className="app">
-      <Router>
-        <PrimaryNav></PrimaryNav>
-        <Provider>
-          <Hero
-            color="black"
-            bg="white"
-            backgroundImage="https://source.unsplash.com/jxaj-UrzQbc/1600x900"
-          >
-            <Heading>Enable</Heading>
-            <Subhead>Borderless peer-to-peer loans with social attestation</Subhead>
-            <CallToAction href="/getting-started" mt={3}>Get Started</CallToAction>
-            <ScrollDownIndicator />
-          </Hero>
-        </Provider>
+        <Router>
+          <PrimaryNav></PrimaryNav>
+          <Route exact={true} path="/" component={LandingPage} />
+        </Router>
         {this.state.status === "loading" && this.renderLoading()}
         {this.state.status === "ready" && this.renderReady()}
         {this.state.status === "scanned" && this.renderScanned()}
-        </Router>
       </div>
     );
   }
