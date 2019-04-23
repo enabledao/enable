@@ -1,6 +1,7 @@
 import React from "react";
 import { RequestElement, Action } from "@bloomprotocol/share-kit-react";
 import { DismissibleAlert } from "./components/DismissableAlert";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css"
@@ -10,6 +11,11 @@ import { socketOn, socketOff, initSocketConnection } from "./socket";
 
 import "./App.css";
 import PrimaryNav from "./components/PrimaryNav";
+
+import { Provider, Heading, Subhead } from 'rebass'
+import {
+  Hero, CallToAction, ScrollDownIndicator
+} from 'react-landing-page'
 
 type AppState = {
   status: "loading" | "ready" | "scanned";
@@ -33,28 +39,28 @@ class App extends React.Component<{}, AppState> {
       `${window.location.protocol}//${window.location.host}`}/scan`;
     const buttonCallbackUrl = `${window.location.protocol}//${
       window.location.host
-    }?token=${this.state.token}`;
+      }?token=${this.state.token}`;
 
     return (
       <div>
-      <React.Fragment>
-        <p className="app__description">Please scan the QR code to continue</p>
-        <RequestElement
-          {...{ className: "app__request-element-container" }}
-          requestData={{
-            action: Action.attestation,
-            token: this.state.token,
-            url: url,
-            org_logo_url: "https://bloom.co/favicon.png",
-            org_name: "Bloom Starter",
-            org_usage_policy_url: "https://bloom.co/legal/terms",
-            org_privacy_policy_url: "https://bloom.co/legal/privacy",
-            types: ["email"]
-          }}
-          buttonCallbackUrl={buttonCallbackUrl}
-          qrOptions={{ size: 300 }}
-        />
-      </React.Fragment>
+        <React.Fragment>
+          <p className="app__description">Please scan the QR code to continue</p>
+          <RequestElement
+            {...{ className: "app__request-element-container" }}
+            requestData={{
+              action: Action.attestation,
+              token: this.state.token,
+              url: url,
+              org_logo_url: "https://bloom.co/favicon.png",
+              org_name: "Bloom Starter",
+              org_usage_policy_url: "https://bloom.co/legal/terms",
+              org_privacy_policy_url: "https://bloom.co/legal/privacy",
+              types: ["email"]
+            }}
+            buttonCallbackUrl={buttonCallbackUrl}
+            qrOptions={{ size: 300 }}
+          />
+        </React.Fragment>
       </div>
     );
   };
@@ -109,11 +115,24 @@ class App extends React.Component<{}, AppState> {
   render() {
     return (
       <div className="app">
-      <PrimaryNav></PrimaryNav>
-        <h1 className="app__header">Welcome to Bloom Starter</h1>
+      <Router>
+        <PrimaryNav></PrimaryNav>
+        <Provider>
+          <Hero
+            color="black"
+            bg="white"
+            backgroundImage="https://source.unsplash.com/jxaj-UrzQbc/1600x900"
+          >
+            <Heading>Enable</Heading>
+            <Subhead>Borderless peer-to-peer loans with social attestation</Subhead>
+            <CallToAction href="/getting-started" mt={3}>Get Started</CallToAction>
+            <ScrollDownIndicator />
+          </Hero>
+        </Provider>
         {this.state.status === "loading" && this.renderLoading()}
         {this.state.status === "ready" && this.renderReady()}
         {this.state.status === "scanned" && this.renderScanned()}
+        </Router>
       </div>
     );
   }
