@@ -5,12 +5,12 @@ import "./LoanRequest.sol";
 
 contract LoanRequestFactory is Ownable {    
 
-    event LoanRequestCreated(address contractAddress, address indexed requester, address ownershipToken, address indexed loanCurrency, uint principal, uint interestRate, uint repayments, uint[] repaymentSchedule);
+    event LoanRequestCreated(address contractAddress, address indexed requester, address ownershipToken, address indexed loanCurrency, uint principal, uint interestRate, LoanRequest.TenorUnits, uint repayments, uint[] repaymentSchedule);
 
     constructor() Ownable() public {}
 
     function createLoanRequest(address ownershipToken, address loanCurrency, uint principal, uint interestRate, uint repayments, uint[] memory repaymentSchedule) public {
-        LoanRequest loanRequest = new LoanRequest(ownershipToken, loanCurrency, principal, interestRate, repayments, repaymentSchedule);
-        emit LoanRequestCreated(address(loanRequest), msg.sender, ownershipToken, loanCurrency, principal, interestRate, repayments, repaymentSchedule);
+        LoanRequest loanRequest = new LoanRequest(ownershipToken, loanCurrency, principal, interestRate, LoanRequest.TenorUnits.MONTHS, repayments, repaymentSchedule);
+        emit LoanRequestCreated(address(loanRequest), msg.sender, ownershipToken, loanCurrency, principal, interestRate, LoanRequest.TenorUnits.MONTHS, repayments, repaymentSchedule);
     }
 }

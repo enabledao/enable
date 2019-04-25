@@ -19,6 +19,10 @@ contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale {
     IERC20 ownershipToken;
     IERC20 loanCurrency;
 
+    enum TenorUnits {
+        DAYS, WEEKS, MONTHS, YEARS
+    }
+
     uint public constant ownershipTokenRate = 1;
 
     struct Loan {
@@ -41,10 +45,12 @@ contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale {
         address _loanCurrency,
         uint _principal,
         uint _interestRate,
+        TenorUnits _tenorUnit,
         uint _repayments,
         uint[] memory _repaymentSchedule
     ) RefundableCrowdsale(_principal) TimedCrowdsale(now, now + 1000000) CappedCrowdsale(_principal) Crowdsale(ownershipTokenRate, address(this), IERC20(_ownershipToken)) public {
         require(_repaymentSchedule.length == _repayments);
+        require(_tenorUnit == TenorUnits.MONTHS);
 
         loan.principal = _principal;
         loan.interestRate = _interestRate;
