@@ -57,7 +57,6 @@ contract("LoanRequest", accounts => {
         );
 
         const LoanRequestCreatedEvent = creationTransaction.logs.find( log => log.event === 'LoanRequestCreated');
-        console.log(LoanRequestCreatedEvent)
         Object.keys(transactionParameters).forEach( parameter => {
           const parsedEventValue = parameter === 'repaymentSchedule' ? LoanRequestCreatedEvent.args[parameter].map( value => value.toString()) : LoanRequestCreatedEvent.args[parameter].toString();
           assert.deepEqual(parsedEventValue, transactionParameters[parameter], `Invalid ${parameter} value in Event`);

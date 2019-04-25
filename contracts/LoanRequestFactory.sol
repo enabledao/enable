@@ -10,7 +10,7 @@ contract LoanRequestFactory is Ownable {
     constructor() Ownable() public {}
 
     function createLoanRequest(address ownershipToken, address loanCurrency, uint principal, uint interestRate, uint repayments, uint[] memory repaymentSchedule) public {
-        LoanRequest loanRequest = new LoanRequest(ownershipToken, loanCurrency, principal, interestRate, repayments, repaymentSchedule);
+        LoanRequest loanRequest = new LoanRequest(msg.sender, ownershipToken, loanCurrency, principal, interestRate, repayments, repaymentSchedule);
         emit LoanRequestCreated(address(loanRequest), msg.sender, ownershipToken, loanCurrency, principal, interestRate, repayments, repaymentSchedule);
     }
 }

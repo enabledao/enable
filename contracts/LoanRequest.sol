@@ -38,6 +38,7 @@ contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale, TokenT
     event FundsWithdrawn(uint withdrawn);
 
     constructor(
+        address _requester,
         address _ownershipToken,
         address _loanCurrency,
         uint _principal,
@@ -52,7 +53,7 @@ contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale, TokenT
         loan.repayments = _repayments;
         loan.repaymentSchedule = _repaymentSchedule;
 
-        requester = msg.sender;
+        requester = _requester;
         ownershipToken = IERC20(_ownershipToken);
         loanCurrency = IERC20(_loanCurrency);
     }
