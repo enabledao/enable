@@ -4,9 +4,9 @@ import "./crowdsale/distribution/RefundablePostDeliveryCrowdsale.sol";
 import "./crowdsale/validation/CappedCrowdsale.sol";
 import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
 
-//TODO: Try extending crowdsale 
+//TODO: Try extending crowdsale
 /*
-    Differences from crowdsale: Rather than paying with ether, you pay with the token of choice. 
+    Differences from crowdsale: Rather than paying with ether, you pay with the token of choice.
     You must approve before calling.
 
     The fallback function just refunds - we don't accept ether here. (Need to evaluate re-entrancy)
@@ -20,12 +20,14 @@ contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale {
     IERC20 loanCurrency;
 
     uint public constant ownershipTokenRate = 1;
+    uint private nextRepayment;
 
     struct Loan {
         uint principal;
         uint interestRate;
         uint repayments;
         uint startTime;
+        uint repaymentTenor;
         uint[] repaymentSchedule;
     }
 
@@ -35,7 +37,7 @@ contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale {
 
     event FundsReleased(uint released);
     event FundsWithdrawn(uint withdrawn);
-        
+
     constructor(
         address _ownershipToken,
         address _loanCurrency,
@@ -58,7 +60,16 @@ contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale {
         emit LoanRequestCreated(requester, address(ownershipToken), address(loanCurrency), loan.principal, loan.interestRate, loan.repayments, loan.repaymentSchedule);
     }
 
-    /* Overridden functions - We buy shares with a given loan token, not with ether */  
+    function _getRepaymentTimestamp (uint repayment) internal returns (uint) {
+        return (repayment+1) * loan.repaymentTenor;
+    }
+
+    function isRepaymentDue () public view returns (bool){
+        return now >= _getRepaymentTimestamp(nextRepayment);
+    }
+    }
+
+    /* Overridden functions - We buy shares with a given loan token, not with ether */
 
     /**
      * @dev fallback function ***DO NOT OVERRIDE***
@@ -96,5 +107,5 @@ contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale {
 
         _forwardFunds();
         _postValidatePurchase(beneficiary, amount);
-    }  
+    }
 }
