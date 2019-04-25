@@ -3,6 +3,7 @@ pragma solidity ^0.5.2;
 import "./crowdsale/distribution/RefundablePostDeliveryCrowdsale.sol";
 import "./crowdsale/validation/CappedCrowdsale.sol";
 import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
+import "./TokenTransfer.sol";
 
 //TODO: Try extending crowdsale
 /*
@@ -14,7 +15,7 @@ import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
     So we may have to override huge parts of it, but we'll see
 */
 
-contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale {
+contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale, TokenTransfer {
     address public requester;
     IERC20 ownershipToken;
     IERC20 loanCurrency;
@@ -32,8 +33,6 @@ contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale {
     }
 
     Loan loan;
-
-    event LoanRequestCreated(address indexed requester, address ownershipToken, address loanCurrency, uint principal, uint interestRate, uint repayments, uint[] repaymentSchedule);
 
     event FundsReleased(uint released);
     event FundsWithdrawn(uint withdrawn);
@@ -56,17 +55,75 @@ contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale {
         requester = msg.sender;
         ownershipToken = IERC20(_ownershipToken);
         loanCurrency = IERC20(_loanCurrency);
-
-        emit LoanRequestCreated(requester, address(ownershipToken), address(loanCurrency), loan.principal, loan.interestRate, loan.repayments, loan.repaymentSchedule);
     }
 
-    function _getRepaymentTimestamp (uint repayment) internal returns (uint) {
-        return (repayment+1) * loan.repaymentTenor;
+    function _getRepaymentScheduleSum () internal returns (uint) {
+        uint repaymentSum;
+        for( uint s=0; s < loan.repayments; s++) {
+          repaymentSum = repaymentSum + loan.repaymentSchedule[s];
+        }
+        return repaymentSum;
     }
 
-    function isRepaymentDue () public view returns (bool){
-        return now >= _getRepaymentTimestamp(nextRepayment);
+    function _getRepaymentTimestamp (uint _repayment) internal returns (uint) {
+        return loan.startTime + ((_repayment+1) * loan.repaymentTenor);
     }
+
+    function _getCyclesPast () internal returns (uint) {
+        uint nextRepaymentTimestamp = _getRepaymentTimestamp(nextRepayment);
+        uint timeSinceRepayment = now - nextRepaymentTimestamp;
+        uint cyclesPast = timeSinceRepayment / loan.repaymentTenor;
+        cyclesPast = (nextRepayment + cyclesPast) > loan.repayments ? loan.repayments - nextRepayment : cyclesPast;
+    }
+
+    function _calcRepaymentAmount (uint _repaymentStartIndex,uint _repaymentCycles) internal returns (uint) {
+        uint totalDue;
+        uint scheduleSum = _getRepaymentScheduleSum();
+        // TODO Account for interest rate
+        for (uint r = _repaymentStartIndex; r < (_repaymentStartIndex + _repaymentCycles); r++) {
+          totalDue = totalDue + (loan.principal * ( loan.repaymentSchedule[r] / scheduleSum ));
+        }
+        return totalDue;
+    }
+
+    function _getEffectiveRepaymentAmount (uint _amount) internal returns (uint, uint) {
+        uint totalCyclesPast = _getCyclesPast();
+        uint totalDue = totalRepaymentDue();
+        uint exactCyclesPast;
+        uint exactAmountDue;
+
+        if (_amount >= totalDue || _amount == 0) {
+          return (totalDue, totalCyclesPast);
+        } else {
+          for (uint c=0; (c<totalCyclesPast && exactAmountDue < _amount); c++) {
+            uint cycleRepayment = _calcRepaymentAmount(nextRepayment, c+1);
+            if (_amount >= cycleRepayment) {
+              exactCyclesPast = c+1;
+              exactAmountDue = cycleRepayment;
+            }
+          }
+          return (exactAmountDue, exactCyclesPast);
+        }
+    }
+
+    function totalRepaymentDue () public view returns (uint) { //Doubles as repayment due check
+        uint cyclesPast = _getCyclesPast();
+        if (cyclesPast == 0) {
+          return 0;
+        } else {
+            // TODO Account for missed repayment penalties if cyclesPast > 1
+          return _calcRepaymentAmount(nextRepayment, cyclesPast);
+        }
+    }
+
+    function repayLoan (uint amount) public returns (bool) {
+        (uint totalDue, uint paidCycles) = _getEffectiveRepaymentAmount(amount);
+        require(_receiveTokens(address(loanCurrency), msg.sender, totalDue));
+        nextRepayment = nextRepayment + paidCycles;
+    }
+
+    function repayLoan () public returns (bool) {
+        return repayLoan (0);
     }
 
     /* Overridden functions - We buy shares with a given loan token, not with ether */
