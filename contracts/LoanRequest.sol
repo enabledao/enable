@@ -57,7 +57,7 @@ contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale, TokenT
         loanCurrency = IERC20(_loanCurrency);
     }
 
-    function _getRepaymentScheduleSum () internal returns (uint) {
+    function _getRepaymentScheduleSum () internal view returns (uint) {
         uint repaymentSum;
         for( uint s=0; s < loan.repayments; s++) {
           repaymentSum = repaymentSum + loan.repaymentSchedule[s];
@@ -65,18 +65,18 @@ contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale, TokenT
         return repaymentSum;
     }
 
-    function _getRepaymentTimestamp (uint _repayment) internal returns (uint) {
+    function _getRepaymentTimestamp (uint _repayment) internal view returns (uint) {
         return loan.startTime + ((_repayment+1) * loan.repaymentTenor);
     }
 
-    function _getCyclesPast () internal returns (uint) {
+    function _getCyclesPast () internal view returns (uint) {
         uint nextRepaymentTimestamp = _getRepaymentTimestamp(nextRepayment);
         uint timeSinceRepayment = now - nextRepaymentTimestamp;
         uint cyclesPast = timeSinceRepayment / loan.repaymentTenor;
         cyclesPast = (nextRepayment + cyclesPast) > loan.repayments ? loan.repayments - nextRepayment : cyclesPast;
     }
 
-    function _calcRepaymentAmount (uint _repaymentStartIndex,uint _repaymentCycles) internal returns (uint) {
+    function _calcRepaymentAmount (uint _repaymentStartIndex,uint _repaymentCycles) internal view returns (uint) {
         uint totalDue;
         uint scheduleSum = _getRepaymentScheduleSum();
         // TODO Account for interest rate
@@ -86,7 +86,7 @@ contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale, TokenT
         return totalDue;
     }
 
-    function _getEffectiveRepaymentAmount (uint _amount) internal returns (uint, uint) {
+    function _getEffectiveRepaymentAmount (uint _amount) internal view returns (uint, uint) {
         uint totalCyclesPast = _getCyclesPast();
         uint totalDue = totalRepaymentDue();
         uint exactCyclesPast;
