@@ -36,6 +36,7 @@ contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale, TokenT
 
     event FundsReleased(uint released);
     event FundsWithdrawn(uint withdrawn);
+    event LoanRepayed(uint repayment, uint cycles);
 
     constructor(
         address _requester,
@@ -121,6 +122,8 @@ contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale, TokenT
         (uint totalDue, uint paidCycles) = _getEffectiveRepaymentAmount(amount);
         require(_receiveTokens(address(loanCurrency), msg.sender, totalDue));
         nextRepayment = nextRepayment + paidCycles;
+        // TODO Kill or freeze Tokens, once loan totally repaid
+        emit LoanRepayed(totalDue, paidCycles);
     }
 
     function repayLoan () public returns (bool) {
