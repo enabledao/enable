@@ -58,7 +58,7 @@ export default class PrimaryNav extends React.Component<{}, MyState> {
   render() {
     return (
       <Navbar type="dark" theme="primary" expand="md">
-        <NavbarBrand href="#">Enable</NavbarBrand>
+        <NavbarBrand href="/">Enable</NavbarBrand>
         <NavbarToggler onClick={this.toggleNavbar} />
 
         <Collapse open={this.state.collapseOpen} navbar>
