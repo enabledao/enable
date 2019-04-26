@@ -2,6 +2,7 @@ import React from "react";
 import { RequestElement, Action } from "@bloomprotocol/share-kit-react";
 import { DismissibleAlert } from "./components/DismissableAlert";
 import { LandingPage } from "./components/pages/LandingPage";
+import { Home } from "./components/pages/Home";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,7 +12,6 @@ import * as api from "./api";
 import { socketOn, socketOff, initSocketConnection } from "./socket";
 
 import "./App.css";
-import PrimaryNav from "./components/PrimaryNav";
 
 import { Provider, Heading, Subhead } from 'rebass'
 import {
@@ -117,8 +117,9 @@ class App extends React.Component<{}, AppState> {
     return (
       <div className="app">
         <Router>
-          <PrimaryNav></PrimaryNav>
           <Route exact={true} path="/" component={LandingPage} />
+          <Route exact={true} path="/home" component={Home} />
+          <Route exact={true} path="/getting-started" render={props => <div>#getting-started</div>} />
         </Router>
         {this.state.status === "loading" && this.renderLoading()}
         {this.state.status === "ready" && this.renderReady()}
