@@ -9,8 +9,8 @@ There are two parts to this app the server-side (express) and client-side (react
 
 ### Geting started
 
-1. `git clone https://github.com/hellobloom/bloom-starter.git`
-2. `cd bloom-starter/bloom-starter-react`
+1. `git clone https://github.com/onggunhao/enable.git`
+2. `cd app`
 3. `npm run deps` (install dependencies for server and client)
 4. Before starting up the dev server, you will need a `.env` file with
    these variables set: `PORT`, `NODE_ENV`, and `SESSION_SECRET`. See

@@ -8,15 +8,13 @@ import { Provider, Heading, Subhead } from 'rebass'
 import {
   Hero, CallToAction, ScrollDownIndicator
 } from 'react-landing-page'
-import PrimaryNav from "../PrimaryNav";
 
 type MyState = {};
 
-export class LandingPage extends React.Component<{}, MyState> {
+export class Home extends React.Component<{}, MyState> {
   render() {
     return (
         <Provider>
-          <PrimaryNav></PrimaryNav>
           <Hero
             color="black"
             bg="white"
@@ -24,7 +22,6 @@ export class LandingPage extends React.Component<{}, MyState> {
           >
             <Heading>Enable</Heading>
             <Subhead>Borderless peer-to-peer loans with social attestation</Subhead>
-            <CallToAction  mt={3}><Link to="/home" >Home</Link></CallToAction>
             <CallToAction  mt={3}><Link to="/getting-started" >Get Started</Link></CallToAction>
             <ScrollDownIndicator />
           </Hero>
