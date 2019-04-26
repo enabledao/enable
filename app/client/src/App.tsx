@@ -3,6 +3,8 @@ import { RequestElement, Action } from "@bloomprotocol/share-kit-react";
 import { DismissibleAlert } from "./components/DismissableAlert";
 import { LandingPage } from "./components/pages/LandingPage";
 import { Home } from "./components/pages/Home";
+import { UserProfile } from "./components/pages/UserProfile";
+import { Loan } from "./components/pages/Loan";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -120,6 +122,8 @@ class App extends React.Component<{}, AppState> {
           <Route exact={true} path="/" component={LandingPage} />
           <Route exact={true} path="/home" component={Home} />
           <Route exact={true} path="/getting-started" render={props => <div>#getting-started</div>} />
+          <Route exact={true} path="/profile/:address" component={UserProfile} />
+          <Route exact={true} path="/loan/:address" component={Loan} />
         </Router>
         {this.state.status === "loading" && this.renderLoading()}
         {this.state.status === "ready" && this.renderReady()}
