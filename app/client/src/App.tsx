@@ -12,7 +12,6 @@ import "shards-ui/dist/css/shards.min.css"
 
 import * as api from "./api";
 import { socketOn, socketOff, initSocketConnection } from "./socket";
-import web3Init from './utils/web3Init';
 
 import "./App.css";
 
@@ -20,12 +19,11 @@ type AppState = {
   status: "loading" | "ready" | "scanned";
   token: string;
   email?: string;
-  web3: any;
 }
 
 
 class App extends React.Component<{}, AppState> {
-  readonly state: AppState = { status: "loading", token: "", web3: undefined };
+  readonly state: AppState = { status: "loading", token: "" };
 
   private handleQRScan = (payload: { email: string }) => {
     this.setState(() => ({ status: "scanned", email: payload.email }));
@@ -89,18 +87,7 @@ class App extends React.Component<{}, AppState> {
       });
   };
 
-  private  async loadWeb3 () {
-    const web3 = await web3Init ;
-    this.setState ({
-      web3
-    });
-  }
-
   componentWillMount() {
-    // metaMask listener
-    window.addEventListener('load', async () => {
-      await this.loadWeb3();
-    });
   }
 
   componentDidMount() {

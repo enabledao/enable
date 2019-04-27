@@ -28,4 +28,4 @@ async function initWeb3 () {
     }
 }
 
-export default initWeb3();
+export default initWeb3;
