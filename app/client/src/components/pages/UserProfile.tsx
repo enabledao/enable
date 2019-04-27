@@ -1,13 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "shards-ui/dist/css/shards.min.css"
-
-import { Provider, Heading, Subhead } from 'rebass'
-import {
-    Hero, CallToAction, ScrollDownIndicator
-} from 'react-landing-page'
+export interface UserData {
+    name: string,
+}
 
 type MyState = {
     userAddress: string;
@@ -16,9 +12,10 @@ type MyState = {
 export class UserProfile extends React.Component<any, MyState> {
 
     componentDidMount() {
-        console.log(this.props);
         console.log(this.props.match);
-        const userAddress = this.props.match.params.address;
+        this.setState({
+            userAddress: this.props.match.address
+        })
 
         /* Get the user account data from TheGraph
             - The user previously set up bloom stuff w/ us. Unfortunately they can't just share all future data.
