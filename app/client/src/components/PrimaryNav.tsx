@@ -19,12 +19,14 @@ import {
   Collapse
 } from "shards-react";
 
+import { Link } from "react-router-dom";
+
 interface MyState {
   dropdownOpen: boolean
   collapseOpen: boolean
 };
 
-export default class PrimaryNav extends React.Component<{}, MyState> {
+export class PrimaryNav extends React.Component<{}, MyState> {
   constructor(props) {
     super(props);
 
@@ -71,9 +73,9 @@ export default class PrimaryNav extends React.Component<{}, MyState> {
                 Loans
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem>Education</DropdownItem>
-                <DropdownItem>Agriculture</DropdownItem>
-                <DropdownItem>Mission-driven Orgs</DropdownItem>
+                <DropdownItem><Link to="/loan/Education">Education</Link></DropdownItem>
+                <DropdownItem><Link>Agriculture</Link></DropdownItem>
+                <DropdownItem><Link>Mission-driven Orgs</Link></DropdownItem>
               </DropdownMenu>
             </Dropdown>
 
@@ -88,17 +90,21 @@ export default class PrimaryNav extends React.Component<{}, MyState> {
           </Nav>
 
           <Nav navbar className="ml-auto">
-            <NavLink href="#">
-              Borrow
+            <NavItem>
+              <NavLink href="#">
+                Borrow
               </NavLink>
-
-            <NavLink href="#">
-              About
+            </NavItem>
+            <NavItem>
+              <NavLink href="#">
+                About
               </NavLink>
-
-            <NavLink href="#">
-              Sign In
+            </NavItem>
+            <NavItem>
+              <NavLink href="#">
+                Sign In
               </NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>

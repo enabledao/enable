@@ -8,7 +8,6 @@ import { Provider, Heading, Subhead } from 'rebass'
 import {
   Hero, CallToAction, ScrollDownIndicator
 } from 'react-landing-page'
-import PrimaryNav from "../PrimaryNav";
 
 type MyState = {};
 
@@ -16,7 +15,6 @@ export class LandingPage extends React.Component<{}, MyState> {
   render() {
     return (
         <Provider>
-          <PrimaryNav></PrimaryNav>
           <Hero
             color="black"
             bg="white"
