@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { EthereumComponent } from '../EthereumComponent';
 
 export interface UserData {
     name: string,
@@ -21,9 +22,12 @@ export interface UserStaker {
 
 type MyState = {
     userAddress: string;
+    web3: any;
 };
 
-export class UserProfile extends React.Component<any, MyState> {
+export class UserProfile extends EthereumComponent {
+    props: any
+    state: MyState
 
     componentDidMount() {
         console.log(this.props.match);
