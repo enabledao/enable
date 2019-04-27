@@ -30,7 +30,7 @@ interface LoanParams {
   repaymentTenor: number;
   repayments: number;
   repaymentSchedule: [];
-  loanCurrency?: string;
+  loanCurrency: string;
 }
 
 type MyState = {
@@ -47,21 +47,8 @@ export class Loan extends React.Component<{}, MyState> {
     super(props);
     this.state = {
       contributors: [] as AvatarListData[],
-      loanParams: {
-        principal: 0,
-        fundsRaised: 0,
-        interestRate: 0,
-        repaymentTenor: 0,
-        repayments: 0,
-        repaymentSchedule: [],
-      },
-      loanMetadata: {
-        country: "",
-        purpose: "",
-        description: "",
-        userStory: "",
-        imgSrc: "",
-      },
+      loanParams: {} as LoanParams,
+      loanMetadata: {} as LoanMetadata,
       userData: {} as UserData,
       isLoaded: false
     }
@@ -102,6 +89,7 @@ export class Loan extends React.Component<{}, MyState> {
         repaymentTenor: 3,
         repayments: 100,
         repaymentSchedule: [],
+        loanCurrency: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
       },
       loanMetadata: {
         country: "Indonesia",
@@ -168,7 +156,8 @@ export class Loan extends React.Component<{}, MyState> {
             <AvatarList data={contributors}></AvatarList>
           </Box>
           <Box p={3} width={1 / 2} color="black" bg="white">
-            Box
+            <h3>Loan Details</h3>
+            <h3>Repayment Schedule</h3>
           </Box>
         </Flex>
       </div>

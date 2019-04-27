@@ -3,6 +3,20 @@ import { Link } from "react-router-dom";
 
 export interface UserData {
     name: string,
+    img?: string,
+    email?: string,
+}
+
+export interface UserAttestations {
+    linkedin: boolean,
+    facebook: boolean,
+}
+
+// @dev A staker can always be identified by their address, but may have approved our app to see their name and/or image.
+export interface UserStaker {
+    address: string,
+    name?: string,
+    img?: string,
 }
 
 type MyState = {
