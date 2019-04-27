@@ -12,6 +12,7 @@ import "shards-ui/dist/css/shards.min.css"
 
 import * as api from "./api";
 import { socketOn, socketOff, initSocketConnection } from "./socket";
+import web3Init from './utils/web3Init';
 
 import "./App.css";
 
@@ -88,21 +89,17 @@ class App extends React.Component<{}, AppState> {
       });
   };
 
+  private  async loadWeb3 () {
+    const web3 = await web3Init ;
+    this.setState ({
+      web3
+    });
+  }
+
   componentWillMount() {
     // metaMask listener
-    window.addEventListener('load', function () {
-      // Checking if Web3 has been injected by the browser (Mist/MetaMask)
-      // @ts-ignore
-      if (typeof window.web3 !== 'undefined') {
-        // Use Mist/MetaMask's provider
-        // @ts-ignore
-        window.web3 = new Web3(web3.currentProvider);
-      } else {
-        console.log('No web3? You should consider trying MetaMask!')
-        // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-        // @ts-ignore
-        window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/60ab76e16df54c808e50a79975b4779f"));
-      }
+    window.addEventListener('load', async () => {
+      await this.loadWeb3();
     });
   }
 
