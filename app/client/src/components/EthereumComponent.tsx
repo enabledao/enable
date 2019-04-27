@@ -14,7 +14,6 @@ export class EthereumComponent extends React.Component <{}, {}>{
     }
 
     componentWillMount() {
-        console.log('wiil', this)
         // metaMask listener
         window.addEventListener('load', async () => {
           await this.loadWeb3();

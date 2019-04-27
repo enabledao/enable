@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex, Box, Text } from 'rimble-ui';
 import { Link } from "react-router-dom";
+import { EthereumComponent } from '../EthereumComponent';
 import { AvatarList, AvatarListData } from "../AvatarList";
 import {
   Card,
@@ -34,6 +35,7 @@ interface LoanParams {
 }
 
 type MyState = {
+  web3: any;
   contributors: AvatarListData[];
   loanParams: LoanParams;
   loanMetadata: LoanMetadata;
@@ -41,7 +43,9 @@ type MyState = {
   isLoaded: boolean;
 };
 
-export class Loan extends React.Component<{}, MyState> {
+export class Loan extends EthereumComponent {
+
+  state: MyState
 
   constructor(props) {
     super(props);
@@ -50,7 +54,8 @@ export class Loan extends React.Component<{}, MyState> {
       loanParams: {} as LoanParams,
       loanMetadata: {} as LoanMetadata,
       userData: {} as UserData,
-      isLoaded: false
+      isLoaded: false,
+      web3: null
     }
   }
 
