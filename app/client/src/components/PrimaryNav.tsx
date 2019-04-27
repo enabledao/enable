@@ -19,10 +19,10 @@ import {
   Collapse
 } from "shards-react";
 
-interface MyState  {
-    dropdownOpen: boolean
-    collapseOpen: boolean
-  };
+interface MyState {
+  dropdownOpen: boolean
+  collapseOpen: boolean
+};
 
 export default class PrimaryNav extends React.Component<{}, MyState> {
   constructor(props) {
@@ -63,40 +63,42 @@ export default class PrimaryNav extends React.Component<{}, MyState> {
 
         <Collapse open={this.state.collapseOpen} navbar>
           <Nav navbar>
-            <NavItem>
-              <NavLink active href="#">
-                Active
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#" disabled>
-                Disabled
-              </NavLink>
-            </NavItem>
             <Dropdown
               open={this.state.dropdownOpen}
               toggle={this.toggleDropdown}
             >
               <DropdownToggle nav caret>
-                Dropdown
+                Loans
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem>Action</DropdownItem>
-                <DropdownItem>Another action</DropdownItem>
-                <DropdownItem>Something else here</DropdownItem>
+                <DropdownItem>Education</DropdownItem>
+                <DropdownItem>Agriculture</DropdownItem>
+                <DropdownItem>Mission-driven Orgs</DropdownItem>
               </DropdownMenu>
             </Dropdown>
-          </Nav>
 
-          <Nav navbar className="ml-auto">
             <InputGroup size="sm" seamless>
               <InputGroupAddon type="prepend">
                 <InputGroupText>
                   <FontAwesomeIcon icon={faSearch} />
                 </InputGroupText>
               </InputGroupAddon>
-              <FormInput className="border-0" placeholder="Search..." />
+              <FormInput placeholder="Search..." />
             </InputGroup>
+          </Nav>
+
+          <Nav navbar className="ml-auto">
+            <NavLink href="#">
+              Borrow
+              </NavLink>
+
+            <NavLink href="#">
+              About
+              </NavLink>
+
+            <NavLink href="#">
+              Sign In
+              </NavLink>
           </Nav>
         </Collapse>
       </Navbar>
