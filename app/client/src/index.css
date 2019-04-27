@@ -8,7 +8,89 @@
   -moz-osx-font-smoothing: grayscale;
 } */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@font-face {
+  font-family: 'SF-Pro-Display-Black';
+  src: url('./assets/fonts/SF-Pro-Display-Black.otf') format('opentype'); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display-Bold';
+  src: url('./assets/fonts/SF-Pro-Display-Bold.otf') format('opentype'); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display-Heavy';
+  src: url('./assets/fonts/SF-Pro-Display-Heavy.otf') format('opentype'); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display-Light';
+  src: url('./assets/fonts/SF-Pro-Display-Light.otf') format('opentype'); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display-Medium';
+  src: url('./assets/fonts/SF-Pro-Display-Medium.otf') format('opentype'); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display-Regular';
+  src: url('./assets/fonts/SF-Pro-Display-Regular.otf') format('opentype'); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display-Semibold';
+  src: url('./assets/fonts/SF-Pro-Display-Semibold.otf') format('opentype'); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display-Thin';
+  src: url('./assets/fonts/SF-Pro-Display-Thin.otf') format('opentype'); /* IE9 Compat Modes */
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display-Ultralight';
+  src: url('./assets/fonts/SF-Pro-Display-Ultralight.otf') format('opentype'); /* IE9 Compat Modes */
+}
+
+
+body {
+  font-family: "SF-Pro-Display-Regular", "Roboto",
+  sans-serif;
+}
+
+.SF-Pro-Display-Black {
+  font-family: "SF-Pro-Display-Black"
+}
+
+.SF-Pro-Display-Bold {
+  font-family: 'SF-Pro-Display-Bold';
+}
+
+.SF-Pro-Display-Heavy {
+  font-family: 'SF-Pro-Display-Heavy';
+}
+
+.SF-Pro-Display-Light {
+  font-family: 'SF-Pro-Display-Light';
+}
+
+.SF-Pro-Display-Medium {
+  font-family: 'SF-Pro-Display-Medium';
+}
+
+.SF-Pro-Display-Regular {
+  font-family: 'SF-Pro-Display-Regular';
+}
+
+.SF-Pro-Display-Semibold {
+  font-family: 'SF-Pro-Display-Semibold';
+}
+
+.SF-Pro-Display-Thin {
+  font-family: 'SF-Pro-Display-Thin';
+}
+
+.SF-Pro-Display-Ultralight {
+  font-family: 'SF-Pro-Display-Ultralight';
 }
