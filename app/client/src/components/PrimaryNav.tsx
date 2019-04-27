@@ -1,49 +1,34 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  Button,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
   NavLink,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText,
-  FormInput,
   Collapse
 } from "shards-react";
+import { Heading } from 'rimble-ui'
 
 interface MyState  {
-    dropdownOpen: boolean
     collapseOpen: boolean
   };
 
 export default class PrimaryNav extends React.Component<{}, MyState> {
+  state: MyState
+
   constructor(props) {
     super(props);
 
-    this.toggleDropdown = this.toggleDropdown.bind(this);
     this.toggleNavbar = this.toggleNavbar.bind(this);
 
     this.state = {
-      dropdownOpen: false,
       collapseOpen: false
     };
-  }
-
-  toggleDropdown() {
-    this.setState({
-      ...this.state,
-      ...{
-        dropdownOpen: !this.state.dropdownOpen
-      }
-    });
   }
 
   toggleNavbar() {
@@ -57,46 +42,26 @@ export default class PrimaryNav extends React.Component<{}, MyState> {
 
   render() {
     return (
-      <Navbar type="dark" theme="primary" expand="md">
-        <NavbarBrand href="/">Enable</NavbarBrand>
+      <Navbar type="dark" expand="md" style={{ background: "transparent", borderBottom: "solid 5px rgba(0,0,0,0.1)", padding: 0 }}>
+        <NavbarBrand href="/">
+          <Heading.h5>
+            Enable
+          </Heading.h5>
+        </NavbarBrand>
         <NavbarToggler onClick={this.toggleNavbar} />
 
         <Collapse open={this.state.collapseOpen} navbar>
           <Nav navbar>
-            <NavItem>
-              <NavLink active href="#">
-                Active
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#" disabled>
-                Disabled
-              </NavLink>
-            </NavItem>
-            <Dropdown
-              open={this.state.dropdownOpen}
-              toggle={this.toggleDropdown}
-            >
-              <DropdownToggle nav caret>
-                Dropdown
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>Action</DropdownItem>
-                <DropdownItem>Another action</DropdownItem>
-                <DropdownItem>Something else here</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
           </Nav>
 
           <Nav navbar className="ml-auto">
-            <InputGroup size="sm" seamless>
-              <InputGroupAddon type="prepend">
-                <InputGroupText>
-                  <FontAwesomeIcon icon={faSearch} />
-                </InputGroupText>
-              </InputGroupAddon>
-              <FormInput className="border-0" placeholder="Search..." />
-            </InputGroup>
+            <NavItem>
+              <Link to="/dashboard">
+                <Button theme="primary">
+                  Dashboard
+                </Button>
+              </Link>
+            </NavItem>          
           </Nav>
         </Collapse>
       </Navbar>

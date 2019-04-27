@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css"
 
-import { Provider, Heading, Subhead } from 'rebass'
+import { Box, Flex, Heading, Image } from 'rimble-ui'
 import {
   Hero, CallToAction, ScrollDownIndicator
 } from 'react-landing-page'
@@ -15,20 +15,23 @@ type MyState = {};
 export class LandingPage extends React.Component<{}, MyState> {
   render() {
     return (
-        <Provider>
-          <PrimaryNav></PrimaryNav>
-          <Hero
-            color="black"
-            bg="white"
-            backgroundImage="https://source.unsplash.com/jxaj-UrzQbc/1600x900"
-          >
-            <Heading>Enable</Heading>
-            <Subhead>Borderless peer-to-peer loans with social attestation</Subhead>
-            <CallToAction  mt={3}><Link to="/home" >Home</Link></CallToAction>
-            <CallToAction  mt={3}><Link to="/getting-started" >Get Started</Link></CallToAction>
-            <ScrollDownIndicator />
-          </Hero>
-        </Provider>
+        <Flex flexDirection="column">
+          <Box width={1} >
+            <PrimaryNav></PrimaryNav>
+          </Box>
+          <Box width={1} justifyContent="center" pt={144} pb={72}>
+              <Heading.h1 textAlign="center">Stablecoin Loans</Heading.h1>
+              <Heading.h6 textAlign="center" fontWeight="500" pb={48}>Enabling opportunity through borderless credit</Heading.h6>
+              <Box width={1/2} pl={1/4}>
+                <Image src="">
+                </Image>
+              </Box>
+              <ScrollDownIndicator />
+          </Box>
+          <Box width={1} justifyContent="center" pt={144} pb={72}>
+              <Heading.h4 textAlign="center" >How it works</Heading.h4>
+          </Box>
+        </Flex>
     );
   }
 }
