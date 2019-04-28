@@ -27,6 +27,7 @@ export class PrimaryNav extends React.Component<{}, MyState> {
   constructor(props) {
     super(props);
 
+    this.toggleDropdown = this.toggleDropdown.bind(this);
     this.toggleNavbar = this.toggleNavbar.bind(this);
 
     this.state = {
