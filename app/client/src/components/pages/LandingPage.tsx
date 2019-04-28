@@ -130,7 +130,7 @@ export class LandingPage extends React.Component<{}, MyState> {
           </Box>
           <Box width={1} justifyContent="center" pt={144} pb={72}>
             <Heading.h2 textAlign="center" className="sectionHeader">Protocol Integrations</Heading.h2>
-            <Flex width={"80%"} className="justifyCentered" flexWrap="wrap">
+            <Flex width={"80%"} className="justifyCentered" flexWrap="wrap" mb="24em">
               <Box width={"30%"}>
                 <Card className="integrationsBox border-radius-12">
                   <Image className="logos" src={dharma} />
