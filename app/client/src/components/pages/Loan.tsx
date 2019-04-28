@@ -22,6 +22,10 @@ enum VerifiedIdTypes {
   '3BOX'
 }
 
+var LoanRequest = require("../../contractabi/LoanRequest.json");
+var LoanRequestFactory = require("../../contractabi/LoanRequestFactory.json");
+var UserStaking = require("../../contractabi/UserStaking.json");
+
 interface RepaymentData {
   days: number;
   date: Date;
@@ -153,6 +157,18 @@ export class Loan extends EthereumComponent {
       },
       isLoaded: true
     });
+
+    //Contract Instances
+    if(!this.state.web3) {
+      //Connect ot infura - at the previous component
+    }
+
+    var MyContract = contract({
+      abi: ...,
+      unlinked_binary: ...,
+      address: ..., // optional
+      // many more
+    })
 
     //Will get real data
     const contributors = await this.getContributors();
