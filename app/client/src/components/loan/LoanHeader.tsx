@@ -17,7 +17,6 @@ import {
   } from "shards-react";
 
 import { Loan } from '../../interfaces/Loans';
-import { User } from '../../interfaces/Users';
 
 
 interface MyState {
