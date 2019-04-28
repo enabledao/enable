@@ -1,7 +1,3 @@
-.grey {
-    color: #5a6169 !important;
-}
-
 .loanHeader, .loanHeader * {
     font-family: 'SF-Pro-Display-Regular' !important;
     letter-spacing: 1px !important;
@@ -9,6 +5,7 @@
 
 .loanHeader .loanCard {
     border-radius: 0 12px 12px 0;
+    width: 100%;
 }
 
 .loanHeader .loanCard .card-body{

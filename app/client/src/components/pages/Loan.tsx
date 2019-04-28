@@ -1,6 +1,8 @@
 import React from "react";
-import { Flex, Box, Text, PublicAddress } from 'rimble-ui';
+import { string, number } from "prop-types";
 import { Link } from "react-router-dom";
+
+import { Flex, Box, Heading, Image, Text, PublicAddress } from 'rimble-ui';
 import {
   Card,
   CardHeader,
@@ -11,7 +13,11 @@ import {
   Button,
   Progress
 } from "shards-react";
-import { string, number } from "prop-types";
+import "../../styles/Loan.css";
+
+import dBox from "../../assets/3dbox.png";
+import bloomLogo from "../../assets/bloom-logo.png";
+
 import { EthereumComponent } from '../EthereumComponent';
 import { ContributerMetadata, LoanMetadata, LoanParams, TokenMetadata, UserMetadata, RepaymentData, StakerMetadata } from '../../interfaces'
 import { database } from '../../data/database';
@@ -131,12 +137,12 @@ export class Loan extends EthereumComponent {
       //Connect ot infura - at the previous component
     }
 
-    var MyContract = contract({
-      abi: ...,
-      unlinked_binary: ...,
-      address: ..., // optional
-      // many more
-    })
+    // var MyContract = contract({
+    //   abi: ...,
+    //   unlinked_binary: ...,
+    //   address: ..., // optional
+    //   // many more
+    // })
 
     //Will get real data
     const contributors = await this.getContributors();
@@ -172,17 +178,36 @@ export class Loan extends EthereumComponent {
     const percentFunded = loanParams.fundsRaised / loanParams.principal * 100;
 
     return (
-      <div className="tight-page">
+      <div className="tight-page" style={{ marginTop: "48px"}}>
         <LoanHeader
           loan = {this.getLoan}
         />
 
-        // First Row
-        <Flex >
+        <Flex className="section-row" >
           <Box p={3} width={1 / 2} color="black" bg="white">
             <Card>
               <CardBody>
-                "User Image"
+                <Flex >
+                  <Box width={2/4}>
+                    <Heading.h2 className="SF-Pro-Display-Semibold" textAlign="left">Identity</Heading.h2>
+                  </Box>
+                  <Box width={2/4}>
+                    <div style={{ position: "relative", marginTop: "-20px", marginRight: "-5px", width: "100%" }}>
+                      <Text textAlign="right" className="SF-Pro-Display-Light gray">Powered by</Text>
+                      <div className="powered-by">
+                        <Image src={dBox} />
+                        <Image src={bloomLogo} />
+                      </div>
+                    </div>
+                  </Box>
+                </Flex>
+                <div>
+                  <PublicAddress
+                    className="pubAddress"
+                    address={this.getLoan.borrower.address} 
+                    label=""
+                  />
+                </div>
               </CardBody>
             </Card>
           </Box>

@@ -54,7 +54,7 @@ export class LoanHeader extends React.Component {
 
     render() {
         return (
-            <Flex p={16} className="loanHeader" >
+            <Flex p={16} className="loanHeader section-row" >
                 <Card className="loanCard">
                     <CardBody>
                         <Flex height={250} >

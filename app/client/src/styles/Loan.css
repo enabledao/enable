@@ -1,0 +1,14 @@
+.grey {
+    color: #5a6169 !important;
+}
+
+.powered-by {
+    text-align: right;
+    height: 74px;
+}
+
+.powered-by img{
+    max-height: 72px;
+    max-width: 108px;
+    display: inline-block;
+}
