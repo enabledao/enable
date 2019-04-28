@@ -1,8 +1,12 @@
 import { User } from './Users';
 
+export  interface LoanDocumentation {
+    name: string;
+    url: string;
+}
 
 export interface LoanMetadata {
-    country: string;
+    location: string;
     purpose: string;
     description: string;
     userStory: string;
@@ -24,4 +28,6 @@ export interface Loan {
     metadata?: LoanMetadata;
     category?: string;
     borrower?: User;
+    articles: LoanDocumentation[]
+    documents: LoanDocumentation[]
 }

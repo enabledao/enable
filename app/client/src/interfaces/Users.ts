@@ -14,9 +14,9 @@ export interface UserMetadata {
 
 export interface User {
     address: string;
-    metadata: UserMetadata;
-    verifiedIdentities: Identity[];//Bloom, 3D Box
-    verifiedSocialAccounts: Identity[]; //Linkedin, Twitter, facebook
+    metadata?: UserMetadata;
+    verifiedIdentities?: Identity[];//Bloom, 3D Box
+    verifiedSocialAccounts?: Identity[]; //Linkedin, Twitter, facebook
 }
 
 export interface ContributerMetadata {

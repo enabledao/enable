@@ -15,6 +15,7 @@ import { string, number } from "prop-types";
 import { EthereumComponent } from '../EthereumComponent';
 import {  LoanMetadata, LoanParams, TokenMetadata, UserMetadata, } from '../../interfaces'
 import { database } from '../../data/database';
+import { LoanHeader } from '../loan/LoanHeader';
 import { AvatarList, AvatarListData } from "../AvatarList";
 import { UserData } from "./UserProfile";
 
@@ -109,7 +110,7 @@ export class Loan extends EthereumComponent {
         loanCurrency: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
       },
       loanMetadata: {
-        country: "Jakarta, Indonesia",
+        location: "Jakarta, Indonesia",
         purpose: "University",
         description: "Student loan for Masters Degree in Human Resources at Cornell University, with the intention to work in the US HR sector post-graduation.",
         userStory: "Student loan for Masters Degree in Human Resources at Cornell University, with the intention to work in the US HR sector post-graduation.",
@@ -131,15 +132,37 @@ export class Loan extends EthereumComponent {
     })
   }
 
+  get getLoan () {
+    return {
+      category: "Education",
+      metadata: Object.assign({}, this.state.loanMetadata, {
+          imgSrc: "https://cdn.pixabay.com/photo/2017/02/17/23/15/duiker-island-2076042_960_720.jpg",
+      }),
+      borrower: {
+        address:"0x0",
+        metadata: this.state.userData
+      },
+      articles: [
+        {name: "Medium Post", url: "weee"},
+      ],
+      documents: [
+        {name: "Cornell Admission Letter", url: "weee"},
+      ]
+    }
+  }
+
   render() {
     const { contributors, loanParams, loanMetadata, userData, isLoaded, tokenMetadata } = this.state;
     const percentFunded = loanParams.fundsRaised / loanParams.principal * 100;
 
     return (
-      <div>
+      <div className="tight-page">
+        <LoanHeader
+          loan = {this.getLoan}
+        />
 
         // First Row
-        <Flex>
+        <Flex >
           <Box p={3} width={1 / 2} color="black" bg="white">
             <Card>
               <CardBody>
@@ -155,7 +178,7 @@ export class Loan extends EthereumComponent {
                 <Text>Total Amount ${loanParams.principal}</Text>
                 <Text>Powered by {contributors.length} lenders</Text>
                 <h3>{userData.name}</h3>
-                <Text>{loanMetadata.country} | {loanMetadata.purpose}</Text>
+                <Text>{loanMetadata.location} | {loanMetadata.purpose}</Text>
                 <Text>"Default Amount + Call to action"</Text>
               </CardBody>
             </Card>
