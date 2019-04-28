@@ -44,9 +44,9 @@ export default class PrimaryNav extends React.Component<{}, MyState> {
     return (
       <Navbar type="dark" expand="md" style={{ background: "transparent", borderBottom: "solid 5px rgba(0,0,0,0.1)", padding: 0 }}>
         <NavbarBrand href="/">
-          <Heading.h5>
+          <Heading.h4>
             Enable
-          </Heading.h5>
+          </Heading.h4>
         </NavbarBrand>
         <NavbarToggler onClick={this.toggleNavbar} />
 

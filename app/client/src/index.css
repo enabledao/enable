@@ -60,37 +60,45 @@ body {
 }
 
 .SF-Pro-Display-Black {
-  font-family: "SF-Pro-Display-Black"
+  font-family: "SF-Pro-Display-Black !important"
 }
 
 .SF-Pro-Display-Bold {
-  font-family: 'SF-Pro-Display-Bold';
+  font-family: 'SF-Pro-Display-Bold' !important;
 }
 
 .SF-Pro-Display-Heavy {
-  font-family: 'SF-Pro-Display-Heavy';
+  font-family: 'SF-Pro-Display-Heavy' !important;
 }
 
 .SF-Pro-Display-Light {
-  font-family: 'SF-Pro-Display-Light';
+  font-family: 'SF-Pro-Display-Light' !important;
 }
 
 .SF-Pro-Display-Medium {
-  font-family: 'SF-Pro-Display-Medium';
+  font-family: 'SF-Pro-Display-Medium' !important;
 }
 
 .SF-Pro-Display-Regular {
-  font-family: 'SF-Pro-Display-Regular';
+  font-family: 'SF-Pro-Display-Regular' !important;
 }
 
 .SF-Pro-Display-Semibold {
-  font-family: 'SF-Pro-Display-Semibold';
+  font-family: 'SF-Pro-Display-Semibold' !important;
 }
 
 .SF-Pro-Display-Thin {
-  font-family: 'SF-Pro-Display-Thin';
+  font-family: 'SF-Pro-Display-Thin' !important;
 }
 
 .SF-Pro-Display-Ultralight {
-  font-family: 'SF-Pro-Display-Ultralight';
+  font-family: 'SF-Pro-Display-Ultralight' !important;
+}
+
+.sectionHeader {
+  margin-bottom: 60px !important;
+}
+
+.border-radius-12 {
+  border-radius: 12px;
 }

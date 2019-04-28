@@ -1,0 +1,53 @@
+.landingPage {
+    font-family: 'SF-Pro-Display-Regular' !important;
+}
+
+.navBox, .navBox * {
+    font-family: 'SF-Pro-Display-Semibold' !important;
+}
+
+.worldMap {
+    width: 100% !important;
+    background-color: transparent !important;
+}
+
+.partiesBox h4 {
+    color:#5a6169;
+    font-family: 'SF-Pro-Display-Light' !important;
+    padding-left: 18%;
+    padding-right: 18%;
+    margin-bottom: 24px;
+}
+
+.partiesBox h4:before {
+    content: "\2D";
+    position: absolute;
+    margin-left: -20px;
+}
+
+.featuresBox {
+    height: 332px !important;
+    margin-bottom: 48px !important;
+}
+
+.featuresBox h4 {
+    color:#5a6169;
+    text-align: center;
+    font-family: 'SF-Pro-Display-Light' !important;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 24px;
+}
+
+.integrationsBox {
+
+}
+
+.integrationsBox h4 {
+    color:#5a6169;
+    text-align: center;
+    font-family: 'SF-Pro-Display-Light' !important;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 24px;
+}
