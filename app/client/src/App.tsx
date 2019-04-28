@@ -2,8 +2,8 @@ import React from "react";
 import { RequestElement, Action } from "@bloomprotocol/share-kit-react";
 import { DismissibleAlert } from "./components/DismissableAlert";
 import { LandingPage } from "./components/pages/LandingPage";
-import { Home } from "./components/pages/Home";
 import { PrimaryNav } from "./components/PrimaryNav";
+import { Footer } from "./components/Footer";
 import { UserProfile } from "./components/pages/UserProfile";
 import { Loan } from "./components/pages/Loan";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -121,14 +121,14 @@ class App extends React.Component<{}, AppState> {
         <Router>
           <PrimaryNav></PrimaryNav>
           <Route exact={true} path="/" component={LandingPage} />
-          <Route exact={true} path="/home" component={Home} />
           <Route exact={true} path="/getting-started" render={props => <div>#getting-started</div>} />
           <Route exact={true} path="/profile/:address" component={UserProfile} />
           <Route exact={true} path="/loan/:address" component={Loan} />
+          <Footer/>
         </Router>
-        {this.state.status === "loading" && this.renderLoading()}
-        {this.state.status === "ready" && this.renderReady()}
-        {this.state.status === "scanned" && this.renderScanned()}
+        {/* {this.state.status === "loading" && this.renderLoading()} */}
+        {/* {this.state.status === "ready" && this.renderReady()} */}
+        {/* {this.state.status === "scanned" && this.renderScanned()} */}
       </div>
     );
   }
