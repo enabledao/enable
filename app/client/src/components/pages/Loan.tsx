@@ -163,12 +163,12 @@ export class Loan extends EthereumComponent {
       //Connect ot infura - at the previous component
     }
 
-    var MyContract = contract({
-      abi: ...,
-      unlinked_binary: ...,
-      address: ..., // optional
-      // many more
-    })
+    // var MyContract = contract({
+    //   abi: ...,
+    //   unlinked_binary: ...,
+    //   address: ..., // optional
+    //   // many more
+    // })
 
     //Will get real data
     const contributors = await this.getContributors();
