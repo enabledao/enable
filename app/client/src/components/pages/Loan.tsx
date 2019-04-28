@@ -1,8 +1,8 @@
 import React from "react";
-import { Flex, Box, Text } from 'rimble-ui';
+import { string, number } from "prop-types";
 import { Link } from "react-router-dom";
-import { EthereumComponent } from '../EthereumComponent';
-import { AvatarList, AvatarListData } from "../AvatarList";
+
+import { Flex, Box, Heading, Image, Text, PublicAddress } from 'rimble-ui';
 import {
   Card,
   CardHeader,
@@ -13,9 +13,17 @@ import {
   Button,
   Progress
 } from "shards-react";
-import { string, number } from "prop-types";
+import "../../styles/Loan.css";
+
+import dBox from "../../assets/3dbox.png";
+import bloomLogo from "../../assets/bloom-logo.png";
+
+import { EthereumComponent } from '../EthereumComponent';
+import { ContributerMetadata, LoanMetadata, LoanParams, TokenMetadata, UserMetadata, RepaymentData, StakerMetadata } from '../../interfaces'
+import { database } from '../../data/database';
+import { LoanHeader } from '../loan/LoanHeader';
+import { AvatarList, AvatarListData } from "../AvatarList";
 import { UserData } from "./UserProfile";
-import { LoanMetadata, TokenMetadata, UserMetadata, database } from '../../data/database';
 
 enum VerifiedIdTypes {
   'BLOOM',
@@ -25,40 +33,6 @@ enum VerifiedIdTypes {
 var LoanRequest = require("../../contractabi/LoanRequest.json");
 var LoanRequestFactory = require("../../contractabi/LoanRequestFactory.json");
 var UserStaking = require("../../contractabi/UserStaking.json");
-
-interface RepaymentData {
-  days: number;
-  date: Date;
-  principalDue: number;
-  loanBalance: number;
-  interest: number;
-  fees: number;
-  penalties: number;
-  due: number;
-}
-
-interface StakerMetadata {
-  img: string;
-  name: string;
-  relationship: string;
-  verifiedIds: VerifiedIdTypes[];
-}
-
-interface ContributerMetadata {
-  img: string;
-  text: string;
-}
-
-interface LoanParams {
-  principal: number;
-  fundsRaised: number;
-  interestRate: number;
-  tenor: number;
-  gracePeriod: number;
-  repayments: number;
-  repaymentSchedule: [];
-  loanCurrency: string;
-}
 
 type MyState = {
   web3: any;
@@ -146,7 +120,7 @@ export class Loan extends EthereumComponent {
         loanCurrency: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
       },
       loanMetadata: {
-        country: "Jakarta, Indonesia",
+        location: "Jakarta, Indonesia",
         purpose: "University",
         description: "Student loan for Masters Degree in Human Resources at Cornell University, with the intention to work in the US HR sector post-graduation.",
         userStory: "Student loan for Masters Degree in Human Resources at Cornell University, with the intention to work in the US HR sector post-graduation.",
@@ -180,19 +154,60 @@ export class Loan extends EthereumComponent {
     })
   }
 
+  get getLoan () {
+    return {
+      category: "Education",
+      metadata: Object.assign({}, this.state.loanMetadata, {
+          imgSrc: "https://cdn.pixabay.com/photo/2017/02/17/23/15/duiker-island-2076042_960_720.jpg",
+      }),
+      borrower: {
+        address:"0x0",
+        metadata: this.state.userData
+      },
+      articles: [
+        {name: "Medium Post", url: "weee"},
+      ],
+      documents: [
+        {name: "Cornell Admission Letter", url: "weee"},
+      ]
+    }
+  }
+
   render() {
     const { contributors, loanParams, loanMetadata, userData, isLoaded, tokenMetadata } = this.state;
     const percentFunded = loanParams.fundsRaised / loanParams.principal * 100;
 
     return (
-      <div>
+      <div className="tight-page" style={{ marginTop: "48px"}}>
+        <LoanHeader
+          loan = {this.getLoan}
+        />
 
-        // First Row
-        <Flex>
+        <Flex className="section-row" >
           <Box p={3} width={1 / 2} color="black" bg="white">
             <Card>
               <CardBody>
-                "User Image"
+                <Flex >
+                  <Box width={2/4}>
+                    <Heading.h2 className="SF-Pro-Display-Semibold" textAlign="left">Identity</Heading.h2>
+                  </Box>
+                  <Box width={2/4}>
+                    <div style={{ position: "relative", marginTop: "-20px", marginRight: "-5px", width: "100%" }}>
+                      <Text textAlign="right" className="SF-Pro-Display-Light gray">Powered by</Text>
+                      <div className="powered-by">
+                        <Image src={dBox} />
+                        <Image src={bloomLogo} />
+                      </div>
+                    </div>
+                  </Box>
+                </Flex>
+                <div>
+                  <PublicAddress
+                    className="pubAddress"
+                    address={this.getLoan.borrower.address} 
+                    label=""
+                  />
+                </div>
               </CardBody>
             </Card>
           </Box>
@@ -204,7 +219,7 @@ export class Loan extends EthereumComponent {
                 <Text>Total Amount ${loanParams.principal}</Text>
                 <Text>Powered by {contributors.length} lenders</Text>
                 <h3>{userData.name}</h3>
-                <Text>{loanMetadata.country} | {loanMetadata.purpose}</Text>
+                <Text>{loanMetadata.location} | {loanMetadata.purpose}</Text>
                 <Text>"Default Amount + Call to action"</Text>
               </CardBody>
             </Card>

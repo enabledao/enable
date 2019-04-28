@@ -52,7 +52,7 @@ export class UserProfile extends EthereumComponent {
     }
 
     render() {
-        return (<div>
+        return (<div className="tight-page">
             <a>a</a>
         </div>);
     }

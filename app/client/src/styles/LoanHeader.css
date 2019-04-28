@@ -1,0 +1,50 @@
+.loanHeader, .loanHeader * {
+    font-family: 'SF-Pro-Display-Regular' !important;
+    letter-spacing: 1px !important;
+}
+
+.loanHeader .loanCard {
+    border-radius: 0 12px 12px 0;
+    width: 100%;
+}
+
+.loanHeader .loanCard .card-body{
+    padding: 0 16px 0 0;
+}
+
+.userSection, .userSection * {
+    color: #fff;
+}
+
+.userSection h2, .loanSection h3 {
+    font-family: 'SF-Pro-Display-Semibold' !important;
+    margin: 0;
+}
+
+.userSection h5 {
+    font-family: 'SF-Pro-Display-Thin' !important;
+    margin: 0;
+}
+
+.userSection .user-avatar {
+    border-radius: 50%;
+    border: #cccccc solid 3px;
+    padding: 1px;
+    width: 60px;
+    height: 60px;
+    overflow: hidden !important;
+}
+
+.loanImage-overlay {
+    height: 100%;
+    width: 100%;
+}
+
+.category-pill {
+    padding: 16px 4px;
+    font-family: 'SF-Pro-Display-Semibold' !important;
+}
+
+.articles {
+    margin-bottom: 12px;
+}
