@@ -4,6 +4,10 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Button,
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
   Navbar,
   NavbarToggler,
   NavbarBrand,
@@ -15,10 +19,11 @@ import {
 import { Heading } from 'rimble-ui'
 
 interface MyState  {
-    collapseOpen: boolean
-  };
+  collapseOpen: boolean;
+  dropdownOpen: boolean;
+};
 
-export default class PrimaryNav extends React.Component<{}, MyState> {
+export class PrimaryNav extends React.Component<{}, MyState> {
   state: MyState
 
   constructor(props) {
@@ -27,8 +32,18 @@ export default class PrimaryNav extends React.Component<{}, MyState> {
     this.toggleNavbar = this.toggleNavbar.bind(this);
 
     this.state = {
-      collapseOpen: false
+      collapseOpen: false,
+      dropdownOpen: false
     };
+  }
+
+  toggleDropdown() {
+    this.setState({
+      ...this.state,
+      ...{
+        dropdownOpen: !this.state.dropdownOpen
+      }
+    });
   }
 
   toggleNavbar() {
@@ -52,6 +67,19 @@ export default class PrimaryNav extends React.Component<{}, MyState> {
 
         <Collapse open={this.state.collapseOpen} navbar>
           <Nav navbar>
+            <Dropdown
+              open={this.state.dropdownOpen}
+              toggle={this.toggleDropdown}
+            >
+              <DropdownToggle nav caret>
+                Loans
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem><Link to="/loan/Education">Education</Link></DropdownItem>
+                <DropdownItem><Link>Agriculture</Link></DropdownItem>
+                <DropdownItem><Link>Mission-driven Orgs</Link></DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
           </Nav>
 
           <Nav navbar className="ml-auto">
@@ -62,6 +90,24 @@ export default class PrimaryNav extends React.Component<{}, MyState> {
                 </Button>
               </Link>
             </NavItem>          
+          </Nav>
+
+          <Nav navbar className="ml-auto">
+            <NavItem>
+              <NavLink href="#">
+                Borrow
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#">
+                About
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#">
+                Sign In
+              </NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>

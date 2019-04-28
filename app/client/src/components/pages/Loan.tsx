@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex, Box, Text } from 'rimble-ui';
 import { Link } from "react-router-dom";
+import { EthereumComponent } from '../EthereumComponent';
 import { AvatarList, AvatarListData } from "../AvatarList";
 import {
   Card,
@@ -12,36 +13,62 @@ import {
   Button,
   Progress
 } from "shards-react";
-import { string } from "prop-types";
+import { string, number } from "prop-types";
 import { UserData } from "./UserProfile";
+import { LoanMetadata, TokenMetadata, UserMetadata, database } from '../../data/database';
 
-interface LoanMetadata {
-  country: string;
-  purpose: string;
-  description: string;
-  userStory: string;
-  imgSrc: string;
+enum VerifiedIdTypes {
+  'BLOOM',
+  '3BOX'
+}
+
+interface RepaymentData {
+  days: number;
+  date: Date;
+  principalDue: number;
+  loanBalance: number;
+  interest: number;
+  fees: number;
+  penalties: number;
+  due: number;
+}
+
+interface StakerMetadata {
+  img: string;
+  name: string;
+  relationship: string;
+  verifiedIds: VerifiedIdTypes[];
+}
+
+interface ContributerMetadata {
+  img: string;
+  text: string;
 }
 
 interface LoanParams {
   principal: number;
   fundsRaised: number;
   interestRate: number;
-  repaymentTenor: number;
+  tenor: number;
+  gracePeriod: number;
   repayments: number;
   repaymentSchedule: [];
   loanCurrency: string;
 }
 
 type MyState = {
+  web3: any;
   contributors: AvatarListData[];
   loanParams: LoanParams;
   loanMetadata: LoanMetadata;
   userData: UserData;
+  tokenMetadata: TokenMetadata;
   isLoaded: boolean;
 };
 
-export class Loan extends React.Component<{}, MyState> {
+export class Loan extends EthereumComponent {
+
+  state: MyState
 
   constructor(props) {
     super(props);
@@ -50,13 +77,26 @@ export class Loan extends React.Component<{}, MyState> {
       loanParams: {} as LoanParams,
       loanMetadata: {} as LoanMetadata,
       userData: {} as UserData,
-      isLoaded: false
+      tokenMetadata: {} as TokenMetadata,
+      isLoaded: false,
+      web3: null
     }
   }
 
   // @dev Get icons and names of contributors if they have shared their data, or ethereum blockie and address if not
   async getContributors(): Promise<AvatarListData[]> {
     return [] as AvatarListData[];
+  }
+
+  async getStakers(userAddress: string): Promise<string[]> {
+    return [] as string[];
+  }
+
+  /* 
+    Get a list of attestations, and the relevant data for each parsed down to what we need. The user gives these to the app via bloom when they create their account, or later. We then store the attestations in our datastore and display them to the potential lenders. Some information may be kept private which the lenders and borrower can communicate directly about
+  */
+  async getAttestations(userAddress: string): Promise<any> {
+    return {};
   }
 
   // @dev Web3 call to get loan parameters from chain
@@ -69,6 +109,15 @@ export class Loan extends React.Component<{}, MyState> {
     return {} as LoanMetadata;
   }
 
+  async getTokenMetadata(tokenAddress: string): Promise<TokenMetadata> {
+    console.log(database.tokens.get(tokenAddress));
+    return database.tokens.get(tokenAddress);
+  }
+
+  async getUserMetadata(userId: number): Promise<UserMetadata> {
+    return database.users.get(userId);
+  }
+
   async componentDidMount() {
     //Dummy Data
     this.setState({
@@ -79,23 +128,24 @@ export class Loan extends React.Component<{}, MyState> {
         },
         {
           img: "https://airswap-token-images.s3.amazonaws.com/DAI.png",
-          text: "Dai"
+          text: "USDC"
         }
       ],
       loanParams: {
         principal: 60000,
-        fundsRaised: 25000,
-        interestRate: 5,
-        repaymentTenor: 3,
+        fundsRaised: 48000,
+        interestRate: 6,
+        tenor: 120,
+        gracePeriod: 24,
         repayments: 100,
         repaymentSchedule: [],
         loanCurrency: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
       },
       loanMetadata: {
-        country: "Indonesia",
+        country: "Jakarta, Indonesia",
         purpose: "University",
-        description: "",
-        userStory: "",
+        description: "Student loan for Masters Degree in Human Resources at Cornell University, with the intention to work in the US HR sector post-graduation.",
+        userStory: "Student loan for Masters Degree in Human Resources at Cornell University, with the intention to work in the US HR sector post-graduation.",
         imgSrc: "",
       },
       userData: {
@@ -107,10 +157,15 @@ export class Loan extends React.Component<{}, MyState> {
     //Will get real data
     const contributors = await this.getContributors();
     const loanParams = await this.getLoanParameters();
+    const tokenMetadata = await this.getTokenMetadata(this.state.loanParams.loanCurrency);
+
+    this.setState({
+      tokenMetadata: tokenMetadata
+    })
   }
 
   render() {
-    const { contributors, loanParams, loanMetadata, userData, isLoaded } = this.state;
+    const { contributors, loanParams, loanMetadata, userData, isLoaded, tokenMetadata } = this.state;
     const percentFunded = loanParams.fundsRaised / loanParams.principal * 100;
 
     return (
@@ -119,7 +174,7 @@ export class Loan extends React.Component<{}, MyState> {
         // First Row
         <Flex>
           <Box p={3} width={1 / 2} color="black" bg="white">
-          <Card>
+            <Card>
               <CardBody>
                 "User Image"
               </CardBody>
@@ -156,7 +211,17 @@ export class Loan extends React.Component<{}, MyState> {
             <AvatarList data={contributors}></AvatarList>
           </Box>
           <Box p={3} width={1 / 2} color="black" bg="white">
-            <h3>Loan Details</h3>
+
+            <Card>
+              <CardBody>
+                <h3>Loan Details</h3>
+                <Text>Principal ${loanParams.principal} {tokenMetadata.name}</Text>
+                <Text>Interest {loanParams.interestRate}% Effective Annual</Text>
+                <Text>Tenor {loanParams.tenor / 12} Years</Text>
+                <Text>Grace Period {loanParams.gracePeriod / 12} Years</Text>
+                <Text>Expected Return {36}%</Text>
+              </CardBody>
+            </Card>
             <h3>Repayment Schedule</h3>
           </Box>
         </Flex>

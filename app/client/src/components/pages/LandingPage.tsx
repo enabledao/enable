@@ -8,7 +8,6 @@ import { Box, Card, Flex, Heading, Image } from 'rimble-ui'
 import {
   Hero, CallToAction, ScrollDownIndicator
 } from 'react-landing-page'
-import PrimaryNav from "../PrimaryNav";
 
 import world_dotted_map from "../../assets/world_dotted_map.png";
 import loan_card from "../../assets/loan_card.png";
@@ -19,9 +18,6 @@ export class LandingPage extends React.Component<{}, MyState> {
   render() {
     return (
         <Flex flexDirection="column" className="landingPage">
-          <Box width={1} className="navBox">
-            <PrimaryNav></PrimaryNav>
-          </Box>
           <Box width={1} justifyContent="center" pt={144} pb={72}>
             <Heading.h1 textAlign="center" className="SF-Pro-Display-Semibold" >Stablecoin Loans</Heading.h1>
             <Heading.h3 textAlign="center" fontWeight="500" pb={48} style={{color: '#484848'}} className="SF-Pro-Display-Medium">Enabling opportunity through borderless credit</Heading.h3>
