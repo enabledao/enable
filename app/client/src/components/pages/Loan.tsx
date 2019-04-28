@@ -13,7 +13,7 @@ import {
 } from "shards-react";
 import { string, number } from "prop-types";
 import { EthereumComponent } from '../EthereumComponent';
-import {  LoanMetadata, LoanParams, TokenMetadata, UserMetadata, } from '../../interfaces'
+import { ContributerMetadata, LoanMetadata, LoanParams, TokenMetadata, UserMetadata, RepaymentData, StakerMetadata } from '../../interfaces'
 import { database } from '../../data/database';
 import { LoanHeader } from '../loan/LoanHeader';
 import { AvatarList, AvatarListData } from "../AvatarList";
@@ -23,6 +23,10 @@ enum VerifiedIdTypes {
   'BLOOM',
   '3BOX'
 }
+
+var LoanRequest = require("../../contractabi/LoanRequest.json");
+var LoanRequestFactory = require("../../contractabi/LoanRequestFactory.json");
+var UserStaking = require("../../contractabi/UserStaking.json");
 
 type MyState = {
   web3: any;
@@ -121,6 +125,18 @@ export class Loan extends EthereumComponent {
       },
       isLoaded: true
     });
+
+    //Contract Instances
+    if(!this.state.web3) {
+      //Connect ot infura - at the previous component
+    }
+
+    var MyContract = contract({
+      abi: ...,
+      unlinked_binary: ...,
+      address: ..., // optional
+      // many more
+    })
 
     //Will get real data
     const contributors = await this.getContributors();

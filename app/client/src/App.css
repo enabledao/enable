@@ -35,6 +35,11 @@
   margin: auto;
 }
 
+.justifyCentered {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 @media only screen and (min-width: 768px) {
   .app__header {
     font-size: 60px;
