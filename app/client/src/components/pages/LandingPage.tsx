@@ -11,6 +11,9 @@ import {
 
 import world_dotted_map from "../../assets/world_dotted_map.png";
 import loan_card from "../../assets/loan_card.png";
+import dharma from "../../assets/dharma.png";
+import bloom from "../../assets/bloom.png";
+import usdc from "../../assets/usdc.png";
 
 type MyState = {};
 
@@ -130,7 +133,7 @@ export class LandingPage extends React.Component<{}, MyState> {
             <Flex width={"80%"} className="justifyCentered" flexWrap="wrap">
               <Box width={"30%"}>
                 <Card className="integrationsBox border-radius-12">
-                  <Image className="logos" src={loan_card} />
+                  <Image className="logos" src={dharma} />
                   <Heading.h3 className="SF-Pro-Display-Semibold" textAlign="center">Dharma</Heading.h3>
                   <h4>
                     Open protocol for issuing and administering debt agreements on the Ethereum blockchain
@@ -139,7 +142,7 @@ export class LandingPage extends React.Component<{}, MyState> {
               </Box>
               <Box width={"30%"} ml={"5%"}>
                 <Card className="integrationsBox border-radius-12">
-                  <Image className="logos" src={loan_card} />
+                  <Image className="logos" src={bloom} />
                   <Heading.h3 className="SF-Pro-Display-Semibold" textAlign="center">Bloom</Heading.h3>
                   <h4>
                     End-to-end protocol for Identity attestation and credit scoring, powered by Ethereum and IPFS
@@ -148,7 +151,7 @@ export class LandingPage extends React.Component<{}, MyState> {
               </Box>
               <Box width={"30%"} ml={"5%"}>
                 <Card className="integrationsBox border-radius-12">
-                  <Image className="logos" src={loan_card} />
+                  <Image className="logos width-auto" src={usdc} />
                   <Heading.h3 className="SF-Pro-Display-Semibold" textAlign="center">USDC</Heading.h3>
                   <h4>
                     Coinbase's USD Coin is an Ethereum token stableCoin backed by US Dollars held in a bak account

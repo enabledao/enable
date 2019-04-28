@@ -59,6 +59,10 @@ body {
   sans-serif;
 }
 
+img {
+  background-color: transparent !important;
+}
+
 .SF-Pro-Display-Black {
   font-family: "SF-Pro-Display-Black !important"
 }
@@ -96,9 +100,27 @@ body {
 }
 
 .sectionHeader {
+  font-family: 'SF-Pro-Display-Semibold' !important;
+  letter-spacing: 1px;
   margin-bottom: 60px !important;
+}
+
+.width-auto {
+  width: auto !important;
+  max-width: unset !important;
 }
 
 .border-radius-12 {
   border-radius: 12px;
+}
+
+.footer {
+  color: '#818ea3';
+  padding: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.footer a {
+  color: #007bff !important;
 }

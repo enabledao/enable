@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Button,
   Dropdown,
@@ -90,24 +88,6 @@ export class PrimaryNav extends React.Component<{}, MyState> {
                 </Button>
               </Link>
             </NavItem>          
-          </Nav>
-
-          <Nav navbar className="ml-auto">
-            <NavItem>
-              <NavLink href="#">
-                Borrow
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#">
-                About
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#">
-                Sign In
-              </NavLink>
-            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>

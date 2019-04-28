@@ -2,6 +2,15 @@
     font-family: 'SF-Pro-Display-Regular' !important;
 }
 
+.landingPage h1 {
+    letter-spacing: 1px;
+}
+
+
+.landingPage h3 {
+    margin-bottom: 24px;
+}
+
 .navBox, .navBox * {
     font-family: 'SF-Pro-Display-Semibold' !important;
 }
@@ -29,7 +38,6 @@
     height: 332px !important;
     margin-bottom: 48px !important;
 }
-
 .featuresBox h4 {
     color:#5a6169;
     text-align: center;
@@ -40,7 +48,13 @@
 }
 
 .integrationsBox {
+    height: 453px;
+}
 
+.integrationsBox .logos {
+    max-height: 113px;
+    max-width: 113px;
+    margin: 24px auto 48px;
 }
 
 .integrationsBox h4 {
