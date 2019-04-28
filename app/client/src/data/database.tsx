@@ -1,23 +1,6 @@
-export interface UserMetadata {
-    imgSrc: string,
-    name: string,
-    attestations?: string[],
-    stakers?: string[]
-}
-
-export interface LoanMetadata {
-    country: string;
-    purpose: string;
-    description: string;
-    userStory: string;
-    imgSrc: string;
-}
-
-export interface TokenMetadata {
-    imgSrc: string;
-    name: string;
-    address: string;
-}
+import { LoanMetadata } from '../interfaces/Loans';
+import { UserMetadata } from '../interfaces/Users';
+import { TokenMetadata } from '../interfaces/Tokens';
 
 let tokens: Map<string, TokenMetadata> = new Map<string, TokenMetadata>();
 let users: Map<number, UserMetadata> = new Map<number, UserMetadata>();
