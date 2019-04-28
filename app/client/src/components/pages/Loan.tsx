@@ -1,8 +1,6 @@
 import React from "react";
-import { Flex, Box, Text } from 'rimble-ui';
+import { Flex, Box, Text, PublicAddress } from 'rimble-ui';
 import { Link } from "react-router-dom";
-import { EthereumComponent } from '../EthereumComponent';
-import { AvatarList, AvatarListData } from "../AvatarList";
 import {
   Card,
   CardHeader,
@@ -14,46 +12,15 @@ import {
   Progress
 } from "shards-react";
 import { string, number } from "prop-types";
+import { EthereumComponent } from '../EthereumComponent';
+import {  LoanMetadata, LoanParams, TokenMetadata, UserMetadata, } from '../../interfaces'
+import { database } from '../../data/database';
+import { AvatarList, AvatarListData } from "../AvatarList";
 import { UserData } from "./UserProfile";
-import { LoanMetadata, TokenMetadata, UserMetadata, database } from '../../data/database';
 
 enum VerifiedIdTypes {
   'BLOOM',
   '3BOX'
-}
-
-interface RepaymentData {
-  days: number;
-  date: Date;
-  principalDue: number;
-  loanBalance: number;
-  interest: number;
-  fees: number;
-  penalties: number;
-  due: number;
-}
-
-interface StakerMetadata {
-  img: string;
-  name: string;
-  relationship: string;
-  verifiedIds: VerifiedIdTypes[];
-}
-
-interface ContributerMetadata {
-  img: string;
-  text: string;
-}
-
-interface LoanParams {
-  principal: number;
-  fundsRaised: number;
-  interestRate: number;
-  tenor: number;
-  gracePeriod: number;
-  repayments: number;
-  repaymentSchedule: [];
-  loanCurrency: string;
 }
 
 type MyState = {
