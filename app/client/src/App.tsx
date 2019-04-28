@@ -138,9 +138,9 @@ class App extends React.Component<{}, AppState> {
           <Route exact={true} path="/profile/:address" component={UserProfile} />
           <Route exact={true} path="/loan/:address" component={Loan} />
         </Router>
-        {this.state.status === "loading" && this.renderLoading()}
-        {this.state.status === "ready" && this.renderReady()}
-        {this.state.status === "scanned" && this.renderScanned()}
+        {/* {this.state.status === "loading" && this.renderLoading()} */}
+        {/* {this.state.status === "ready" && this.renderReady()} */}
+        {/* {this.state.status === "scanned" && this.renderScanned()} */}
       </div>
     );
   }
