@@ -5,9 +5,7 @@ import "../../styles/LandingPage.css"
 
 import { Box, Card, Flex, Heading, Image } from 'rimble-ui'
 
-import {
-  Hero, CallToAction, ScrollDownIndicator
-} from 'react-landing-page'
+import { EmailOptIn } from "../EmailOptIn";
 
 import world_dotted_map from "../../assets/world_dotted_map.png";
 import loan_card from "../../assets/loan_card.png";
@@ -75,6 +73,7 @@ export class LandingPage extends React.Component<{}, MyState> {
               </Image>
             </Box>
           </Box>
+          <EmailOptIn />
           <Box width={1} justifyContent="center" pt={144} pb={72}>
             <Heading.h2 textAlign="center" className="sectionHeader">Features</Heading.h2>
             <Flex width={"80%"} className="justifyCentered" flexWrap="wrap">
