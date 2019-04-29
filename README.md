@@ -1,62 +1,22 @@
 # Enable
-Borderless peer-to-peer loans with social attestation
 
-Built using [bloom-starter-react](https://github.com/hellobloom/bloom-starter/tree/master/bloom-starter-react/)
+Stablecoin loans with borderless credit scoring through social attestation.
 
-## Development
+## Visit us
 
-There are two parts to this app the server-side (express) and client-side (react).
+https://enable-loans.herokuapp.com/
 
-### Geting started
+## Contribute to development
 
-1. `git clone https://github.com/onggunhao/enable.git`
-2. `cd app`
-3. `npm run deps` (install dependencies for server and client)
-4. Before starting up the dev server, you will need a `.env` file with
-   these variables set: `PORT`, `NODE_ENV`, and `SESSION_SECRET`. See
-   `.env.sample` for an example of where you `.env` should be and
-   what your `.env` should look like.
-5. `npm run dev`
+We are building in public, in line with the open source ethos of  decentralized finance.
 
-#### What does this do?
+#### Deploying latest to Heroku:
 
-- Start the express server
-- Start ngrok to proxy the express server
-  - This is so the mobile app can POST share-kit data to the url
-- Start the react app
-  - The `REACT_APP_SERVER_URL` env var is set to the ngrok url.
+We need to tell git to push the  `/app` subtree to Heroku, otherwise Heroku will throw an error.
 
-## Production
-
-### Build app (client and server)
-
-This will build client and server code and output to the `build/` directory
-
-```
-npm run build
-```
-
-### Start app (client and server)
-
-```
-npm run start
-```
-
-### Deploy to Heroku
-
-Commands must be done from the root of the git project.
-
-#### Init heroku (one time)
-
-Assuming that your heroku app is called `bloom-starter-react`.
-
-```
-heroku login
-heroku git:remote -a bloom-starter-react
-```
-
-#### Push latest:
+Source: https://medium.com/@shalandy/deploy-git-subdirectory-to-heroku-ea05e95fce1f
 
 ```
 git subtree push --prefix bloom-starter-react heroku master
 ```
+
