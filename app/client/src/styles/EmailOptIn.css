@@ -8,7 +8,7 @@
 
 .email-opt-in * {
     color: #ffffff;
-    text-align: center;
+    text-align: center !important;
 }
 
 .email-opt-in h2, .email-opt-in h4{
