@@ -25,8 +25,8 @@ git subtree push --prefix bloom-starter-react heroku master
 
 ##### Heroku Pipeline (CI / CD)
 
-We currently use Heroku pipelines, and utilize `heroku-buildpack-multi-procfile` to configure automatic deployments.
-For more info: https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-multi-procfile
+We currently use Heroku pipelines, and utilize `subdir-heroku-buildpack` to configure automatic deployments.
+For more info: https://github.com/timanovsky/subdir-heroku-buildpack
 
 **Step 1**:
 
