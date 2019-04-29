@@ -22,7 +22,7 @@
 }
 
 .partiesBox {
-    height: 670px;
+    height: 670px !important;
 }
 .partiesBox h4 {
     color:#5a6169;
