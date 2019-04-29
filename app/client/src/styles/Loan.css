@@ -8,7 +8,8 @@
 }
 
 .powered-by img{
-    max-height: 72px;
-    max-width: 108px;
+    max-height: 60px;
+    max-width: 96px;
     display: inline-block;
+    margin: 0 0 0 10px;
 }
