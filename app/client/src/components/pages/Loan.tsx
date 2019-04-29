@@ -15,8 +15,8 @@ import {
 } from "shards-react";
 import "../../styles/Loan.css";
 
-import dBox from "../../assets/3dbox.png";
-import bloomLogo from "../../assets/bloom-logo.png";
+import dBox from "../../assets/3dbox.svg";
+import bloomLogo from "../../assets/bloom-logo.svg";
 
 import { EthereumComponent } from '../EthereumComponent';
 import { ContributerMetadata, LoanMetadata, LoanParams, TokenMetadata, UserMetadata, RepaymentData, StakerMetadata } from '../../interfaces'
@@ -195,8 +195,8 @@ export class Loan extends EthereumComponent {
                     <div style={{ position: "relative", marginTop: "-20px", marginRight: "-5px", width: "100%" }}>
                       <Text textAlign="right" className="SF-Pro-Display-Light gray">Powered by</Text>
                       <div className="powered-by">
-                        <Image src={dBox} />
-                        <Image src={bloomLogo} />
+                        <a href="https://https://3box.io/" target="_blank"><Image src={dBox} /></a>
+                        <a href="https://bloom.co/" target="_blank"><Image src={bloomLogo} /></a>
                       </div>
                     </div>
                   </Box>
