@@ -48,7 +48,7 @@ export class EmailOptIn extends React.Component {
                     <FormGroup>
                         <FormInput placeholder="Email address" className="mb-2" required type="email" value={this.state.email} onChange={e=>this.onChange('email', e.target.value)} />
                     </FormGroup>
-                    <Button tyoe="submit" outline theme="light"> Submit </Button>
+                    <Button type="submit" outline theme="light"> Submit </Button>
                 </Form>
             </Box>
         </Flex>
