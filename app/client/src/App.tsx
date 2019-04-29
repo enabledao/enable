@@ -7,9 +7,11 @@ import { Footer } from "./components/Footer";
 import { UserProfile } from "./components/pages/UserProfile";
 import { Loan } from "./components/pages/Loan";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Col } from "shards-react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "shards-ui/dist/css/shards.min.css"
+import "shards-ui/dist/css/shards.min.css";
+import "./styles/shards-dashboard.1.1.0.css";
 
 import * as api from "./api";
 import { socketOn, socketOff, initSocketConnection } from "./socket";
@@ -20,8 +22,7 @@ type AppState = {
   status: "loading" | "ready" | "scanned";
   token: string;
   email?: string;
-}
-
+};
 
 class App extends React.Component<{}, AppState> {
   readonly state: AppState = { status: "loading", token: "" };
@@ -39,12 +40,14 @@ class App extends React.Component<{}, AppState> {
       `${window.location.protocol}//${window.location.host}`}/scan`;
     const buttonCallbackUrl = `${window.location.protocol}//${
       window.location.host
-      }?token=${this.state.token}`;
+    }?token=${this.state.token}`;
 
     return (
       <div>
         <React.Fragment>
-          <p className="app__description">Please scan the QR code to continue</p>
+          <p className="app__description">
+            Please scan the QR code to continue
+          </p>
           <RequestElement
             {...{ className: "app__request-element-container" }}
             requestData={{
@@ -67,7 +70,7 @@ class App extends React.Component<{}, AppState> {
 
   private renderScanned = () => (
     <React.Fragment>
-      <DismissibleAlert message="You can easily dismiss me using the <strong>close</strong> button &rarr;"></DismissibleAlert>
+      <DismissibleAlert message="You can easily dismiss me using the <strong>close</strong> button &rarr;" />
       <p className="app__description">
         Thank you for sharing! You told us your email is {this.state.email}
       </p>
@@ -88,8 +91,7 @@ class App extends React.Component<{}, AppState> {
       });
   };
 
-  componentWillMount() {
-  }
+  componentWillMount() {}
 
   componentDidMount() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -118,17 +120,33 @@ class App extends React.Component<{}, AppState> {
   render() {
     return (
       <div className="app">
-        <Router>
-          <PrimaryNav></PrimaryNav>
-          <Route exact={true} path="/" component={LandingPage} />
-          <Route exact={true} path="/getting-started" render={props => <div>#getting-started</div>} />
-          <Route exact={true} path="/profile/:address" component={UserProfile} />
-          <Route exact={true} path="/loan/:address" component={Loan} />
-          <Footer/>
-        </Router>
-        {/* {this.state.status === "loading" && this.renderLoading()} */}
-        {/* {this.state.status === "ready" && this.renderReady()} */}
-        {/* {this.state.status === "scanned" && this.renderScanned()} */}
+        <Col
+          className="main-content p-0"
+          lg={{ size: 12 }}
+          md={{ size: 12 }}
+          sm="12"
+          tag="main"
+        >
+          <Router>
+            <PrimaryNav />
+            <Route exact={true} path="/" component={LandingPage} />
+            <Route
+              exact={true}
+              path="/getting-started"
+              render={props => <div>#getting-started</div>}
+            />
+            <Route
+              exact={true}
+              path="/profile/:address"
+              component={UserProfile}
+            />
+            <Route exact={true} path="/loan/:address" component={Loan} />
+            <Footer />
+          </Router>
+          {/* {this.state.status === "loading" && this.renderLoading()} */}
+          {/* {this.state.status === "ready" && this.renderReady()} */}
+          {/* {this.state.status === "scanned" && this.renderScanned()} */}
+        </Col>
       </div>
     );
   }
