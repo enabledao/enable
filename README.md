@@ -12,17 +12,25 @@ We are building in public, in line with the open source ethos of  decentralized 
 
 #### Deploying to Heroku:
 
-We need to tell git to push the  `/app` subtree to Heroku, otherwise Heroku will throw an error.
+As our repo is structured as a monorepo, the `/app` folder is the one that needs to be deployed to heroku.
 
-Source: https://medium.com/@shalandy/deploy-git-subdirectory-to-heroku-ea05e95fce1f
+##### Local machine
+
+We need to tell git to push the  `/app` subtree to Heroku.
+For more info: https://medium.com/@shalandy/deploy-git-subdirectory-to-heroku-ea05e95fce1f
 
 ```
 git subtree push --prefix bloom-starter-react heroku master
 ```
 
-We currently use Heroku pipelines, and utilize `heroku-buildpack-monorepo` to configure automatic deployments.
+##### Heroku Pipeline (CI / CD)
 
-In Heroku's config variables:
+We currently use Heroku pipelines, and utilize `heroku-buildpack-monorepo` to configure automatic deployments.
+For more info: https://github.com/lstoll/heroku-buildpack-monorepo
+
+**Step 1**:
+
+**Step 2**: Add this to Heroku's config variables:
 ```
 APP_BASE=app
 ```
