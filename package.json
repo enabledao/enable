@@ -1,0 +1,27 @@
+{
+  "name": "enable",
+  "version": "1.0.0",
+  "description": "Borderless peer-to-peer loans with social attestation",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onggunhao/enable.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onggunhao/enable/issues"
+  },
+  "homepage": "https://github.com/onggunhao/enable#readme",
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "openzeppelin-solidity": "2.2.0",
+    "truffle-hdwallet-provider": "^1.0.8"
+  }
+}
