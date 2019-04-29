@@ -10,7 +10,7 @@ https://enable-loans.herokuapp.com/
 
 We are building in public, in line with the open source ethos of  decentralized finance.
 
-#### Deploying latest to Heroku:
+#### Deploying to Heroku:
 
 We need to tell git to push the  `/app` subtree to Heroku, otherwise Heroku will throw an error.
 
@@ -20,3 +20,9 @@ Source: https://medium.com/@shalandy/deploy-git-subdirectory-to-heroku-ea05e95fc
 git subtree push --prefix bloom-starter-react heroku master
 ```
 
+We currently use Heroku pipelines, and utilize `heroku-buildpack-monorepo` to configure automatic deployments.
+
+In Heroku's config variables:
+```
+APP_BASE=app
+```
