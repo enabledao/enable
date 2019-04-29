@@ -1,0 +1,25 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ],
+  "env": {
+    "NODE_ENV": {
+      "required": true
+    },
+    "PORT": {
+      "required": true
+    },
+    "SESSION_SECRET": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "name": "enable",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
