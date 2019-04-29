@@ -68,8 +68,8 @@ export class PrimaryNav extends React.Component<{}, MyState> {
             className="align-items-stretch ml-2 flex-md-nowrap p-0"
           >
             <NavbarBrand
-              className="w-100 mr-0"
-              href="#"
+              className="mr-0"
+              href="/"
               style={{ lineHeight: "25px" }}
             >
               <img
@@ -90,46 +90,13 @@ export class PrimaryNav extends React.Component<{}, MyState> {
                 </h5>
               </span>
             </NavbarBrand>
-            <Nav navbar className="ml-auto app__navbar-button">
+            <Nav navbar className="ml-auto app__navbar-button mr-2">
               <NavItem>
-                <Link to="/dashboard">
-                  <Button theme="primary">Dashboard</Button>
+                <Link to="/loan/1">
+                  <Button theme="primary">Loan</Button>
                 </Link>
               </NavItem>
             </Nav>
-            {/* <NavbarToggler onClick={this.toggleNavbar} /> */}
-
-            {/* <Collapse open={this.state.collapseOpen} navbar>
-              <Nav navbar>
-                <Dropdown
-                  open={this.state.dropdownOpen}
-                  toggle={this.toggleDropdown}
-                >
-                  <DropdownToggle nav caret>
-                    Loans
-                  </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem>
-                      <Link to="/loan/Education">Education</Link>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Link>Agriculture</Link>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Link>Mission-driven Orgs</Link>
-                    </DropdownItem>
-                  </DropdownMenu>
-                </Dropdown>
-              </Nav>
-
-              <Nav navbar className="ml-auto">
-                <NavItem>
-                  <Link to="/dashboard">
-                    <Button theme="primary">Dashboard</Button>
-                  </Link>
-                </NavItem>
-              </Nav>
-            </Collapse> */}
           </Navbar>
         </Container>
       </div>
