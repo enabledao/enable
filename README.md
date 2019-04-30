@@ -61,6 +61,8 @@ We utilized existing DeFi protocols, such as:
 - [OpenZeppelin's ERC20](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC20/ERC20.sol) for crowdsale contract
 - [Dharma's Loan Contracts](https://dharmaprotocol.github.io/developer-docs/#/) for debt token issuance
 
+Learn more at our [wiki](https://github.com/onggunhao/enable/wiki/Architecture-&-Rationale)
+
 # How to participate
 
 We are building in public - in line with the open source ethos of decentralized finance. Most of our discussions are tracked in Github issues, including business-related ones.
