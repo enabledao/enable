@@ -23,3 +23,15 @@ export interface ContributerMetadata {
     img: string;
     text: string;
 }
+
+export interface SocialAttesterData {
+    img: string;
+    name: string;
+    relationship: string;
+    linkedIdentities: LinkedIdentity[]
+}
+
+export enum LinkedIdentity {
+    BLOOM,
+    THREE_BOX
+}

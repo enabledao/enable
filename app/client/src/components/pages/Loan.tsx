@@ -24,11 +24,7 @@ import { database } from '../../data/database';
 import { LoanHeader } from '../loan/LoanHeader';
 import { AvatarList, AvatarListData } from "../AvatarList";
 import { UserData } from "./UserProfile";
-
-enum VerifiedIdTypes {
-  'BLOOM',
-  '3BOX'
-}
+import {LoanFunding} from "../LoanFunding";
 
 var LoanRequest = require("../../contractabi/LoanRequest.json");
 var LoanRequestFactory = require("../../contractabi/LoanRequestFactory.json");
@@ -133,7 +129,7 @@ export class Loan extends EthereumComponent {
     });
 
     //Contract Instances
-    if(!this.state.web3) {
+    if (!this.state.web3) {
       //Connect ot infura - at the previous component
     }
 
@@ -154,21 +150,21 @@ export class Loan extends EthereumComponent {
     })
   }
 
-  get getLoan () {
+  get getLoan() {
     return {
       category: "Education",
       metadata: Object.assign({}, this.state.loanMetadata, {
-          imgSrc: "https://cdn.pixabay.com/photo/2017/02/17/23/15/duiker-island-2076042_960_720.jpg",
+        imgSrc: "https://cdn.pixabay.com/photo/2017/02/17/23/15/duiker-island-2076042_960_720.jpg",
       }),
       borrower: {
-        address:"0x0",
+        address: "0x0",
         metadata: this.state.userData
       },
       articles: [
-        {name: "Medium Post", url: "weee"},
+        { name: "Medium Post", url: "weee" },
       ],
       documents: [
-        {name: "Cornell Admission Letter", url: "weee"},
+        { name: "Cornell Admission Letter", url: "weee" },
       ]
     }
   }
@@ -178,9 +174,9 @@ export class Loan extends EthereumComponent {
     const percentFunded = loanParams.fundsRaised / loanParams.principal * 100;
 
     return (
-      <div className="tight-page" style={{ marginTop: "48px"}}>
+      <div className="tight-page" style={{ marginTop: "48px" }}>
         <LoanHeader
-          loan = {this.getLoan}
+          loan={this.getLoan}
         />
 
         <Flex className="section-row" >
@@ -188,10 +184,10 @@ export class Loan extends EthereumComponent {
             <Card>
               <CardBody>
                 <Flex >
-                  <Box width={2/4}>
+                  <Box width={2 / 4}>
                     <Heading.h2 className="SF-Pro-Display-Semibold" textAlign="left">Identity</Heading.h2>
                   </Box>
-                  <Box width={2/4}>
+                  <Box width={2 / 4}>
                     <div style={{ position: "relative", marginTop: "-20px", marginRight: "-5px", width: "100%" }}>
                       <Text textAlign="right" className="SF-Pro-Display-Light gray">Powered by</Text>
                       <div className="powered-by">
@@ -204,7 +200,7 @@ export class Loan extends EthereumComponent {
                 <div>
                   <PublicAddress
                     className="pubAddress"
-                    address={this.getLoan.borrower.address} 
+                    address={this.getLoan.borrower.address}
                     label=""
                   />
                 </div>
@@ -212,48 +208,54 @@ export class Loan extends EthereumComponent {
             </Card>
           </Box>
           <Box p={3} width={1 / 2} color="black" bg="white">
+          
             <Card>
               <CardBody>
                 <h2>{percentFunded}% Funded</h2>
                 <Progress theme="primary" value={percentFunded} />
                 <Text>Total Amount ${loanParams.principal}</Text>
                 <Text>Powered by {contributors.length} lenders</Text>
-                <h3>{userData.name}</h3>
-                <Text>{loanMetadata.location} | {loanMetadata.purpose}</Text>
-                <Text>"Default Amount + Call to action"</Text>
+                
               </CardBody>
             </Card>
           </Box>
         </Flex>
 
-        // Second Row
         <Flex>
           <Box p={3} width={1 / 2} color="black" bg="white">
-            Loan Summary
-          </Box>
-        </Flex>
-
-        // Third Row
-        <Flex>
-          <Box p={3} width={1 / 2} color="black" bg="white">
-            <h3>{userData.name}'s Story</h3>
-
-            <h3>Contributors</h3>
-            <AvatarList data={contributors}></AvatarList>
+            <Card>
+              <CardBody>
+                <h3>{userData.name}'s Story</h3>
+                <p>{loanMetadata.userStory}</p>
+              </CardBody>
+            </Card>
           </Box>
           <Box p={3} width={1 / 2} color="black" bg="white">
 
             <Card>
               <CardBody>
                 <h3>Loan Details</h3>
-                <Text>Principal ${loanParams.principal} {tokenMetadata.name}</Text>
-                <Text>Interest {loanParams.interestRate}% Effective Annual</Text>
-                <Text>Tenor {loanParams.tenor / 12} Years</Text>
-                <Text>Grace Period {loanParams.gracePeriod / 12} Years</Text>
-                <Text>Expected Return {36}%</Text>
+                <Text>Principal: ${loanParams.principal} {tokenMetadata.name}</Text>
+                <Text>Interest: {loanParams.interestRate}% Effective Annual</Text>
+                <Text>Tenor: {loanParams.tenor / 12} Years</Text>
+                <Text>Grace Period: {loanParams.gracePeriod / 12} Years</Text>
+                <Text>Expected Return: {36}%</Text>
               </CardBody>
             </Card>
-            <h3>Repayment Schedule</h3>
+
+            <LoanFunding></LoanFunding>
+            {/* 6<h3>Repayment Schedule</h3> */}
+          </Box>
+        </Flex>
+
+        <Flex>
+          <Box p={3} width={1 / 2} color="black" bg="white">
+            <Card>
+              <CardBody>
+                <h3>Contributors</h3>
+                <AvatarList data={contributors}></AvatarList>
+              </CardBody>
+            </Card>
           </Box>
         </Flex>
       </div>
