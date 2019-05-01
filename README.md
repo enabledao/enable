@@ -18,7 +18,7 @@ We are currently building in public:
 
 ## Video Introduction
 
-[![image](https://user-images.githubusercontent.com/518024/56973331-35e9d600-6b9f-11e9-8e41-b88185cfdea7.png)](https://youtu.be/WZl9TJuePsw)
+[![image](https://user-images.githubusercontent.com/518024/56973331-35e9d600-6b9f-11e9-8e41-b88185cfdea7.png)](https://youtu.be/rDU8_ZXRZ0A)
 
 # What is enable
 
