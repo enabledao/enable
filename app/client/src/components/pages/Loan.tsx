@@ -328,60 +328,115 @@ export class Loan extends EthereumComponent {
                         #
                       </th>
                       <th scope="col" className="border-0">
-                        First Name
+                        Days
                       </th>
                       <th scope="col" className="border-0">
-                        Last Name
+                        Date
                       </th>
                       <th scope="col" className="border-0">
-                        Country
+                        Paid Date
                       </th>
                       <th scope="col" className="border-0">
-                        City
+                        Principal Due
                       </th>
                       <th scope="col" className="border-0">
-                        Phone
+                        Balance of Loan
+                      </th>
+                      <th scope="col" className="border-0">
+                        Interest
+                      </th>
+                      <th scope="col" className="border-0">
+                        Fees
+                      </th>
+                      <th scope="col" className="border-0">
+                        Penalties
+                      </th>
+                      <th scope="col" className="border-0">
+                        Due
+                      </th>
+                      <th scope="col" className="border-0">
+                        Paid
+                      </th>
+                      <th scope="col" className="border-0">
+                        In Advance
+                      </th>
+                      <th scope="col" className="border-0">
+                        Late
+                      </th>
+                      <th scope="col" className="border-0">
+                        Outstanding
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td>Ali</td>
-                      <td>Kerry</td>
-                      <td>Russian Federation</td>
-                      <td>Gdańsk</td>
-                      <td>107-0339</td>
+                      <td>31</td>
+                      <td>01 Oct 2019</td>
+                      <td />
+                      <td>0</td>
+                      <td>60,000</td>
+                      <td>300</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>300</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>300</td>
                     </tr>
                     <tr>
-                      <td>2</td>
-                      <td>Clark</td>
-                      <td>Angela</td>
-                      <td>Estonia</td>
-                      <td>Borghetto di Vara</td>
-                      <td>1-660-850-1647</td>
+                      <td>1</td>
+                      <td>31</td>
+                      <td>01 Oct 2019</td>
+                      <td />
+                      <td>0</td>
+                      <td>60,000</td>
+                      <td>300</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>300</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>300</td>
                     </tr>
                     <tr>
-                      <td>3</td>
-                      <td>Jerry</td>
-                      <td>Nathan</td>
-                      <td>Cyprus</td>
-                      <td>Braunau am Inn</td>
-                      <td>214-4225</td>
+                      <td>1</td>
+                      <td>31</td>
+                      <td>01 Oct 2019</td>
+                      <td />
+                      <td>0</td>
+                      <td>60,000</td>
+                      <td>300</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>300</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>300</td>
                     </tr>
                     <tr>
-                      <td>4</td>
-                      <td>Colt</td>
-                      <td>Angela</td>
-                      <td>Liberia</td>
-                      <td>Bad Hersfeld</td>
-                      <td>1-848-473-7416</td>
+                      <td>1</td>
+                      <td>31</td>
+                      <td>01 Oct 2019</td>
+                      <td />
+                      <td>0</td>
+                      <td>60,000</td>
+                      <td>300</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>300</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>300</td>
                     </tr>
                   </tbody>
                 </table>
               </CardBody>
             </Card>
-            s
           </Col>
         </Row>
       </Container>
