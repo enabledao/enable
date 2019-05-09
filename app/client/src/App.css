@@ -59,3 +59,25 @@
     font-size: 30px;
   }
 }
+
+.app__funding-form {
+  font-size: 1rem;
+}
+
+.app__funding-bg {
+  background-color: #5eda6d;
+}
+
+.app__funding-progress-text span {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+}
+.app__funding-progress-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.app__bloom-color {
+  background-color: #6067f1;
+}
