@@ -11,11 +11,16 @@ import {
   CardBody,
   Badge,
   CardHeader,
+  Form,
+  FormInput,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  Button,
+  Progress,
   CardTitle,
   CardImg,
-  CardFooter,
-  Button,
-  Progress
+  CardFooter
 } from "shards-react";
 import "../../styles/Loan.css";
 import SmallStats from "../common/SmallStats";
@@ -295,21 +300,58 @@ export class Loan extends EthereumComponent {
         <Row className="mt-4">
           <Col lg="6" className="py-2">
             <Card className="card-post h-100 text-left">
-              <CardBody>
-                <h5>
+              <CardBody className="app__funding-bg text-white">
+                <h4 className="text-white">
                   <strong>Funding</strong>
-                </h5>
-                <p>asdfasdf</p>
+                </h4>
+                <h6 className="text-white">My Amount</h6>
+                <Form>
+                  <Row form>
+                    <Col md="6" className="form-group">
+                      <InputGroup>
+                        <InputGroupAddon type="append">
+                          <InputGroupText>USDC</InputGroupText>
+                        </InputGroupAddon>
+                        <FormInput
+                          className="app__funding-form font-weight-bold"
+                          value="1,000"
+                          onChange={() => {}}
+                        />
+                      </InputGroup>
+                    </Col>
+                    <Col md="6">
+                      <Button
+                        theme="success"
+                        className="app__funding-form font-weight-bold w-50"
+                      >
+                        Fund
+                      </Button>
+                    </Col>
+                  </Row>
+                </Form>
               </CardBody>
             </Card>
           </Col>
           <Col lg="6" className="py-2">
             <Card className="card-post h-100 text-left">
               <CardBody>
-                <h5>
+                <h4>
                   <strong>Progress</strong>
-                </h5>
-                <p>asdfasdfasdf</p>
+                </h4>
+                <Row className="mt-3">
+                  <Col className="app__funding-progress-text">
+                    <span>$48,982</span> of $60,000 goal
+                  </Col>
+                </Row>
+                <Progress
+                  theme="primary"
+                  style={{ height: "10px" }}
+                  className="mb-2"
+                  value={40}
+                />
+                <Row>
+                  <Col>From 8 potential investors</Col>
+                </Row>
               </CardBody>
             </Card>
           </Col>
