@@ -73,7 +73,11 @@
   line-height: 1.5rem;
   font-weight: bold;
 }
-s .app__funding-progress-text {
+.app__funding-progress-text {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.app__bloom-color {
+  background-color: #6067f1;
 }

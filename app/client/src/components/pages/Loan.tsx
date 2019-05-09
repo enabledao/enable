@@ -1,8 +1,9 @@
 import React from "react";
 import { string, number } from "prop-types";
 import { Link } from "react-router-dom";
+import { SocialIcon } from "react-social-icons";
 
-import { Flex, Box, Heading, Image, Text, PublicAddress } from "rimble-ui";
+import { PublicAddress } from "rimble-ui";
 import {
   Container,
   Row,
@@ -227,21 +228,64 @@ export class Loan extends EthereumComponent {
         </Row>
         <Row>
           <Col lg="6" className="py-2">
-            <Card small className="card-post">
-              <div
-                className="card-post__image"
-                // style={{ backgroundImage: `url('${post.backgroundImage}')` }}
-                // style={{ backgroundImage: `url('${post.backgroundImage}')` }}
-              />
+            <Card small className="card-post h-100 text-left">
+              <CardBody>
+                <Row>
+                  <Col>
+                    <h4>
+                      <strong>Identity</strong>
+                    </h4>
+                  </Col>
+                  <Col />
+                  <Col />
+                </Row>
+                <Row>
+                  <Col>
+                    <PublicAddress address="0x99cb784f0429efd72wu39fn4256n8wud4e01c7d2" />
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Button
+                      theme="primary"
+                      className="mb-2 mr-3 app__bloom-color"
+                    >
+                      Bloom ID
+                    </Button>
+                    <Button theme="primary" className="mb-2 mr-3">
+                      3Box ID
+                    </Button>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <strong className="text-muted d-block my-2">
+                      Verified Accounts
+                    </strong>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <SocialIcon url="https://linkedin.com" className="mx-1" />
+                    <SocialIcon
+                      url="https://twitter.com/jaketrent"
+                      className="mx-1"
+                    />
+                    <SocialIcon url="https://facebook.com" className="mx-1" />
+                    <SocialIcon url="https://instagram.com" className="mx-1" />
+                  </Col>
+                </Row>
+              </CardBody>
             </Card>
           </Col>
           <Col lg="6" className="py-2">
-            <Card small className="card-post">
-              <div
-                className="card-post__image"
-                // style={{ backgroundImage: `url('${post.backgroundImage}')` }}
-                // style={{ backgroundImage: `url('${post.backgroundImage}')` }}
-              />
+            <Card small className="card-post h-100 text-left">
+              <CardBody>
+                <h4>
+                  <strong>Social Attestation</strong>
+                </h4>
+              </CardBody>
+              <div className="card-post__image" />
             </Card>
           </Col>
         </Row>
@@ -292,7 +336,7 @@ export class Loan extends EthereumComponent {
               variation="1"
               label="expected return"
               value="36%"
-              subheader="PER ANNUM"
+              subheader="INTEREST"
               increase="11293"
             />
           </Col>
