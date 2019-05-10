@@ -499,7 +499,7 @@ export class Loan extends EthereumComponent {
               <CardHeader className="border-bottom text-left">
                 <h6 className="m-0">Repayment Schedule</h6>
               </CardHeader>
-              <CardBody className="p-0 pb-3">
+              <CardBody className="p-0 pb-3 overflow-auto">
                 <table className="table mb-0">
                   <thead className="bg-light">
                     <tr>
