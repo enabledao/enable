@@ -81,3 +81,31 @@
 .app__bloom-color {
   background-color: #6067f1;
 }
+
+.app__social-icon {
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+.app__loan-feature-title {
+  height: 100%;
+}
+
+.app__loan-feature-borrower-image {
+  width: 3.1875rem;
+  height: 3.1875rem;
+}
+
+.app__loan-feature-borrower-name {
+  left: 0;
+  color: white;
+}
+
+.app__loan-feature-borrower-name-large {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.app__loan-feature-borrower-image {
+  right: 0;
+}
