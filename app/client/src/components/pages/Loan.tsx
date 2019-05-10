@@ -28,6 +28,7 @@ import SmallStats from "../common/SmallStats";
 
 import dBox from "../../assets/3dbox.svg";
 import bloomLogo from "../../assets/bloom-logo.svg";
+import profilePic from "../../assets/img/avatars/0.jpg";
 
 import { EthereumComponent } from "../EthereumComponent";
 import {
@@ -229,16 +230,10 @@ export class Loan extends EthereumComponent {
         <Row>
           <Col lg="6" className="py-2">
             <Card small className="card-post h-100 text-left">
+              <CardHeader className="border-bottom">
+                <h6 className="m-0">Identity</h6>
+              </CardHeader>
               <CardBody>
-                <Row>
-                  <Col>
-                    <h4>
-                      <strong>Identity</strong>
-                    </h4>
-                  </Col>
-                  <Col />
-                  <Col />
-                </Row>
                 <Row>
                   <Col>
                     <PublicAddress address="0x99cb784f0429efd72wu39fn4256n8wud4e01c7d2" />
@@ -266,26 +261,90 @@ export class Loan extends EthereumComponent {
                 </Row>
                 <Row>
                   <Col>
-                    <SocialIcon url="https://linkedin.com" className="mx-1" />
+                    <SocialIcon
+                      url="https://linkedin.com"
+                      className="mx-1 app__social-icon"
+                    />
                     <SocialIcon
                       url="https://twitter.com/jaketrent"
-                      className="mx-1"
+                      className="mx-1 app__social-icon"
                     />
-                    <SocialIcon url="https://facebook.com" className="mx-1" />
-                    <SocialIcon url="https://instagram.com" className="mx-1" />
+                    <SocialIcon
+                      url="https://facebook.com"
+                      className="mx-1 app__social-icon"
+                    />
+                    <SocialIcon
+                      url="https://instagram.com"
+                      className="mx-1 app__social-icon"
+                    />
                   </Col>
                 </Row>
               </CardBody>
             </Card>
           </Col>
           <Col lg="6" className="py-2">
-            <Card small className="card-post h-100 text-left">
-              <CardBody>
-                <h4>
-                  <strong>Social Attestation</strong>
-                </h4>
+            <Card small className="blog-comments h-100 text-left">
+              <CardHeader className="border-bottom">
+                <h6 className="m-0">Social Attestation</h6>
+              </CardHeader>
+              <CardBody className="p-0">
+                <div className="blog-comments__item d-flex p-3">
+                  {/* Avatar */}
+                  <div className="blog-comments__avatar mr-3">
+                    <img src={profilePic} alt={"hi"} />
+                  </div>
+                  {/* Content */}
+                  <div className="blog-comments__content">
+                    {/* Content :: Title */}
+                    <div className="blog-comments__meta text-mutes">
+                      <a className="text-secondary" href={"#"}>
+                        Husband
+                      </a>
+                      <span className="text-mutes">- 2 days ago</span>
+                    </div>
+
+                    {/* Content :: Body */}
+                    <p className="m-0 my-1 mb-2 text-muted">Husband</p>
+                  </div>
+                  {/* Content :: Actions */}
+                  <div className="blog-comments__actions ml-auto align-self-center">
+                    <Button theme="primary" className="mx-2 app__bloom-color">
+                      Bloom ID
+                    </Button>
+                    <Button theme="primary" className="mx-2">
+                      3Box
+                    </Button>
+                  </div>
+                </div>
+                <div className="blog-comments__item d-flex p-3">
+                  {/* Avatar */}
+                  <div className="blog-comments__avatar mr-3">
+                    <img src={profilePic} alt={"hi"} />
+                  </div>
+                  {/* Content */}
+                  <div className="blog-comments__content">
+                    {/* Content :: Title */}
+                    <div className="blog-comments__meta text-mutes">
+                      <a className="text-secondary" href={"#"}>
+                        Daniel Onggunhao
+                      </a>
+                      <span className="text-mutes">- 2 days ago</span>
+                    </div>
+
+                    {/* Content :: Body */}
+                    <p className="m-0 my-1 mb-2 text-muted">Colleague</p>
+                  </div>
+                  {/* Content :: Actions */}
+                  <div className="blog-comments__actions ml-auto align-self-center">
+                    <Button theme="primary" className="mx-2 app__bloom-color">
+                      Bloom ID
+                    </Button>
+                    <Button theme="primary" className="mx-2">
+                      3Box
+                    </Button>
+                  </div>
+                </div>
               </CardBody>
-              <div className="card-post__image" />
             </Card>
           </Col>
         </Row>

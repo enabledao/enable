@@ -81,3 +81,8 @@
 .app__bloom-color {
   background-color: #6067f1;
 }
+
+.app__social-icon {
+  width: 2rem !important;
+  height: 2rem !important;
+}
