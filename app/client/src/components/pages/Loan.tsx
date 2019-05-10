@@ -29,6 +29,7 @@ import SmallStats from "../common/SmallStats";
 import dBox from "../../assets/3dbox.svg";
 import bloomLogo from "../../assets/bloom-logo.svg";
 import profilePic from "../../assets/img/avatars/0.jpg";
+import cornellPic from "../../assets/img/ines/cornell.jpg";
 
 import { EthereumComponent } from "../EthereumComponent";
 import {
@@ -204,12 +205,44 @@ export class Loan extends EthereumComponent {
       <Container className="main-content-container py-4 px-4">
         <Row className="py-4">
           <Col lg="4" md="12" sm="12" className="py-2">
-            <Card small className="card-post">
+            <Card
+              small
+              className="card-post h-100 text-left"
+              style={{
+                backgroundImage: `url('${cornellPic}')`,
+                backgroundSize: `cover`
+              }}
+            >
               <div
-                className="card-post__image"
-                // style={{ backgroundImage: `url('${post.backgroundImage}')` }}
-                // style={{ backgroundImage: `url('${post.backgroundImage}')` }}
-              />
+                style={{
+                  background: `linear-gradient(0deg, rgba(8, 8, 8, 0.76) 27%, rgba(0, 0, 0, 0.26) 100%)`,
+                  borderRadius: `7px`
+                }}
+                className="h-100"
+              >
+                <div className="card-post__image card-post--aside card-post--1 app__loan-feature-title">
+                  <Badge pill className={`card-post__category bg-success`}>
+                    Education
+                  </Badge>
+                  <Row>
+                    <div className="card-post__author app__loan-feature-borrower-name">
+                      <div className="app__loan-feature-borrower-name-large">
+                        Widya Imanesti
+                      </div>
+                      <div>Cornell University</div>
+                    </div>
+                    <div className="card-post__author d-flex app__loan-feature-borrower-image ml-auto mr-3">
+                      <a
+                        href="#"
+                        className="card-post__author-avatar card-post__author-avatar--small app__loan-feature-borrower-image"
+                        style={{ backgroundImage: `url('${profilePic}')` }}
+                      >
+                        Written by Anna Ken
+                      </a>
+                    </div>
+                  </Row>
+                </div>
+              </div>
             </Card>
           </Col>
           <Col lg="8" md="12" sm="12" className="py-2">
@@ -223,6 +256,7 @@ export class Loan extends EthereumComponent {
                   University, with the intent to work in the US Human Resources
                   sector post-graduation.
                 </p>
+                <Button theme="primary">Medium Post</Button>
               </CardBody>
             </Card>
           </Col>
