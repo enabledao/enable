@@ -13,7 +13,7 @@ import "./TokenTransfer.sol";
     The fallback function just refunds - we don't accept ether here. (Need to evaluate re-entrancy)
 
     So we may have to override huge parts of it, but we'll see
-*/
+*/oma
 
 contract LoanRequest is RefundablePostDeliveryCrowdsale, CappedCrowdsale, TokenTransfer {
     address public requester;
