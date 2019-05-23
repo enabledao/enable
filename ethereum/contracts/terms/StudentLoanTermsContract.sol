@@ -3,51 +3,25 @@ pragma solidity >=0.4.21 <0.6.0;
 import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 import "../dharma/TermsContract.sol";
 import "../dharma/ContractRegistry.sol";
+import "../core/EnableContractRegistry.sol";
+import "../core/StudentLoanTypes.sol";
 
 
-contract StudentLoanTermsContract is TermsContract {
+contract StudentLoanTermsContract is TermsContract, StudentLoanTypes {
     using SafeMath for uint;
 
-    enum AmortizationUnitType { HOURS, DAYS, WEEKS, MONTHS, YEARS }
-    uint public constant NUM_AMORTIZATION_UNIT_TYPES = 5;
+    /*
+        Storage Variables
+    */
 
-    struct StudentLoanParams {
-        address principalTokenAddress;
-        uint principalAmount;
-        uint termStartUnixTimestamp;
-        uint termEndUnixTimestamp;
-        AmortizationUnitType amortizationUnitType;
-        uint termLengthInAmortizationUnits;
+    mapping (bytes32 => uint) public valueRepaid; //This tracks the valuerepaid for every agreement that uses this contract.
 
-        // Given that Solidity does not support floating points, we encode
-        // interest rates as percentages scaled up by a factor of 10,000
-        // As such, interest rates can, at a maximum, have 4 decimal places
-        // of precision.
-        uint interestRate;
+    ContractRegistry public dharmaContractRegistry;
+    EnableContractRegistry public enableContractRegistry;
 
-        uint gracePeriod; // In AmortizationUnits
-        uint gracePeriodPaymentAmount;
-        uint unitPaymentAmount;
-    }
-
-    uint public constant HOUR_LENGTH_IN_SECONDS = 60 * 60;
-    uint public constant DAY_LENGTH_IN_SECONDS = HOUR_LENGTH_IN_SECONDS * 24;
-    uint public constant WEEK_LENGTH_IN_SECONDS = DAY_LENGTH_IN_SECONDS * 7;
-    uint public constant MONTH_LENGTH_IN_SECONDS = DAY_LENGTH_IN_SECONDS * 30;
-    uint public constant YEAR_LENGTH_IN_SECONDS = DAY_LENGTH_IN_SECONDS * 365;
-
-     // To convert an encoded interest rate into its equivalent in percents,
-    // divide it by INTEREST_RATE_SCALING_FACTOR_PERCENT -- e.g.
-    //     10,000 => 1% interest rate
-    uint public constant INTEREST_RATE_SCALING_FACTOR_PERCENT = 10 ** 4;
-    // To convert an encoded interest rate into its equivalent multiplier
-    // (for purposes of calculating total interest), divide it by INTEREST_RATE_SCALING_FACTOR_PERCENT -- e.g.
-    //     10,000 => 0.01 interest multiplier
-    uint public constant INTEREST_RATE_SCALING_FACTOR_MULTIPLIER = INTEREST_RATE_SCALING_FACTOR_PERCENT * 100;
-
-    mapping (bytes32 => uint) public valueRepaid;
-
-    ContractRegistry public contractRegistry;
+    /*
+        Events
+    */
 
     event LogSimpleInterestTermStart(
         bytes32 indexed agreementId,
@@ -66,35 +40,45 @@ contract StudentLoanTermsContract is TermsContract {
         address tokenAddress
     );
 
+    /*
+        Modifiers
+    */
+
     modifier onlyRouter() {
-        require(msg.sender == address(contractRegistry.repaymentRouter()));
+        require(msg.sender == address(dharmaContractRegistry.repaymentRouter()));
         _;
     }
 
     modifier onlyMappedToThisContract(bytes32 agreementId) {
-        require(address(this) == contractRegistry.debtRegistry().getTermsContract(agreementId));
+        require(address(this) == dharmaContractRegistry.debtRegistry().getTermsContract(agreementId));
         _;
     }
 
     modifier onlyDebtKernel() {
-        require(msg.sender == address(contractRegistry.debtKernel()));
+        require(msg.sender == address(dharmaContractRegistry.debtKernel()));
         _;
     }
 
-    constructor(address _contractRegistry) public {
-        contractRegistry = ContractRegistry(_contractRegistry);
+    /*
+        Constructor
+    */
+
+    constructor(address _dharmaContractRegistry, address _enableContractRegistry) public {
+        dharmaContractRegistry = ContractRegistry(_dharmaContractRegistry);
+        enableContractRegistry = ContractRegistry(_enableContractRegistry);
     }
 
-    function registerTermStart(
-        bytes32 agreementId,
-        address debtor
-    ) public returns (bool _success) {
+    /*
+        Public Functions
+    */
+
+    function registerTermStart(bytes32 agreementId, address debtor) public returns (bool _success) {
 
         // Get Terms contract & parameters from agreement
         address termsContract;
         bytes32 termsContractParameters;
 
-        (termsContract, termsContractParameters) = contractRegistry.debtRegistry().getTerms(agreementId);
+        (termsContract, termsContractParameters) = dharmaContractRegistry.debtRegistry().getTerms(agreementId);
 
         // Parse & Validate parameters
         uint principalTokenIndex;
@@ -106,7 +90,7 @@ contract StudentLoanTermsContract is TermsContract {
         (principalTokenIndex, principalAmount, interestRate, amortizationUnitType, termLengthInAmortizationUnits) = 
         unpackParametersFromBytes(termsContractParameters);
 
-        address principalTokenAddress = contractRegistry.tokenRegistry().getTokenAddressByIndex(principalTokenIndex);
+        address principalTokenAddress = dharmaContractRegistry.tokenRegistry().getTokenAddressByIndex(principalTokenIndex);
 
         // Returns true (i.e. valid) if the specified principal token is valid,
         // the specified amortization unit type is valid, and the terms contract
@@ -130,34 +114,74 @@ contract StudentLoanTermsContract is TermsContract {
         }
 
         return false;
-
-        
-
-        
     }
 
-    function registerRepayment(
-        bytes32 agreementId,
-        address payer,
-        address beneficiary,
-        uint256 unitsOfRepayment,
-        address tokenAddress
-    ) public returns (bool _success);
+     /// When called, the registerRepayment function records the debtor's
+     ///  repayment, as well as any auxiliary metadata needed by the contract
+     ///  to determine ex post facto the value repaid (e.g. current USD
+     ///  exchange rate)
+     /// @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.
+     /// @param  payer address. The address of the payer.
+     /// @param  beneficiary address. The address of the payment's beneficiary.
+     /// @param  unitsOfRepayment uint. The units-of-value repaid in the transaction.
+     /// @param  tokenAddress address. The address of the token with which the repayment transaction was executed.
+    function registerRepayment(bytes32 agreementId, address payer, address beneficiary, uint256 unitsOfRepayment, address tokenAddress) public onlyRouter returns (bool _success) {
+        StudentLoanParams memory params = unpackParamsForAgreementID(agreementId);
 
-    function getExpectedRepaymentValue(
-        bytes32 agreementId,
-        uint256 timestamp
-    ) public view returns (uint256) {
+        if (tokenAddress == params.principalTokenAddress) {
+            valueRepaid[agreementId] = valueRepaid[agreementId].add(unitsOfRepayment);
 
+            LogRegisterRepayment(
+                agreementId,
+                payer,
+                beneficiary,
+                unitsOfRepayment,
+                tokenAddress
+            );
+
+            return true;
+        }
+
+        return false;
     }
 
-    function getValueRepaidToDate(
-        bytes32 agreementId
-    ) public view returns (uint256);
+    function getExpectedRepaymentValue(bytes32 agreementId, uint256 timestamp) public view onlyMappedToThisContract(agreementId) returns (uint256 _expectedRepaymentValue) {
+        StudentLoanParams memory params = unpackParamsForAgreementID(agreementId);
+        uint principalPlusInterest = calculateTotalPrincipalPlusInterest(params);
 
-    function getTermEndTimestamp(
-        bytes32 _agreementId
-    ) public view returns (uint);
+        if (timestamp <= params.termStartUnixTimestamp) {
+            /* The query occurs before the contract was even initialized so the
+            expected value of repayments is 0. */
+            return 0;
+        } else if (timestamp >= params.termEndUnixTimestamp) {
+            /* the query occurs beyond the contract's term, so the expected
+            value of repayment is the full principal plus interest. */
+            return principalPlusInterest;
+        } else {
+
+            uint numUnits = _numAmortizationUnitsForTimestamp(timestamp, params);
+            uint gracePeriodUnits;
+            uint standardUnits;
+            
+            //Math.min
+            if (numUnits <= params.gracePeriodInAmortizationUnits) {
+                gracePeriodUnits = numUnits;
+                standardUnits = 0;
+            } else if ( numUints > params.gracePeriodInAmortizationUnits) {
+                gracePeriodUnits = params.gracePeriodInAmortizationUnits;           
+                standardUnits = numUnits.sub(gracePeriodUnits);           
+            }
+
+            uint gracePeriodAmountDue = gracePeriodUnits.mul(params.gracePeriodPaymentAmount);
+            uint standardAmountDue = standardUnits.mul(paramsstandardPaymentAmount);
+
+            return gracePeriodAmountDue.add(standardAmountDue);
+        }   
+    }
+
+    function getValueRepaidToDate(bytes32 agreementId) public view returns (uint256);
+
+    function getTermEndTimestamp(bytes32 _agreementId) public view returns (uint);
 
     /*
         Internal Functions
@@ -169,46 +193,139 @@ contract StudentLoanTermsContract is TermsContract {
 
     function _unpackParamsForAgreementID(bytes32 agreementId) internal returns (StudentLoanParams params)
     {
-        bytes32 parameters = contractRegistry.debtRegistry().getTermsContractParameters(agreementId);
+        bytes32 parameters = dharmaContractRegistry.debtRegistry().getTermsContractParameters(agreementId);
 
         uint principalTokenIndex;
         uint principalAmount;
         uint interestRate;
         uint rawAmortizationUnitType;
         uint termLengthInAmortizationUnits;
+        uint gracePeriodInAmortizationUnits;
+        uint gracePeriodPaymentAmount;
+        uint standardPaymentAmount;
 
-        (principalTokenIndex, principalAmount, interestRate, rawAmortizationUnitType, termLengthInAmortizationUnits) =
+        (principalTokenIndex, principalAmount, interestRate, rawAmortizationUnitType, termLengthInAmortizationUnits, 
+        gracePeriodInAmortizationUnits, gracePeriodPaymentAmount, standardPaymentAmount) =
             _unpackParametersFromBytes(parameters);
 
         address principalTokenAddress =
-            contractRegistry.tokenRegistry().getTokenAddressByIndex(principalTokenIndex);
+            dharmaContractRegistry.tokenRegistry().getTokenAddressByIndex(principalTokenIndex);
 
-        // Ensure that the encoded principal token address is valid
-        require(principalTokenAddress != address(0));
-
-        // Before we cast to `AmortizationUnitType`, ensure that the raw value being stored is valid.
-        require(rawAmortizationUnitType <= uint(AmortizationUnitType.YEARS));
+        require(principalTokenAddress != address(0)); // Ensure that the encoded principal token address is valid
+        require(rawAmortizationUnitType <= uint(AmortizationUnitType.YEARS)); // Before we cast to `AmortizationUnitType`, ensure that the raw value being stored is valid.
 
         AmortizationUnitType amortizationUnitType = AmortizationUnitType(rawAmortizationUnitType);
 
-        uint amortizationUnitLengthInSeconds = getAmortizationUnitLengthInSeconds(amortizationUnitType);
-        uint issuanceBlockTimestamp = contractRegistry.debtRegistry().getIssuanceBlockTimestamp(agreementId);
-        
+        uint amortizationUnitLengthInSeconds = _getAmortizationUnitLengthInSeconds(amortizationUnitType);
+        uint issuanceBlockTimestamp = dharmaContractRegistry.debtRegistry().getIssuanceBlockTimestamp(agreementId);
+
         uint termLengthInSeconds = termLengthInAmortizationUnits.mul(amortizationUnitLengthInSeconds);
         uint termEndUnixTimestamp = termLengthInSeconds.add(issuanceBlockTimestamp);
+
+        uint gracePeriodInSeconds = gracePeriodInAmortizationUnits.mul(amortizationUnitLengthInSeconds);
+        uint gracePeriodEndUnixTimeStamp = gracePeriodInSeconds.add(issuanceBlockTimestamp);
 
         return StudentLoanParams({
             principalTokenAddress: principalTokenAddress,
             principalAmount: principalAmount,
-            interestRate: interestRate,
             termStartUnixTimestamp: issuanceBlockTimestamp,
             termEndUnixTimestamp: termEndUnixTimestamp,
             amortizationUnitType: amortizationUnitType,
-            termLengthInAmortizationUnits: termLengthInAmortizationUnits
+            termLengthInAmortizationUnits: termLengthInAmortizationUnits,
+            gracePeriodInAmortizationUnits: gracePeriodInAmortizationUnits,
+            gracePeriodEndUnixTimestamp: gracePeriodEndUnixTimeStamp,
+            gracePeriodPaymentAmount: gracePeriodPaymentAmount,
+            standardPaymentAmount: standardPaymentAmount,
+            interestRate: interestRate
         });
     }
 
-    function getAmortizationUnitLengthInSeconds(AmortizationUnitType amortizationUnitType)
+    function unpackParametersFromBytes(bytes32 parameters)
+        public
+        pure
+        returns (
+            uint _principalTokenIndex,
+            uint _principalAmount,
+            uint _interestRate,
+            uint _amortizationUnitType,
+            uint _termLengthInAmortizationUnits,
+            uint _gracePeriodInAmortizationUnits,
+            uint gracePeriodPaymentAmount,
+            uint standardPaymentAmount
+        )
+    {
+        // The first byte of the parameters encodes the principal token's index in the
+        // token registry.
+        bytes32 principalTokenIndexShifted =
+            parameters & 0xff00000000000000000000000000000000000000000000000000000000000000;
+        // The subsequent 12 bytes of the parameters encode the principal amount.
+        bytes32 principalAmountShifted =
+            parameters & 0x00ffffffffffffffffffffffff00000000000000000000000000000000000000;
+        // The subsequent 3 bytes of the parameters encode the interest rate.
+        bytes32 interestRateShifted =
+            parameters & 0x00000000000000000000000000ffffff00000000000000000000000000000000;
+        // The subsequent 4 bits (half byte) encode the amortization unit type code.
+        bytes32 amortizationUnitTypeShifted =
+            parameters & 0x00000000000000000000000000000000f0000000000000000000000000000000;
+        // The subsequent 2 bytes encode the term length, as denominated in
+        // the encoded amortization unit.
+        bytes32 termLengthInAmortizationUnitsShifted =
+            parameters & 0x000000000000000000000000000000000ffff000000000000000000000000000;
+
+        // Note that the remaining 108 bits are reserved for any parameters relevant to a
+        // collateralized terms contracts.
+
+        /*
+        We then bit shift left each of these values so that the 32-byte uint
+        counterpart correctly represents the value that was originally packed
+        into the 32 byte string.
+        The below chart summarizes where in the 32 byte string each value
+        terminates -- which indicates the extent to which each value must be bit
+        shifted left.
+                                        Location (bytes)	Location (bits)
+                                        32                  256
+        principalTokenIndex	            31	                248
+        principalAmount	                19                  152
+        interestRate                    16                  128
+        amortizationUnitType            15.5                124
+        termLengthInAmortizationUnits   13.5                108
+        */
+        return (
+            bitShiftRight(principalTokenIndexShifted, 248),
+            bitShiftRight(principalAmountShifted, 152),
+            bitShiftRight(interestRateShifted, 128),
+            bitShiftRight(amortizationUnitTypeShifted, 124),
+            bitShiftRight(termLengthInAmortizationUnitsShifted, 108)
+        );
+    }
+
+    /**
+     * Calculates the total repayment value expected at the end of the loan's term.
+     *
+     * This computation assumes that interest is paid per amortization period.
+     *
+     * @param params StudentLoanParams. The parameters that define the loan.
+     * @return uint The total repayment value expected at the end of the loan's term.
+     */
+    function _calculateTotalPrincipalPlusInterest(StudentLoanParams params) internal returns (uint _principalPlusInterest) {
+        // Since we represent decimal interest rates using their
+        // scaled-up, fixed point representation, we have to
+        // downscale the result of the interest payment computation
+        // by the multiplier scaling factor we choose for interest rates.
+        uint totalInterest = params.principalAmount
+            .mul(params.interestRate)
+            .div(INTEREST_RATE_SCALING_FACTOR_MULTIPLIER);
+
+        return params.principalAmount.add(totalInterest);
+    }
+
+    function _numAmortizationUnitsForTimestamp(uint timestamp, StudentLoanParams params) internal returns (uint units) {
+        uint delta = timestamp.sub(params.termStartUnixTimestamp);
+        uint amortizationUnitLengthInSeconds = _getAmortizationUnitLengthInSeconds(params.amortizationUnitType);
+        return delta.div(amortizationUnitLengthInSeconds);
+    }
+
+    function _getAmortizationUnitLengthInSeconds(AmortizationUnitType amortizationUnitType)
         internal
         pure
         returns (uint _amortizationUnitLengthInSeconds)
