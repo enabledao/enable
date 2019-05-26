@@ -1,17 +1,13 @@
 pragma solidity >=0.4.21 <0.6.0;
 
-// @notice 
-contract StudentLoanTypes {
-    
-    struct StudentLoanParams {
+// @notice Holds types and constants for student loan data
+library StudentLoanTypes {
+    struct StoredParams {
         uint principalTokenIndex;
         uint principalAmount;
-        uint termStartUnixTimestamp;
-        uint termEndUnixTimestamp;
         AmortizationUnitType amortizationUnitType;
         uint termLengthInAmortizationUnits;
         uint gracePeriodInAmortizationUnits;
-        uint gracePeriodEndUnixTimestamp;
         uint gracePeriodPaymentAmount;
         uint standardPaymentAmount;
 
@@ -20,8 +16,12 @@ contract StudentLoanTypes {
         // As such, interest rates can, at a maximum, have 4 decimal places
         // of precision.
         uint interestRate;
+    }
 
-        uint crowdfundContractAddress;
+    struct DerivedParams {
+        uint termStartUnixTimestamp;
+        uint termEndUnixTimestamp;
+        uint gracePeriodEndUnixTimestamp;
     }
 
     enum AmortizationUnitType { HOURS, DAYS, WEEKS, MONTHS, YEARS }

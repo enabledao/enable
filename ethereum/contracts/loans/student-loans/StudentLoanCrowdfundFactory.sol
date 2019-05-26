@@ -41,9 +41,26 @@ contract StudentLoanCrowdfundFactory is Ownable {
         uint standardPaymentAmount
     ) public {
 
-        uint paramIndex = termsStorage.add();
+        uint paramIndex = termsStorage.add(
+            principalTokenIndex,
+            principalAmount,
+            interestRate,
+            amortizationUnitType,
+            termLengthInAmortizationUnits,
+            gracePeriodInAmortizationUnits,
+            gracePeriodPaymentAmount,
+            standardPaymentAmount
+        );
 
         StudentLoanCrowdfund crowdfund = new StudentLoanCrowdfund(
+            termsStorage,
+            paramIndex
+        );
+
+        emit studentLoanCrowdfundCreated(
+            address(crowdfund),
+            termsStorage,
+            paramIndex,
             principalTokenIndex,
             principalAmount,
             interestRate,

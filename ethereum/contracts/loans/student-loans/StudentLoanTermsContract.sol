@@ -5,11 +5,12 @@ import "../../dharma/TermsContract.sol";
 import "../../dharma/ContractRegistry.sol";
 import "../../core/EnableContractRegistry.sol";
 import "./StudentLoanTermsStorage.sol";
-import "./StudentLoanTypes.sol";
+import "./StudentLoanLibrary.sol";
 
 
-contract StudentLoanTermsContract is StudentLoanTypes {
+contract StudentLoanTermsContract {
     using SafeMath for uint;
+    using StudentLoanLibrary for StudentLoanLibrary.StoredParams;
 
     /*
         Storage Variables
@@ -66,7 +67,7 @@ contract StudentLoanTermsContract is StudentLoanTypes {
     */
 
     constructor(
-        address _dharmaContractRegistry, 
+        address _dharmaContractRegistry,
         address _enableContractRegistry,
         address _termsStorage
     ) public {

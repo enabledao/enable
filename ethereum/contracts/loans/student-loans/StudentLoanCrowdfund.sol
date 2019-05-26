@@ -4,7 +4,8 @@ pragma solidity ^0.5.2;
 import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
 import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
-import "./StudentLoanTypes.sol";
+
+import "./StudentLoanTermsStorage.sol";
 
 contract StudentLoanCrowdfund is StudentLoanTypes {
     using SafeMath for uint;
@@ -24,10 +25,6 @@ contract StudentLoanCrowdfund is StudentLoanTypes {
     mapping (address => bool) lenders;
     uint lendersCount;
 
-    //This works like a mintable token, supply starts at zero. If and when we make it an actual token we can replace this.
-    mapping (address => uint) debtTokens;
-    uint debtTokensSupply;
-
     enum LoanStatus {
         NOT_STARTED,
         PARTIALLY_FUNDED,
@@ -37,10 +34,13 @@ contract StudentLoanCrowdfund is StudentLoanTypes {
         REPAYMENT_COMPLETE
     }
 
+    StudentLoanTermsStorage termsStorage;
+    uint termStorageIndex;
+    
     LoanStatus loanStatus;
-    StudentLoanParams loanParams;
 
     uint totalRepaid;
+    mapping (address => uint) withdrawn;
 
     IERC20 debtToken;
     IERC20 loanToken;
@@ -49,19 +49,21 @@ contract StudentLoanCrowdfund is StudentLoanTypes {
     event RevokeFunding(address indexed lender, uint indexed amount);
     event WithdrawPayment(address indexed lender, uint indexed amount);
 
+    // @notice Only users who hold debt tokens can call
     modifier onlyDebtHolder() {
-        require(debtToken[msg.sender] > 0, NO_DEBT_TOKENS);
+        // @TODO: add logic once token is completed
         _;
     }
 
     constructor(
-        address _debtTokenAddr,
-        address _loanTokenAddr,
-        StudentLoanParams memory _params
+        address _termsStorage,
+        uint _paramsIndex
     ) public {
-        debtToken = IERC20(_debtTokenAddr);
-        loanToken = IERC20(_loanTokenAddr);
-        loanParams = _params;
+        loanToken = //Get loan token from params
+        termsStorage = StudentLoanTermsStorage(termsStorage);
+        termStorageIndex = _paramsIndex;
+
+        //Get principal and mint max token size based on this
     }
 
     function addFunding(uint amount) public {
@@ -70,23 +72,15 @@ contract StudentLoanCrowdfund is StudentLoanTypes {
         _addDebtTokens(msg.sender, debtTokensToAdd);
     }
     function revokeFunding() public onlyDebtHolder() {
-        //This should only be allowed after a lockup time
+        //This should only be allowed after a lockup time?
         //Return funds to lender
         //Remove all debt tokens
     }
     function withdrawRepayment() public onlyDebtHolder() {
-        // User should be able to withdraw
+        // User should be able to withdraw their accumlated repayments at any time
     }
 
-    function getRepayment() public view {
-
-    }
-
-    function _addDebtTokens(address recipient, uint amount) internal {
-        //Invariant: Ensure the debt tokens are still a proper amount in total
-    }
-
-    function _burnDebtTokens(address recipient, uint amount) internal {
+    function getAvailableWithdrawal() public view returns (uint) {
 
     }
 }
