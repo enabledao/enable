@@ -4,7 +4,7 @@ pragma solidity ^0.5.2;
 import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
 import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
-import "../core/StudentLoanTypes.sol";
+import "./StudentLoanTypes.sol";
 
 contract StudentLoanCrowdfund is StudentLoanTypes {
     using SafeMath for uint;
@@ -32,7 +32,9 @@ contract StudentLoanCrowdfund is StudentLoanTypes {
         NOT_STARTED,
         PARTIALLY_FUNDED,
         FULLY_FUNDED,
-        STARTED
+        LOAN_STARTED,
+        REPAYMENT_STARTED,
+        REPAYMENT_COMPLETE
     }
 
     LoanStatus loanStatus;
@@ -55,8 +57,8 @@ contract StudentLoanCrowdfund is StudentLoanTypes {
     constructor(
         address _debtTokenAddr,
         address _loanTokenAddr,
-        StudentLoanParams _params
-    ) {
+        StudentLoanParams memory _params
+    ) public {
         debtToken = IERC20(_debtTokenAddr);
         loanToken = IERC20(_loanTokenAddr);
         loanParams = _params;

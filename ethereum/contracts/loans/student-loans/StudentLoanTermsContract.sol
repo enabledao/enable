@@ -1,13 +1,14 @@
 pragma solidity >=0.4.21 <0.6.0;
 
 import "openzeppelin-solidity/contracts/math/SafeMath.sol";
-import "../dharma/TermsContract.sol";
-import "../dharma/ContractRegistry.sol";
-import "../core/EnableContractRegistry.sol";
-import "../core/StudentLoanTypes.sol";
+import "../../dharma/TermsContract.sol";
+import "../../dharma/ContractRegistry.sol";
+import "../../core/EnableContractRegistry.sol";
+import "./StudentLoanTermsStorage.sol";
+import "./StudentLoanTypes.sol";
 
 
-contract StudentLoanTermsContract is TermsContract, StudentLoanTypes {
+contract StudentLoanTermsContract is StudentLoanTypes {
     using SafeMath for uint;
 
     /*
@@ -18,6 +19,7 @@ contract StudentLoanTermsContract is TermsContract, StudentLoanTypes {
 
     ContractRegistry public dharmaContractRegistry;
     EnableContractRegistry public enableContractRegistry;
+    StudentLoanTermsStorage public termsStorage;
 
     /*
         Events
@@ -63,9 +65,14 @@ contract StudentLoanTermsContract is TermsContract, StudentLoanTypes {
         Constructor
     */
 
-    constructor(address _dharmaContractRegistry, address _enableContractRegistry) public {
+    constructor(
+        address _dharmaContractRegistry, 
+        address _enableContractRegistry,
+        address _termsStorage
+    ) public {
         dharmaContractRegistry = ContractRegistry(_dharmaContractRegistry);
-        enableContractRegistry = ContractRegistry(_enableContractRegistry);
+        enableContractRegistry = EnableContractRegistry(_enableContractRegistry);
+        termsStorage = StudentLoanTermsStorage(_termsStorage);
     }
 
     /*
@@ -86,9 +93,12 @@ contract StudentLoanTermsContract is TermsContract, StudentLoanTypes {
         uint interestRate;
         uint amortizationUnitType;
         uint termLengthInAmortizationUnits;
+        uint gracePeriodInAmortizationUnits;
+        uint gracePeriodPaymentAmount;
+        uint standardPaymentAmount;
 
         (principalTokenIndex, principalAmount, interestRate, amortizationUnitType, termLengthInAmortizationUnits) = 
-        unpackParametersFromBytes(termsContractParameters);
+        unpackParameters(termsContractParameters);
 
         address principalTokenAddress = dharmaContractRegistry.tokenRegistry().getTokenAddressByIndex(principalTokenIndex);
 
@@ -206,7 +216,7 @@ contract StudentLoanTermsContract is TermsContract, StudentLoanTypes {
 
         (principalTokenIndex, principalAmount, interestRate, rawAmortizationUnitType, termLengthInAmortizationUnits, 
         gracePeriodInAmortizationUnits, gracePeriodPaymentAmount, standardPaymentAmount) =
-            _unpackParametersFromBytes(parameters);
+            unpackParameters(parameters);
 
         address principalTokenAddress =
             dharmaContractRegistry.tokenRegistry().getTokenAddressByIndex(principalTokenIndex);
@@ -240,7 +250,7 @@ contract StudentLoanTermsContract is TermsContract, StudentLoanTypes {
         });
     }
 
-    function unpackParametersFromBytes(bytes32 parameters)
+    function unpackParameters(bytes32 parameters)
         public
         pure
         returns (
@@ -344,6 +354,4 @@ contract StudentLoanTermsContract is TermsContract, StudentLoanTypes {
             revert();
         }
     }
-}
-
 }

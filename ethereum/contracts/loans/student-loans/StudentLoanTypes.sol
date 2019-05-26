@@ -2,8 +2,9 @@ pragma solidity >=0.4.21 <0.6.0;
 
 // @notice 
 contract StudentLoanTypes {
+    
     struct StudentLoanParams {
-        address principalTokenAddress;
+        uint principalTokenIndex;
         uint principalAmount;
         uint termStartUnixTimestamp;
         uint termEndUnixTimestamp;

@@ -1,9 +1,9 @@
-pragma solidity >=0.4.21 <0.6.0;
+pragma solidity ^0.5.2;
 
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
 import "./PermissionsLib.sol";
-import "../crowdloan/StudentLoanCrowdfundFactory.sol";
+import "../loans/student-loans/StudentLoanCrowdfundFactory.sol";
 
 // @notice Registry for Enable core contract addresses. Modelled after Dharma ContractRegistry.
 contract EnableContractRegistry is Ownable {
