@@ -1,9 +1,11 @@
 pragma solidity >=0.4.21 <0.6.0;
 
 import "openzeppelin-solidity/contracts/math/SafeMath.sol";
-import "../../dharma/TermsContract.sol";
-import "../../dharma/ContractRegistry.sol";
+
+import "../../dharma-interface/TermsContract.sol";
+import "../../dharma-interface/ContractRegistry.sol";
 import "../../core/EnableContractRegistry.sol";
+
 import "./StudentLoanTermsStorage.sol";
 import "./StudentLoanLibrary.sol";
 

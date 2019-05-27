@@ -1,7 +1,7 @@
 pragma solidity ^0.5.2;
 
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
-import "./StudentLoanTypes.sol";
+import "./StudentLoanLibrary.sol";
 
 // @notice Stores instance information for each Student Loan, as the information is too large for the Dharma bytes32 format. 
 /* 
@@ -19,6 +19,7 @@ import "./StudentLoanTypes.sol";
 */
 contract StudentLoanTermsStorage is Ownable {
     using StudentLoanLibrary for StudentLoanLibrary.StoredParams;
+    using StudentLoanLibrary for StudentLoanLibrary.AmortizationUnitType;
     address loanFactory;
     address termsContract;
 
@@ -29,12 +30,12 @@ contract StudentLoanTermsStorage is Ownable {
         uint index,
         uint principalTokenIndex,
         uint principalAmount,
-        uint interestRate,
         uint amortizationUnitType,
         uint termLengthInAmortizationUnits,
         uint gracePeriodInAmortizationUnits,
         uint gracePeriodPaymentAmount,
-        uint standardPaymentAmount
+        uint standardPaymentAmount,
+        uint interestRate
     );
 
     constructor(address _loanFactory, address _termsContract) public {
@@ -46,12 +47,12 @@ contract StudentLoanTermsStorage is Ownable {
     function add(
         uint principalTokenIndex,
         uint principalAmount,
-        uint interestRate,
         uint amortizationUnitType,
         uint termLengthInAmortizationUnits,
         uint gracePeriodInAmortizationUnits,
         uint gracePeriodPaymentAmount,
-        uint standardPaymentAmount
+        uint standardPaymentAmount,
+        uint interestRate
     ) public returns (uint) {
 
         uint index = paramCount;
@@ -59,12 +60,12 @@ contract StudentLoanTermsStorage is Ownable {
         StudentLoanLibrary.StoredParams memory params = StudentLoanLibrary.StoredParams({
             principalTokenIndex: principalTokenIndex,
             principalAmount: principalAmount,
-            interestRate: interestRate,
-            amortizationUnitType: amortizationUnitType,
+            amortizationUnitType: StudentLoanLibrary.AmortizationUnitType(amortizationUnitType),
             termLengthInAmortizationUnits: termLengthInAmortizationUnits,
             gracePeriodInAmortizationUnits: gracePeriodInAmortizationUnits,
             gracePeriodPaymentAmount: gracePeriodPaymentAmount,
-            standardPaymentAmount: standardPaymentAmount
+            standardPaymentAmount: standardPaymentAmount,
+            interestRate: interestRate
         });
 
         paramRegistry[index] = params;
@@ -74,19 +75,41 @@ contract StudentLoanTermsStorage is Ownable {
             index,
             principalTokenIndex,
             principalAmount,
-            interestRate,
             amortizationUnitType,
             termLengthInAmortizationUnits,
             gracePeriodInAmortizationUnits,
             gracePeriodPaymentAmount,
-            standardPaymentAmount
+            standardPaymentAmount,
+            interestRate
         );
 
         return index;
     }
 
-    function get(uint index) public returns(StudentLoanParams) {
-        return paramRegistry[index];
+    // @notice Retrieve all the stored parameters at a given index
+    function get(uint index) public view returns(
+        uint principalTokenIndex,
+        uint principalAmount,
+        uint amortizationUnitType,
+        uint termLengthInAmortizationUnits,
+        uint gracePeriodInAmortizationUnits,
+        uint gracePeriodPaymentAmount,
+        uint standardPaymentAmount,
+        uint interestRate
+    ) {
+        
+        StudentLoanLibrary.StoredParams memory params = paramRegistry[index];
+
+        return (
+            params.principalTokenIndex,
+            params.principalAmount,
+            uint(params.amortizationUnitType),
+            params.termLengthInAmortizationUnits,
+            params.gracePeriodInAmortizationUnits,
+            params.gracePeriodPaymentAmount,
+            params.standardPaymentAmount,
+            params.interestRate
+        );
     }
 
 }

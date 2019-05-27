@@ -1,7 +1,7 @@
 pragma solidity >=0.4.21 <0.6.0;
 
 // @notice Holds types and constants for student loan data
-library StudentLoanTypes {
+library StudentLoanLibrary {
     struct StoredParams {
         uint principalTokenIndex;
         uint principalAmount;

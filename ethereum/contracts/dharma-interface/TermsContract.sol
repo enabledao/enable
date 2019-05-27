@@ -16,7 +16,7 @@
 
 */
 
-pragma solidity 0.4.18;
+pragma solidity ^0.5.2;
 
 
 interface TermsContract {
@@ -37,7 +37,7 @@ interface TermsContract {
     function registerTermStart(
         bytes32 agreementId,
         address debtor
-    ) public returns (bool _success);
+    ) external returns (bool _success);
 
      /// When called, the registerRepayment function records the debtor's
      ///  repayment, as well as any auxiliary metadata needed by the contract
@@ -54,7 +54,7 @@ interface TermsContract {
         address beneficiary,
         uint256 unitsOfRepayment,
         address tokenAddress
-    ) public returns (bool _success);
+    ) external returns (bool _success);
 
      /// Returns the cumulative units-of-value expected to be repaid by a given block timestamp.
      ///  Note this is not a constant function -- this value can vary on basis of any number of
@@ -65,14 +65,14 @@ interface TermsContract {
     function getExpectedRepaymentValue(
         bytes32 agreementId,
         uint256 timestamp
-    ) public view returns (uint256);
+    ) external view returns (uint256);
 
      /// Returns the cumulative units-of-value repaid by the point at which this method is called.
      /// @param  agreementId bytes32. The agreement id (issuance hash) of the debt agreement to which this pertains.
      /// @return uint256 The cumulative units-of-value repaid up until now.
     function getValueRepaidToDate(
         bytes32 agreementId
-    ) public view returns (uint256);
+    ) external view returns (uint256);
 
     /**
      * A method that returns a Unix timestamp representing the end of the debt agreement's term.
@@ -80,5 +80,5 @@ interface TermsContract {
      */
     function getTermEndTimestamp(
         bytes32 _agreementId
-    ) public view returns (uint);
+    ) external view returns (uint);
 }
