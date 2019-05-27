@@ -24,7 +24,7 @@ contract StudentLoanCrowdfundFactory is Ownable {
         uint standardPaymentAmount
     );
 
-    constructor(_termsStorage, _termsContract) Ownable() public {
+    constructor(address _termsStorage, address _termsContract) public {
         termsStorage = StudentLoanTermsStorage(_termsStorage);
         termsContract = StudentLoanTermsContract(_termsContract);
     }
@@ -57,7 +57,7 @@ contract StudentLoanCrowdfundFactory is Ownable {
             paramIndex
         );
 
-        emit studentLoanCrowdfundCreated(
+        emit StudentLoanCrowdfundCreated(
             address(crowdfund),
             termsStorage,
             paramIndex,
