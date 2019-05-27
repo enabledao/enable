@@ -1,11 +1,20 @@
 pragma solidity ^0.5.2;
 
-interface ContractRegistry {
-    function collateralizer() external returns(address);
-    function debtKernel() external returns(address);
-    function debtRegistry() external returns(address);
-    function debtToken() external returns(address);
-    function repaymentRouter() external returns(address);
-    function tokenRegistry() external returns(address);
-    function tokenTransferProxy() external returns(address);
+import "./Collateralizer.sol";
+import "./DebtKernel.sol";
+import "./DebtRegistry.sol";
+import "./DebtToken.sol";
+import "./RepaymentRouter.sol";
+import "./TokenRegistry.sol";
+import "./TokenTransferProxy.sol";
+
+
+contract ContractRegistry {
+    Collateralizer public collateralizer;
+    DebtKernel public debtKernel;
+    DebtRegistry public  debtRegistry;
+    DebtToken public debtToken;
+    RepaymentRouter public repaymentRouter;
+    TokenRegistry public tokenRegistry;
+    TokenTransferProxy public tokenTransferProxy;
 }

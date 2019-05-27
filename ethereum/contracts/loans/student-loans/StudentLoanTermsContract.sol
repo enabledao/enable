@@ -88,7 +88,7 @@ contract StudentLoanTermsContract is TermsContract {
         (termsContract, termsContractParameters) = dharmaContractRegistry.debtRegistry().getTerms(agreementId);
 
         // TODO: Parse stored parameters
-        StudentLoanLibrary.StoredParams memory params = unpackParameters(termsContractParameters);
+        StudentLoanLibrary.StoredParams memory params = termsStorage.get(unpackParameters(termsContractParameters));
 
         // TODO: Find t oken address & validiate
         // Returns true (i.e. valid) if the specified principal token is valid,
