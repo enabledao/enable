@@ -1,32 +1,28 @@
 pragma solidity ^0.5.2;
 
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
+
+import "../../core/EnableContractRegistry.sol";
+
 import "./StudentLoanCrowdfund.sol";
-import "./StudentLoanTermsStorage.sol";
-import "./StudentLoanTermsContract.sol";
+import "./StudentLoanLibrary.sol";
+import "../DebtToken.sol";
 
 contract StudentLoanCrowdfundFactory is Ownable {
+    using StudentLoanLibrary for StudentLoanLibrary.StoredParams;
+    using StudentLoanLibrary for StudentLoanLibrary.AmortizationUnitType;
 
-    StudentLoanTermsStorage termsStorage;
-    StudentLoanTermsContract termsContract;
+    EnableContractRegistry enableRegistry;
 
     event StudentLoanCrowdfundCreated(
         address indexed crowdfundAddress,
+        address indexed debtTokenAddress,
         address paramStorageAddress,
-        uint paramIndex,
-        uint principalTokenIndex,
-        uint principalAmount,
-        uint interestRate,
-        uint amortizationUnitType,
-        uint termLengthInAmortizationUnits,
-        uint gracePeriodInAmortizationUnits,
-        uint gracePeriodPaymentAmount,
-        uint standardPaymentAmount
+        uint paramIndex
     );
 
-    constructor(address _termsStorage, address _termsContract) public {
-        termsStorage = StudentLoanTermsStorage(_termsStorage);
-        termsContract = StudentLoanTermsContract(_termsContract);
+    constructor(address _enableRegistry) public {
+        enableRegistry = EnableContractRegistry(_enableRegistry);
     }
 
     // @notice Create a new crowdfund contract, passing in all required parameters
@@ -39,9 +35,10 @@ contract StudentLoanCrowdfundFactory is Ownable {
         uint gracePeriodInAmortizationUnits,
         uint gracePeriodPaymentAmount,
         uint standardPaymentAmount
-    ) public {
-
-        uint paramIndex = termsStorage.add(
+    ) public returns (address) {
+        
+        // Store parameters in Storage
+        uint paramIndex = enableRegistry.studentLoanTermsStorage().add(
             principalTokenIndex,
             principalAmount,
             interestRate,
@@ -52,24 +49,28 @@ contract StudentLoanCrowdfundFactory is Ownable {
             standardPaymentAmount
         );
 
+        // Create Crowdfund contract
         StudentLoanCrowdfund crowdfund = new StudentLoanCrowdfund(
-            termsStorage,
+            address(enableRegistry),
             paramIndex
         );
+        
+        // Create DebtToken contract
+        address debtTokenAddress = enableRegistry.debtTokenFactory().createDebtToken("Social Bond", "SBOND");
+        DebtToken token = DebtToken(debtTokenAddress);
+        
+        // Link the two
+        crowdfund.setDebtToken(debtTokenAddress);
+        token.addMinter(address(crowdfund));
+        token.renounceMinter();
 
         emit StudentLoanCrowdfundCreated(
             address(crowdfund),
-            termsStorage,
-            paramIndex,
-            principalTokenIndex,
-            principalAmount,
-            interestRate,
-            amortizationUnitType,
-            termLengthInAmortizationUnits,
-            gracePeriodInAmortizationUnits,
-            gracePeriodPaymentAmount,
-            standardPaymentAmount
+            debtTokenAddress,
+            address(enableRegistry.studentLoanTermsStorage()),
+            paramIndex
         );
+        return address(crowdfund);
     }
 
 }

@@ -4,7 +4,12 @@ import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 import "./IEnableContractRegistry.sol";
 
 import "./PermissionsLib.sol";
+import "./UserStaking.sol";
+
+import "../loans/DebtTokenFactory.sol";
+
 import "../loans/student-loans/StudentLoanCrowdfundFactory.sol";
+import "../loans/student-loans/StudentLoanTermsStorage.sol";
 
 // @notice Registry for Enable core contract addresses. Modelled after Dharma ContractRegistry.
 contract EnableContractRegistry is Ownable, IEnableContractRegistry {
@@ -19,16 +24,32 @@ contract EnableContractRegistry is Ownable, IEnableContractRegistry {
         PermissionsLib,
         StudentLoanCrowdfundFactory
     }
-
+    
+    // System Core
     PermissionsLib public permissionsLib;
+    
+    // Loans Core
+    DebtTokenFactory public debtTokenFactory;
+    
+    // Student Loans
     StudentLoanCrowdfundFactory public studentLoanCrowdfundFactory;
+    // StudentLoanTermsContract public studentLoanTermsContract;
+    StudentLoanTermsStorage public studentLoanTermsStorage;
 
     constructor(
         address _permissionsLib,
-        address _studentLoanCrowdfundFactory
+        address _debtTokenFactory,
+        address _studentLoanCrowdfundFactory,
+        // address _studentLoanTermsContract,
+        address _studentLoanTermsStorage
     ) public {
         permissionsLib = PermissionsLib(_permissionsLib);
+        
+        debtTokenFactory = DebtTokenFactory(_debtTokenFactory);
+        
         studentLoanCrowdfundFactory = StudentLoanCrowdfundFactory(_studentLoanCrowdfundFactory);
+        // studentLoanTermsContract = StudentLoanTermsContract(_studentLoanTermsContract);
+        studentLoanTermsStorage = StudentLoanTermsStorage(_studentLoanTermsStorage);
     }
 
     //TODO: Decide what's updatable and add here.
@@ -43,7 +64,7 @@ contract EnableContractRegistry is Ownable, IEnableContractRegistry {
             revert();
         }
 
-        ContractAddressUpdated(contractType, oldAddress, newAddress);
+        emit ContractAddressUpdated(contractType, oldAddress, newAddress);
     }
 
     function _validateNewAddress(address newAddress, address oldAddress) internal pure {

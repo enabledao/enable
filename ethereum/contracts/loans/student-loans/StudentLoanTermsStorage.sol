@@ -3,6 +3,8 @@ pragma solidity ^0.5.2;
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 import "./StudentLoanLibrary.sol";
 
+import "../../core/EnableContractRegistry.sol";
+
 // @notice Stores instance information for each Student Loan, as the information is too large for the Dharma bytes32 format. 
 /* 
     If a loan is funded, it is approved to call this and add data.
@@ -20,8 +22,8 @@ import "./StudentLoanLibrary.sol";
 contract StudentLoanTermsStorage is Ownable {
     using StudentLoanLibrary for StudentLoanLibrary.StoredParams;
     using StudentLoanLibrary for StudentLoanLibrary.AmortizationUnitType;
-    address loanFactory;
-    address termsContract;
+
+    EnableContractRegistry enableRegistry;
 
     mapping (uint => StudentLoanLibrary.StoredParams) paramRegistry;
     uint paramCount;
@@ -38,9 +40,8 @@ contract StudentLoanTermsStorage is Ownable {
         uint interestRate
     );
 
-    constructor(address _loanFactory, address _termsContract) public {
-        loanFactory = _loanFactory;
-        termsContract = _termsContract;
+    constructor(address _enableRegistryAddr) public {
+        enableRegistry = EnableContractRegistry(_enableRegistryAddr);
     }
 
     //TODO: only authorized contracts, aka funded Crowdloans during submission, should be able to call this. 
@@ -90,7 +91,7 @@ contract StudentLoanTermsStorage is Ownable {
     function get(uint index) public view returns(
         uint principalTokenIndex,
         uint principalAmount,
-        uint amortizationUnitType,
+        StudentLoanLibrary.AmortizationUnitType amortizationUnitType,
         uint termLengthInAmortizationUnits,
         uint gracePeriodInAmortizationUnits,
         uint gracePeriodPaymentAmount,
@@ -103,7 +104,7 @@ contract StudentLoanTermsStorage is Ownable {
         return (
             params.principalTokenIndex,
             params.principalAmount,
-            uint(params.amortizationUnitType),
+            params.amortizationUnitType,
             params.termLengthInAmortizationUnits,
             params.gracePeriodInAmortizationUnits,
             params.gracePeriodPaymentAmount,

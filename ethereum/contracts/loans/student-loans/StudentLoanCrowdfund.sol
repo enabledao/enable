@@ -1,16 +1,16 @@
 
 pragma solidity ^0.5.2;
 
-import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
-import "openzeppelin-solidity/contracts/token/ERC721/IERC721Full.sol";
 import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
-import "../ICrowdfund.sol";
-import "./StudentLoanTermsStorage.sol";
+import "../../core/EnableContractRegistry.sol";
 import "./StudentLoanLibrary.sol";
 
-contract StudentLoanCrowdfund is ICrowdfund {
+import "../ICrowdfund.sol";
+import "../DebtToken.sol";
+
+contract StudentLoanCrowdfund is ICrowdfund, Ownable {
     using SafeMath for uint;
     using StudentLoanLibrary for StudentLoanLibrary.StoredParams;
 
@@ -28,9 +28,6 @@ contract StudentLoanCrowdfund is ICrowdfund {
     string private constant REFERRER_NA = "4";
     string private constant NO_DEBT_TOKENS = "5";
 
-    mapping (address => bool) lenders;
-    uint lendersCount;
-
     enum LoanStatus {
         NOT_STARTED,
         PARTIALLY_FUNDED,
@@ -40,19 +37,23 @@ contract StudentLoanCrowdfund is ICrowdfund {
         REPAYMENT_COMPLETE
     }
 
-    StudentLoanTermsStorage termsStorage;
-    uint termStorageIndex;
-    
+    // Storage Variables
     LoanStatus loanStatus;
+    uint termStorageIndex;
+
+    EnableContractRegistry enableRegistry;
 
     uint totalRepaid;
     mapping (address => uint) withdrawn;
 
-    IERC721Full debtToken;
+    DebtToken debtToken;
 
     event AddFunding(address indexed sender, uint indexed amount, uint indexed tokenId);
     event RevokeFunding(address indexed sender, uint indexed amount, uint indexed tokenId);
     event WithdrawPayment(address indexed sender, uint indexed amount, uint indexed tokenId);
+    
+    event DebtTokenSet(address debtToken);
+    event LoanStatusChanged(uint newStatus);
 
     // @notice Only users who hold debt tokens can call
     modifier onlyDebtHolder(uint tokenId) {
@@ -60,15 +61,15 @@ contract StudentLoanCrowdfund is ICrowdfund {
         _;
     }
 
-    constructor(
-        address _termsStorage,
-        address _debtToken,
-        uint _paramsIndex
-    ) public {
-        termsStorage = StudentLoanTermsStorage(_termsStorage);
+    constructor(address _enableRegistry, uint _paramsIndex) public {
+        enableRegistry = EnableContractRegistry(_enableRegistry);
         termStorageIndex = _paramsIndex;
-
-        //Get principal and mint max token size based on this
+    }
+    
+    // @notice Only the creator can set the debt token;
+    function setDebtToken(address _debtTokenAddr) public onlyOwner {
+        debtToken = DebtToken(_debtTokenAddr);
+        emit DebtTokenSet(_debtTokenAddr);
     }
 
     function addFunding(uint amount) public returns (uint tokenId) {
