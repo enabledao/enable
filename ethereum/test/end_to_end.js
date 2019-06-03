@@ -33,13 +33,19 @@ contract( 'ALL', function (accounts) {
     assert.exists(permissionsLib.address, "Failed to deploy PermissionsLib with address");
     assert.exists(enableContractRegistry.address, "Failed to deploy EnableContractRegistry with address");
     assert.exists(debtTokenFactory.address, "Failed to deploy DebtTokenFactory with address");
-    assert.exists(studentLoanTermsContract.address, "Failed to deploy StudentLoanTermsContract with address");
+    // assert.exists(studentLoanTermsContract.address, "Failed to deploy StudentLoanTermsContract with address");
     assert.exists(studentLoanTermsStorage.address, "Failed to deploy StudentLoanTermsStorage with address");
     assert.exists(studentLoanCrowdfundFactory.address, "Failed to deploy StudentLoanCrowdfundFactory with address");
+
+    // console.log(studentLoanTermsContract)
   });
 
   describe("Test", async function () {
-      console.log("Test Describe")
-  })
+      it('Do test', function () {
+        console.log("Done");
+      })
+  });
+
+  // describe("")
 
 });
