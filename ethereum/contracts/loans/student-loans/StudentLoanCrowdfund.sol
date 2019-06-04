@@ -62,6 +62,7 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
         _;
     }
 
+    // @notice Only payments that do not exceed the pricipal Amount allowed
     modifier belowMaxSupply (uint amount) {
       StudentLoanLibrary.StoredParams memory params;
       (

@@ -13,15 +13,20 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721Metadata.sol";
 */
 contract DebtToken is ERC721Enumerable, ERC721Metadata, ERC721Mintable {
 
-    mapping(address => uint) private _debtRatio;
+    mapping(uint => uint) private _debtOwned;
     uint private _totalDebt;
 
     constructor (string memory name, string memory symbol) public ERC721Metadata(name, symbol) {
         // solhint-disable-previous-line no-empty-blocks
     }
 
+    // Total value of Debt tokens, should total principalAmount upon crowdfund completion
     function totalDebt () public view returns (uint) {
-      return _totalDebt;
+        return _totalDebt;
+    }
+
+    function debtValue (uint tokenId) public view returns (uint) {
+        return _debtOwned[tokenId];
     }
 
     /**
@@ -29,22 +34,16 @@ contract DebtToken is ERC721Enumerable, ERC721Metadata, ERC721Mintable {
      * the debt registry, if the calling address is authorized to do so.
      */
     function create(
-        address _version,
         address _beneficiary,
-        address _debtor,
-        address _underwriter,
-        uint _underwriterRiskRating,
-        address _termsContract,
-        bytes32 _termsContractParameters,
-        uint _salt
+        uint _amount
     )
         public
         onlyMinter
         returns (uint _tokenId)
     {
-
+        _tokenId = totalSupply();
+        _mint(_beneficiary, _tokenId);
+        _debtOwned[_tokenId] = _amount;
     }
-
-
     // balanceOf (address)
 }
