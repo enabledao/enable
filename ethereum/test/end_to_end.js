@@ -25,7 +25,7 @@ contract( 'ALL', function (accounts) {
     permissionsLib = await PermissionsLib.deployed();
     enableContractRegistry = await EnableContractRegistry.deployed();
     debtTokenFactory = await DebtTokenFactory.deployed();
-    studentLoanTermsContract = await StudentLoanTermsContract.deployed();
+    // studentLoanTermsContract = await StudentLoanTermsContract.deployed();
     studentLoanTermsStorage = await StudentLoanTermsStorage.deployed();
     studentLoanCrowdfundFactory =  await StudentLoanCrowdfundFactory.deployed();
 

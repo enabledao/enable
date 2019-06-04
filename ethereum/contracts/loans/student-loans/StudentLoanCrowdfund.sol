@@ -51,28 +51,45 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
     event AddFunding(address indexed sender, uint indexed amount, uint indexed tokenId);
     event RevokeFunding(address indexed sender, uint indexed amount, uint indexed tokenId);
     event WithdrawPayment(address indexed sender, uint indexed amount, uint indexed tokenId);
-    
+
     event DebtTokenSet(address debtToken);
     event LoanStatusChanged(uint newStatus);
 
     // @notice Only users who hold debt tokens can call
     modifier onlyDebtHolder(uint tokenId) {
         // @TODO: add logic once token is completed
+        require(msg.sender == debtToken.ownerOf(tokenId), 'Not owner of Debt token');
         _;
+    }
+
+    modifier belowMaxSupply (uint amount) {
+      StudentLoanLibrary.StoredParams memory params;
+      (
+        params.principalTokenIndex,
+        params.principalAmount,
+        params.amortizationUnitType,
+        params.termLengthInAmortizationUnits,
+        params.gracePeriodInAmortizationUnits,
+        params.gracePeriodPaymentAmount,
+        params.standardPaymentAmount,
+        params.interestRate
+      ) = enableRegistry.studentLoanTermsStorage().get(termStorageIndex);
+      require (debtToken.totalDebt().add(amount) <= params.principalAmount);
+      _;
     }
 
     constructor(address _enableRegistry, uint _paramsIndex) public {
         enableRegistry = EnableContractRegistry(_enableRegistry);
         termStorageIndex = _paramsIndex;
     }
-    
+
     // @notice Only the creator can set the debt token;
     function setDebtToken(address _debtTokenAddr) public onlyOwner {
         debtToken = DebtToken(_debtTokenAddr);
         emit DebtTokenSet(_debtTokenAddr);
     }
 
-    function addFunding(uint amount) public returns (uint tokenId) {
+    function addFunding(uint amount) public belowMaxSupply(amount) returns (uint tokenId) {
         //Calculate how many debt tokens to give them based on loan data
     }
     function revokeFunding(uint tokenId) public onlyDebtHolder(tokenId) {
