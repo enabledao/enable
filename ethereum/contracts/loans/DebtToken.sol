@@ -44,6 +44,21 @@ contract DebtToken is ERC721Enumerable, ERC721Metadata, ERC721Mintable {
         _tokenId = totalSupply();
         _mint(_beneficiary, _tokenId);
         _debtOwned[_tokenId] = _amount;
+        _totalDebt = _totalDebt.add(_amount);
+    }
+
+    function remove(
+        address _owner,
+        uint _tokenId
+    )
+        public
+        onlyMinter
+        returns (bool)
+    {
+        uint _amount =  _debtOwned[_tokenId];
+        delete(_debtOwned[_tokenId]);
+        _totalDebt = _totalDebt.sub(_amount);
+        _burn(_owner, _tokenId);
     }
     // balanceOf (address)
 }
