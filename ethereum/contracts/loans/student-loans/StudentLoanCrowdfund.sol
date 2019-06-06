@@ -21,12 +21,12 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
     uint constant public MAXIMUM_PAYMENT = 10**22;
 
     // Error Codes
-    string private constant INSUFFICIENT_PAYMENT = "0";
-    string private constant EXCEEDED_PAYMENT = "1";
-    string private constant TOKENS_NOT_AVAILABLE = "2";
-    string private constant INVALID_AMOUNT = "3";
-    string private constant REFERRER_NA = "4";
-    string private constant NO_DEBT_TOKENS = "5";
+    uint private constant INSUFFICIENT_PAYMENT = 0;
+    uint private constant EXCEEDED_PAYMENT = 1;
+    uint private constant TOKENS_NOT_AVAILABLE = 2;
+    uint private constant INVALID_AMOUNT = 3;
+    uint private constant REFERRER_NA = 4;
+    uint private constant NO_DEBT_TOKENS = 5;
 
     enum LoanStatus {
         NOT_STARTED,
@@ -74,7 +74,7 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
         params.gracePeriodPaymentAmount,
         params.standardPaymentAmount,
         params.interestRate
-      ) = enableRegistry.studentLoanTermsStorage().get(termStorageIndex);
+      ) = getLoanDetails();
       require (debtToken.totalDebt().add(amount) <= params.principalAmount);
       _;
     }
@@ -92,6 +92,18 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
 
     function addFunding(uint amount) public belowMaxSupply(amount) returns (uint tokenId) {
         //Calculate how many debt tokens to give them based on loan data
+        // Allocate exact amount
+        StudentLoanLibrary.StoredParams memory params;
+        (
+          params.principalTokenIndex,
+          params.principalAmount,
+          params.amortizationUnitType,
+          params.termLengthInAmortizationUnits,
+          params.gracePeriodInAmortizationUnits,
+          params.gracePeriodPaymentAmount,
+          params.standardPaymentAmount,
+          params.interestRate
+        ) = getLoanDetails();
     }
     function revokeFunding(uint tokenId) public onlyDebtHolder(tokenId) {
         //This should only be allowed after a lockup time?
@@ -102,7 +114,17 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
         // User should be able to withdraw their accumlated repayments at any time
     }
 
+    function getLoanDetails () internal view returns (
+      uint, uint, StudentLoanLibrary.AmortizationUnitType, uint, uint, uint, uint, uint
+    ) {
+      return enableRegistry.studentLoanTermsStorage().get(termStorageIndex);
+    }
+
     function getAvailableWithdrawal(uint tokenId) public view returns (uint) {
 
+    }
+
+    function agreementId () public view returns (uint) {
+      // return
     }
 }
