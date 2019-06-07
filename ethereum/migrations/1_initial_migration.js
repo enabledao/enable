@@ -22,7 +22,7 @@ module.exports = async function(deployer) {
 
   const userStaking = await deployer.deploy(UserStaking);
   const permissionsLib = await deployer.deploy(PermissionsLib);
-  const permissionsLib = await deployer.deploy(EnableTokenRegistry);
+  const tokenRegistry = await deployer.deploy(EnableTokenRegistry);
 
   const debtTokenFactory = await deployer.deploy(DebtTokenFactory, enableRegistry.address);
   // const studentLoanTermsContract = await deployer.deploy(StudentLoanTermsContract, enableRegistry.address);
