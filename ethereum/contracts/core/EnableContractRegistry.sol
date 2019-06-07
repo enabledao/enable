@@ -5,6 +5,7 @@ import "./IEnableContractRegistry.sol";
 
 import "./PermissionsLib.sol";
 import "./UserStaking.sol";
+import "./EnableTokenRegistry.sol";
 
 import "../loans/DebtTokenFactory.sol";
 
@@ -16,6 +17,7 @@ contract EnableContractRegistry is Ownable, IEnableContractRegistry {
      // System Core
     PermissionsLib public permissionsLib;
     UserStaking public userStaking;
+    EnableTokenRegistry public tokenRegistry;
     
     // Loans Core
     DebtTokenFactory public debtTokenFactory;
@@ -40,6 +42,7 @@ contract EnableContractRegistry is Ownable, IEnableContractRegistry {
     enum ContractType {
         PermissionsLib,
         UserStaking,
+        EnableTokenRegistry,
         DebtTokenFactory,
         StudentLoanCrowdfundFactory,
         StudentLoanTermsStorage
@@ -48,6 +51,7 @@ contract EnableContractRegistry is Ownable, IEnableContractRegistry {
     function initialize(
         address _permissionsLib,
         address _userStaking,
+        address _tokenRegistry,
         address _debtTokenFactory,
         address _studentLoanCrowdfundFactory,
         address _studentLoanTermsStorage
@@ -56,6 +60,7 @@ contract EnableContractRegistry is Ownable, IEnableContractRegistry {
 
             permissionsLib = PermissionsLib(_permissionsLib);
             userStaking = UserStaking(_userStaking);
+            tokenRegistry = EnableTokenRegistry(_tokenRegistry);
 
             debtTokenFactory = DebtTokenFactory(_debtTokenFactory);
 
@@ -64,6 +69,7 @@ contract EnableContractRegistry is Ownable, IEnableContractRegistry {
 
             emit ContractAddressInitialized(ContractType.PermissionsLib, _permissionsLib);
             emit ContractAddressInitialized(ContractType.UserStaking, _userStaking);
+            emit ContractAddressInitialized(ContractType.EnableTokenRegistry, _tokenRegistry);
 
             emit ContractAddressInitialized(ContractType.DebtTokenFactory, _debtTokenFactory);
 
@@ -84,6 +90,9 @@ contract EnableContractRegistry is Ownable, IEnableContractRegistry {
         } else if (contractType == ContractType.UserStaking) {
             _validateNewAddress(newAddress, address(userStaking));
             userStaking = UserStaking(newAddress);
+        } else if (contractType == ContractType.EnableTokenRegistry) {
+            _validateNewAddress(newAddress, address(tokenRegistry));
+            tokenRegistry = EnableTokenRegistry(newAddress);
         } else if (contractType == ContractType.DebtTokenFactory) {
             oldAddress = address(debtTokenFactory);
             _validateNewAddress(newAddress, oldAddress);

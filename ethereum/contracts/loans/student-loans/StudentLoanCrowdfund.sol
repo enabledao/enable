@@ -93,17 +93,6 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
     function addFunding(uint amount) public belowMaxSupply(amount) returns (uint tokenId) {
         //Calculate how many debt tokens to give them based on loan data
         // Allocate exact amount
-        StudentLoanLibrary.StoredParams memory params;
-        (
-          params.principalTokenIndex,
-          params.principalAmount,
-          params.amortizationUnitType,
-          params.termLengthInAmortizationUnits,
-          params.gracePeriodInAmortizationUnits,
-          params.gracePeriodPaymentAmount,
-          params.standardPaymentAmount,
-          params.interestRate
-        ) = getLoanDetails();
     }
     function revokeFunding(uint tokenId) public onlyDebtHolder(tokenId) {
         //This should only be allowed after a lockup time?
