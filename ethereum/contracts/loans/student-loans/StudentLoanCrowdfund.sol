@@ -3,8 +3,10 @@ pragma solidity ^0.5.2;
 
 import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
+import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
 
 import "../../core/EnableContractRegistry.sol";
+import "../../core/TransferTokenLib.sol";
 import "./StudentLoanLibrary.sol";
 
 import "../ICrowdfund.sol";
@@ -105,8 +107,10 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
           params.interestRate
         ) = getLoanDetails();
         address principalTokenAddress = enableRegistry.tokenRegistry().getTokenAddressByIndex(params.principalTokenIndex);
-        // enableRegistry.
+        TransferTokenLib.validatedTransferFrom(IERC20(principalTokenAddress), msg.sender, address(this), amount);
+        tokenId = debtToken.create(msg.sender, amount);
     }
+
     function revokeFunding(uint tokenId) public onlyDebtHolder(tokenId) {
         //This should only be allowed after a lockup time?
         //Return funds to lender
