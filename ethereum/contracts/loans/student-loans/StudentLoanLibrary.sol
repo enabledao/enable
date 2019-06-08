@@ -5,7 +5,7 @@ library StudentLoanLibrary {
     struct StoredParams {
         uint principalTokenIndex;
         uint principalAmount;
-        AmortizationUnitType amortizationUnitType;
+        TimeUnits amortizationUnitType;
         uint termLengthInAmortizationUnits;
         uint gracePeriodInAmortizationUnits;
         uint gracePeriodPaymentAmount;
@@ -22,7 +22,7 @@ library StudentLoanLibrary {
         //Stored Params
         uint principalTokenIndex;
         uint principalAmount;
-        AmortizationUnitType amortizationUnitType;
+        TimeUnits amortizationUnitType;
         uint termLengthInAmortizationUnits;
         uint gracePeriodInAmortizationUnits;
         uint gracePeriodPaymentAmount;
@@ -41,6 +41,5 @@ library StudentLoanLibrary {
         uint gracePeriodEndUnixTimestamp;
     }
 
-    enum AmortizationUnitType { HOURS, DAYS, WEEKS, MONTHS, YEARS }
+    enum TimeUnits { HOURS, DAYS, WEEKS, MONTHS, YEARS }
 }
-

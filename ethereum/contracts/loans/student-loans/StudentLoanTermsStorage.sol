@@ -5,8 +5,8 @@ import "./StudentLoanLibrary.sol";
 
 import "../../core/EnableContractRegistry.sol";
 
-// @notice Stores instance information for each Student Loan, as the information is too large for the Dharma bytes32 format. 
-/* 
+// @notice Stores instance information for each Student Loan, as the information is too large for the Dharma bytes32 format.
+/*
     If a loan is funded, it is approved to call this and add data.
     This happens if it has a given method to call, and has enough of the right ERC-20 tokens at it's address.
     Need to think about how this could be scammed by imitating a loan contract...
@@ -21,7 +21,7 @@ import "../../core/EnableContractRegistry.sol";
 */
 contract StudentLoanTermsStorage is Ownable {
     using StudentLoanLibrary for StudentLoanLibrary.StoredParams;
-    using StudentLoanLibrary for StudentLoanLibrary.AmortizationUnitType;
+    using StudentLoanLibrary for StudentLoanLibrary.TimeUnits;
 
     EnableContractRegistry enableRegistry;
 
@@ -44,7 +44,7 @@ contract StudentLoanTermsStorage is Ownable {
         enableRegistry = EnableContractRegistry(_enableRegistryAddr);
     }
 
-    //TODO: only authorized contracts, aka funded Crowdloans during submission, should be able to call this. 
+    //TODO: only authorized contracts, aka funded Crowdloans during submission, should be able to call this.
     function add(
         uint principalTokenIndex,
         uint principalAmount,
@@ -61,7 +61,7 @@ contract StudentLoanTermsStorage is Ownable {
         StudentLoanLibrary.StoredParams memory params = StudentLoanLibrary.StoredParams({
             principalTokenIndex: principalTokenIndex,
             principalAmount: principalAmount,
-            amortizationUnitType: StudentLoanLibrary.AmortizationUnitType(amortizationUnitType),
+            amortizationUnitType: StudentLoanLibrary.TimeUnits(amortizationUnitType),
             termLengthInAmortizationUnits: termLengthInAmortizationUnits,
             gracePeriodInAmortizationUnits: gracePeriodInAmortizationUnits,
             gracePeriodPaymentAmount: gracePeriodPaymentAmount,
@@ -91,14 +91,14 @@ contract StudentLoanTermsStorage is Ownable {
     function get(uint index) public view returns(
         uint principalTokenIndex,
         uint principalAmount,
-        StudentLoanLibrary.AmortizationUnitType amortizationUnitType,
+        StudentLoanLibrary.TimeUnits amortizationUnitType,
         uint termLengthInAmortizationUnits,
         uint gracePeriodInAmortizationUnits,
         uint gracePeriodPaymentAmount,
         uint standardPaymentAmount,
         uint interestRate
     ) {
-        
+
         StudentLoanLibrary.StoredParams memory params = paramRegistry[index];
 
         return (

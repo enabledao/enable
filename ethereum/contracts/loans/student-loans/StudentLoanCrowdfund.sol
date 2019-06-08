@@ -164,7 +164,7 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
     }
 
     function getLoanDetails () internal view returns (
-      uint, uint, StudentLoanLibrary.AmortizationUnitType, uint, uint, uint, uint, uint
+      uint, uint, StudentLoanLibrary.TimeUnits, uint, uint, uint, uint, uint
     ) {
       return enableRegistry.studentLoanTermsStorage().get(termStorageIndex);
     }

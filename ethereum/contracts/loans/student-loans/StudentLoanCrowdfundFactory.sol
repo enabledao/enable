@@ -10,7 +10,7 @@ import "../DebtToken.sol";
 
 contract StudentLoanCrowdfundFactory is Ownable {
     using StudentLoanLibrary for StudentLoanLibrary.StoredParams;
-    using StudentLoanLibrary for StudentLoanLibrary.AmortizationUnitType;
+    using StudentLoanLibrary for StudentLoanLibrary.TimeUnits;
 
     EnableContractRegistry enableRegistry;
 

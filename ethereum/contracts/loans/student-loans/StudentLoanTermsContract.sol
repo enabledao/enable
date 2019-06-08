@@ -11,8 +11,8 @@ import "./StudentLoanLibrary.sol";
 contract StudentLoanTermsContract is TermsContract {
     using SafeMath for uint;
     using StudentLoanLibrary for StudentLoanLibrary.StoredParams;
-    using StudentLoanLibrary for StudentLoanLibrary.AmortizationUnitType;
-    
+    using StudentLoanLibrary for StudentLoanLibrary.TimeUnits;
+
     uint public constant NUM_AMORTIZATION_UNIT_TYPES = 5;
 
     uint public constant HOUR_LENGTH_IN_SECONDS = 60 * 60;
@@ -132,26 +132,26 @@ contract StudentLoanTermsContract is TermsContract {
         return delta.div(amortizationUnitLengthInSeconds);
     }
 
-    function _getAmortizationUnitLengthInSeconds(StudentLoanLibrary.AmortizationUnitType amortizationUnitType)
+    function _getAmortizationUnitLengthInSeconds(StudentLoanLibrary.TimeUnits amortizationUnitType)
         internal
         pure
         returns (uint _amortizationUnitLengthInSeconds)
     {
-        if (amortizationUnitType == StudentLoanLibrary.AmortizationUnitType.HOURS) {
+        if (amortizationUnitType == StudentLoanLibrary.TimeUnits.HOURS) {
             return HOUR_LENGTH_IN_SECONDS;
-        } else if (amortizationUnitType == StudentLoanLibrary.AmortizationUnitType.DAYS) {
+        } else if (amortizationUnitType == StudentLoanLibrary.TimeUnits.DAYS) {
             return DAY_LENGTH_IN_SECONDS;
-        } else if (amortizationUnitType == StudentLoanLibrary.AmortizationUnitType.WEEKS) {
+        } else if (amortizationUnitType == StudentLoanLibrary.TimeUnits.WEEKS) {
             return WEEK_LENGTH_IN_SECONDS;
-        } else if (amortizationUnitType == StudentLoanLibrary.AmortizationUnitType.MONTHS) {
+        } else if (amortizationUnitType == StudentLoanLibrary.TimeUnits.MONTHS) {
             return MONTH_LENGTH_IN_SECONDS;
-        } else if (amortizationUnitType == StudentLoanLibrary.AmortizationUnitType.YEARS) {
+        } else if (amortizationUnitType == StudentLoanLibrary.TimeUnits.YEARS) {
             return YEAR_LENGTH_IN_SECONDS;
         } else {
             revert();
         }
     }
-    
+
     function _bitShiftRight(bytes32 value, uint amount) internal pure returns (uint) {
         return uint(value) / 2 ** amount;
     }
