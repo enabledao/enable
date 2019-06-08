@@ -64,6 +64,13 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
         _;
     }
 
+    // @notice Only users who hold debt tokens can call
+    modifier isState(LoanStatus tokenId) {
+        // @TODO: add logic once token is completed
+        require(msg.sender == debtToken.ownerOf(tokenId), 'Not owner of Debt token');
+        _;
+    }
+
     // @notice Only payments that do not exceed the pricipal Amount allowed
     modifier belowMaxSupply (uint amount) {
       StudentLoanLibrary.StoredParams memory params;
@@ -81,9 +88,41 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
       _;
     }
 
+    modifier trackLoanStatus () {
+      _;
+
+      StudentLoanLibrary.StoredParams memory params;
+      (
+        params.principalTokenIndex,
+        params.principalAmount,
+        params.amortizationUnitType,
+        params.termLengthInAmortizationUnits,
+        params.gracePeriodInAmortizationUnits,
+        params.gracePeriodPaymentAmount,
+        params.standardPaymentAmount,
+        params.interestRate
+      ) = getLoanDetails();
+      require (debtToken.totalDebt().add(amount) <= params.principalAmount);
+
+      if (debtToken.totalDebt() > 0 && debtToken.totalDebt() <  params.principalAmount) {
+        loanStatus = loanStatus.PARTIALLY_FUNDED;
+      } else if ()
+
+      if (loanStatus == debtToken.totalDebt() >=  params.principalAmount)
+      setLoanStatus(LoanStatus.PARTIALLY_FUNDED);
+    }
+
     constructor(address _enableRegistry, uint _paramsIndex) public {
         enableRegistry = EnableContractRegistry(_enableRegistry);
         termStorageIndex = _paramsIndex;
+    }
+
+    // @notice setthe present state of the Loan;
+    function setLoanStatus(LoanStatus _loanStatus) internal {
+        if (loanStatus != _loanStatus) {
+            loanStatus = _loanStatus;
+            emit LoanStatusChanged(loanStatus);
+        }
     }
 
     // @notice Only the creator can set the debt token;
@@ -92,7 +131,7 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
         emit DebtTokenSet(_debtTokenAddr);
     }
 
-    function addFunding(uint amount) public belowMaxSupply(amount) returns (uint tokenId) {
+    function addFunding(uint amount) public belowMaxSupply(amount) trackLoanStatus returns (uint tokenId) {
         //Calculate how many debt tokens to give them based on loan data
         // Allocate exact amount
         StudentLoanLibrary.StoredParams memory params;
