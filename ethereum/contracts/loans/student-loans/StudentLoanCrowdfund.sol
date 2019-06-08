@@ -36,17 +36,18 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
         FULLY_FUNDED,
         LOAN_STARTED,
         REPAYMENT_STARTED,
-        REPAYMENT_COMPLETE
+        REPAYMENT_COMPLETE,
+        CANCELLED
     }
 
     // Storage Variables
-    LoanStatus loanStatus;
+    LoanStatus loanStatus = LoanStatus.NOT_STARTED;
     uint termStorageIndex;
 
     EnableContractRegistry enableRegistry;
 
-    uint totalRepaid;
-    mapping (address => uint) withdrawn;
+    uint totalRepaid; //Total repayment from the borrower
+    mapping (uint => uint) withdrawn; //Amount withdrawn on each tokenId
 
     DebtToken debtToken;
 
@@ -55,17 +56,10 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
     event WithdrawPayment(address indexed sender, uint indexed amount, uint indexed tokenId);
 
     event DebtTokenSet(address debtToken);
-    event LoanStatusChanged(uint newStatus);
+    event LoanStatusChanged(LoanStatus newStatus);
 
     // @notice Only users who hold debt tokens can call
     modifier onlyDebtHolder(uint tokenId) {
-        // @TODO: add logic once token is completed
-        require(msg.sender == debtToken.ownerOf(tokenId), 'Not owner of Debt token');
-        _;
-    }
-
-    // @notice Only users who hold debt tokens can call
-    modifier isState(LoanStatus tokenId) {
         // @TODO: add logic once token is completed
         require(msg.sender == debtToken.ownerOf(tokenId), 'Not owner of Debt token');
         _;
@@ -102,19 +96,25 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
         params.standardPaymentAmount,
         params.interestRate
       ) = getLoanDetails();
-      require (debtToken.totalDebt().add(amount) <= params.principalAmount);
 
       if (debtToken.totalDebt() > 0 && debtToken.totalDebt() <  params.principalAmount) {
-        loanStatus = loanStatus.PARTIALLY_FUNDED;
-      } else if ()
-
-      if (loanStatus == debtToken.totalDebt() >=  params.principalAmount)
-      setLoanStatus(LoanStatus.PARTIALLY_FUNDED);
+        setLoanStatus(LoanStatus.PARTIALLY_FUNDED);
+      } else if (debtToken.totalDebt() >=  params.principalAmount && totalRepaid == 0) {
+        setLoanStatus(LoanStatus.FULLY_FUNDED);
+      } else if (totalRepaid > 0 && totalRepaid < getTotalRepaymentDue()) {
+        setLoanStatus(LoanStatus.REPAYMENT_STARTED);
+      } else if (totalRepaid >= getTotalRepaymentDue()) {
+        setLoanStatus(LoanStatus.REPAYMENT_COMPLETE);
+      }
     }
 
     constructor(address _enableRegistry, uint _paramsIndex) public {
         enableRegistry = EnableContractRegistry(_enableRegistry);
         termStorageIndex = _paramsIndex;
+    }
+
+    function isState (LoanStatus _loanStatus) internal view returns (bool) {
+        return loanStatus == _loanStatus;
     }
 
     // @notice setthe present state of the Loan;
@@ -134,6 +134,9 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
     function addFunding(uint amount) public belowMaxSupply(amount) trackLoanStatus returns (uint tokenId) {
         //Calculate how many debt tokens to give them based on loan data
         // Allocate exact amount
+
+        require(isState(LoanStatus.NOT_STARTED) || isState(LoanStatus.PARTIALLY_FUNDED), 'Action not possible at the moment');
+
         StudentLoanLibrary.StoredParams memory params;
         (
           params.principalTokenIndex,
@@ -150,10 +153,11 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
         tokenId = debtToken.create(msg.sender, amount);
     }
 
-    function revokeFunding(uint tokenId) public onlyDebtHolder(tokenId) {
+    function revokeFunding(uint tokenId) public onlyDebtHolder(tokenId) trackLoanStatus {
         //This should only be allowed after a lockup time?
         //Return funds to lender
         //Remove all debt tokens
+        require(uint8(loanStatus) < uint8(LoanStatus.LOAN_STARTED), 'Action not possible at the moment');
     }
     function withdrawRepayment(uint tokenId, uint amount) public onlyDebtHolder(tokenId) {
         // User should be able to withdraw their accumlated repayments at any time
@@ -163,6 +167,10 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
       uint, uint, StudentLoanLibrary.AmortizationUnitType, uint, uint, uint, uint, uint
     ) {
       return enableRegistry.studentLoanTermsStorage().get(termStorageIndex);
+    }
+
+    function getTotalRepaymentDue () public view returns (uint) {
+
     }
 
     function getAvailableWithdrawal(uint tokenId) public view returns (uint) {
