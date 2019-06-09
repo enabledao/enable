@@ -29,6 +29,7 @@ contract StudentLoanCrowdfundFactory is Ownable {
     function createStudentLoanCrowdfund(
         uint principalTokenIndex,
         uint principalAmount,
+        uint crowdfundLength,
         uint interestRate,
         uint amortizationUnitType,
         uint termLengthInAmortizationUnits,
@@ -52,7 +53,8 @@ contract StudentLoanCrowdfundFactory is Ownable {
         // Create Crowdfund contract
         StudentLoanCrowdfund crowdfund = new StudentLoanCrowdfund(
             address(enableRegistry),
-            paramIndex
+            paramIndex,
+            crowdfundLength
         );
         
         // Create DebtToken contract
