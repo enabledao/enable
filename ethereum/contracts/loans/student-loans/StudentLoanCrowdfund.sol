@@ -180,6 +180,7 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
         //Return funds to lender
         //Remove all debt tokens
         require(uint8(loanStatus) < uint8(LoanStatus.LOAN_STARTED), 'Action not possible at the moment');
+
     }
     function withdrawRepayment(uint tokenId, uint amount) public onlyDebtHolder(tokenId) {
         // User should be able to withdraw their accumlated repayments at any time
