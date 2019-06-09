@@ -53,9 +53,9 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
 
     DebtToken debtToken;
 
-    event AddFunding(address indexed sender, uint indexed amount, uint indexed tokenId);
-    event RevokeFunding(address indexed sender, uint indexed amount, uint indexed tokenId);
-    event WithdrawPayment(address indexed sender, uint indexed amount, uint indexed tokenId);
+    event AddFunding(address indexed lender, uint indexed amount, uint indexed tokenId);
+    event RevokeFunding(address indexed lender, uint indexed amount, uint indexed tokenId);
+    event WithdrawPayment(address indexed recipient, uint indexed amount);
 
     event DebtTokenSet(address debtToken);
     event LoanStatusChanged(LoanStatus newStatus);
@@ -173,6 +173,8 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
         address principalTokenAddress = enableRegistry.tokenRegistry().getTokenAddressByIndex(params.principalTokenIndex);
         TransferTokenLib.validatedTransferFrom(IERC20(principalTokenAddress), msg.sender, address(this), amount);
         tokenId = debtToken.create(msg.sender, amount);
+
+        emit AddFunding(msg.sender, amount, tokenId);
     }
 
     function revokeFunding(uint tokenId) public onlyDebtHolder(tokenId) trackLoanStatus {
@@ -180,10 +182,45 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
         //Return funds to lender
         //Remove all debt tokens
         require(uint8(loanStatus) < uint8(LoanStatus.LOAN_STARTED), 'Action not possible at the moment');
+        uint fundAmount = debtToken.debtValue(tokenId);
 
+        //Remove debt beforere funding tokens
+        debtToken.remove(msg.sender, tokenId);
+
+        StudentLoanLibrary.StoredParams memory params;
+        (
+          params.principalTokenIndex,
+          params.principalAmount,
+          params.amortizationUnitType,
+          params.termLengthInAmortizationUnits,
+          params.gracePeriodInAmortizationUnits,
+          params.gracePeriodPaymentAmount,
+          params.standardPaymentAmount,
+          params.interestRate
+        ) = _getLoanDetails();
+        address principalTokenAddress = enableRegistry.tokenRegistry().getTokenAddressByIndex(params.principalTokenIndex);
+        IERC20(principalTokenAddress).transfer( msg.sender, fundAmount);
+
+        emit RevokeFunding(msg.sender, fundAmount, tokenId);
     }
-    function withdrawRepayment(uint tokenId, uint amount) public onlyDebtHolder(tokenId) {
+    function withdrawRepayment(uint tokenId) public onlyDebtHolder(tokenId) {
         // User should be able to withdraw their accumlated repayments at any time
+        uint availableWithdrawal = getAvailableWithdrawal(tokenId);
+        withdrawn[tokenId] = withdrawn[tokenId].add(availableWithdrawal);
+
+        StudentLoanLibrary.StoredParams memory params;
+        (
+          params.principalTokenIndex,
+          params.principalAmount,
+          params.amortizationUnitType,
+          params.termLengthInAmortizationUnits,
+          params.gracePeriodInAmortizationUnits,
+          params.gracePeriodPaymentAmount,
+          params.standardPaymentAmount,
+          params.interestRate
+        ) = _getLoanDetails();
+        address principalTokenAddress = enableRegistry.tokenRegistry().getTokenAddressByIndex(params.principalTokenIndex);
+        IERC20(principalTokenAddress).transfer( msg.sender, availableWithdrawal);
     }
 
     function getTotalRepaymentDue () public view returns (uint) {
@@ -196,5 +233,9 @@ contract StudentLoanCrowdfund is ICrowdfund, Ownable {
 
     function agreementId () public view returns (uint) {
       // return
+    }
+
+    function () {
+      revert('Choose a function to call');
     }
 }

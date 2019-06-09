@@ -11,6 +11,7 @@ import "../loans/DebtTokenFactory.sol";
 
 import "../loans/student-loans/StudentLoanCrowdfundFactory.sol";
 import "../loans/student-loans/StudentLoanTermsStorage.sol";
+import "../loans/student-loans/StudentLoanTermsContract.sol";
 
 // @notice Registry for Enable core contract addresses. Modelled after Dharma ContractRegistry.
 contract EnableContractRegistry is Ownable, IEnableContractRegistry {
@@ -25,6 +26,7 @@ contract EnableContractRegistry is Ownable, IEnableContractRegistry {
     // Student Loans
     StudentLoanCrowdfundFactory public studentLoanCrowdfundFactory;
     StudentLoanTermsStorage public studentLoanTermsStorage;
+    StudentLoanTermsContract public studentLoanTermsContract;
 
     bool public initialized;
 
@@ -45,16 +47,18 @@ contract EnableContractRegistry is Ownable, IEnableContractRegistry {
         EnableTokenRegistry,
         DebtTokenFactory,
         StudentLoanCrowdfundFactory,
-        StudentLoanTermsStorage
+        StudentLoanTermsStorage,
+        StudentLoanTermsContract
     }
-   
+
     function initialize(
         address _permissionsLib,
         address _userStaking,
         address _tokenRegistry,
         address _debtTokenFactory,
         address _studentLoanCrowdfundFactory,
-        address _studentLoanTermsStorage
+        address _studentLoanTermsStorage,
+        address _studentLoanTermsContract
     ) public onlyOwner {
             require(!initialized, "ALREADY_INITIALIZED");
 
@@ -66,6 +70,8 @@ contract EnableContractRegistry is Ownable, IEnableContractRegistry {
 
             studentLoanCrowdfundFactory = StudentLoanCrowdfundFactory(_studentLoanCrowdfundFactory);
             studentLoanTermsStorage = StudentLoanTermsStorage(_studentLoanTermsStorage);
+            studentLoanTermsContract = StudentLoanTermsContract(_studentLoanTermsContract);
+
 
             emit ContractAddressInitialized(ContractType.PermissionsLib, _permissionsLib);
             emit ContractAddressInitialized(ContractType.UserStaking, _userStaking);
@@ -75,6 +81,7 @@ contract EnableContractRegistry is Ownable, IEnableContractRegistry {
 
             emit ContractAddressInitialized(ContractType.StudentLoanCrowdfundFactory, _studentLoanCrowdfundFactory);
             emit ContractAddressInitialized(ContractType.StudentLoanTermsStorage, _studentLoanTermsStorage);
+            emit ContractAddressInitialized(ContractType.StudentLoanTermsContract, _studentLoanTermsContract);
 
             initialized = true;
     }
@@ -105,6 +112,10 @@ contract EnableContractRegistry is Ownable, IEnableContractRegistry {
             oldAddress = address(studentLoanTermsStorage);
             _validateNewAddress(newAddress, oldAddress);
             studentLoanTermsStorage = StudentLoanTermsStorage(newAddress);
+        } else if (contractType == ContractType.StudentLoanTermsContract) {
+            oldAddress = address(studentLoanTermsContract);
+            _validateNewAddress(newAddress, oldAddress);
+            studentLoanTermsContract = StudentLoanTermsContract(newAddress);
         } else {
             revert();
         }
