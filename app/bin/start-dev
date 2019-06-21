@@ -1,5 +1,0 @@
-#!/bin/bash
-
-bin/start-dev-server &
-
-node bin/start-ngrok

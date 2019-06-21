@@ -1,9 +1,0 @@
-#!/bin/bash
-
-bin/build-server-dev
-
-echo "Starting server"
-
-node --inspect=127.0.0.1:9300 build/index.js
-
-wait %1

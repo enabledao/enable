@@ -1,6 +1,0 @@
-#!/bin/bash
-
-echo "Starting client"
-echo $SERVER_URL
-
-(cd client && REACT_APP_SERVER_URL=$SERVER_URL npm run start)
