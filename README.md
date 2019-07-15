@@ -44,22 +44,15 @@ In line with the open source ethos of decentralized finance, we are committed to
 
 [![image](https://user-images.githubusercontent.com/518024/56973331-35e9d600-6b9f-11e9-8e41-b88185cfdea7.png)](https://youtu.be/Xqu4cmHzTis?t=3289)
 
-
-Enable is a peer-to-peer "Kiva for Dai" that allows lenders to directly lend stablecoins to borrowers without any intermediaries.
-
-## Current status quo
-
-Loans
-
-* Loans currently flow through intermediaries. Banking system, company on the ground in country, before it reaches the intended recipient
-* As a result loan interest is very high, leading to major credit gaps
-
 ## Our value add
 
-* Stablecoins are borderless, peer-to-peer.
-* Loan management is fully automated, smart contract takes care of account balances, accounting, disbursement
-* Transparent ledger makes repayment very clear
-* Programmability means they can be packaged in the future, with clear value streams
+Enable is a peer-to-peer "Kiva for Dai" that allows lenders to directly lend stablecoins to borrowers without any intermediaries.
+|                   | Status Quo                                                                                                     | Enable Loan Contracts                              |
+| ----------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| Operational Costs | Incurs forex, transfer and bank fees as it goes through the cross-border banking system                        | **$0**, uses stablecoins                           |
+| Accounting Effort | Team of diligent accountants required to manage fractional loan ownership and allocation of repayments streams | **0 headcount**, automated through smart contracts |
+| Transparency      | Loan repayment data is usually opaque or subject to time delays                                                | **Fully transparent ledger**                       |
+| Composability     | Investment bankers, auditors, legal contracts required to package it into derivatives (e.g. bonds, CLOs)       | **Fully programmable smart contract**              |
 
 ## Future Directions
 
