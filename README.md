@@ -7,6 +7,8 @@ We are an open source volunteer project that grew out of the [open finance hacka
 
 This repo is mainly for project management and product-related discussions. See our workstreams for development work.
 
+**Mailing List Signups**: https://www.enable.credit
+
 ### Team
 
 * Thomas Spofford, [@tspoff](https://github.com/tspoff) (USA)
