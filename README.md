@@ -44,15 +44,16 @@ In line with the open source ethos of decentralized finance, we are committed to
 
 [![image](https://user-images.githubusercontent.com/518024/56973331-35e9d600-6b9f-11e9-8e41-b88185cfdea7.png)](https://youtu.be/Xqu4cmHzTis?t=3289)
 
-## Our value add
+## Value add
 
-Enable is a peer-to-peer "Kiva for Dai" that allows lenders to directly lend stablecoins to borrowers without any intermediaries.
-|                   | Status Quo                                                                                                     | Enable Loan Contracts                              |
-| ----------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| Operational Costs | Incurs forex, transfer and bank fees as it goes through the cross-border banking system                        | **$0**, uses stablecoins                           |
-| Accounting Effort | Team of diligent accountants required to manage fractional loan ownership and allocation of repayments streams | **0 headcount**, automated through smart contracts |
-| Transparency      | Loan repayment data is usually opaque or subject to time delays                                                | **Fully transparent ledger**                       |
-| Composability     | Investment bankers, auditors, legal contracts required to package it into derivatives (e.g. bonds, CLOs)       | **Fully programmable smart contract**              |
+Enable makes use of [smart contracts](https://blockgeeks.com/guides/smart-contracts/) and [stablecoins](https://en.wikipedia.org/wiki/Stablecoin) to automate the operations required to do a cross-border peer-to-peer loan.
+
+|                    | Status Quo                                                                                                     | Enable Loan Contracts                              |
+| ------------------ | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| Cross-border Costs | Incurs forex, transfer and bank fees as it goes through the cross-border banking system                        | **$0**, uses stablecoins                           |
+| Accounting Effort  | Team of diligent accountants required to manage fractional loan ownership and allocation of repayments streams | **0 headcount**, automated through smart contracts |
+| Transparency       | Loan repayment data is usually opaque or subject to time delays                                                | **Fully transparent ledger**                       |
+| Composability      | Investment bankers, auditors, legal contracts required to package it into derivatives (e.g. bonds, CLOs)       | **Fully programmable smart contract**              |
 
 ## Future Directions
 
