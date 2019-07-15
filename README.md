@@ -1,18 +1,11 @@
 # Enable
 
-Enable is a “Kiva for Dai” that allows lenders to make peer-to-peer stablecoin microloans to emerging market borrowers. Our first product is a [peer-to-peer crowdloan kit](https://github.com/enabledao/enable/blob/master/product/specs/2019-07-14-v0.1-specs-(ines)/v0.1-specs.md).
+[Enable](https://www.enable.credit) is a “Kiva for Dai” that allows lenders to make peer-to-peer stablecoin microloans to emerging market borrowers. Our first product is a [peer-to-peer crowdloan kit](https://github.com/enabledao/enable/blob/master/product/specs/2019-07-14-v0.1-specs-(ines)/v0.1-specs.md).
+
 
 We are an open source volunteer project that grew out of the [open finance hackathon](https://www.buildandship.it/) in May 2019. We are currently funded by a [3-month grant](https://twitter.com/onggunhao/status/1148140687327555584) from [Binance Labs](https://labs.binance.com/).
 
 This repo is mainly for project management and product-related discussions. See our workstreams for development work.
-
-## Workstreams
-
-| Workstream                 | Github                                                    |
-| -------------------------- | --------------------------------------------------------- |
-| Enable Crowdloan Contracts | [repo](https://www.github.com/enabledao/enable-contracts) |
-| Enable Crowdloan UI        | [repo](https://www.github.com/enabledao/enable-ui)        |
-| Proof-of-concept fundraise | [Ines Fund](https://www.ines.fund)                        |
 
 ### Team
 
@@ -20,6 +13,16 @@ This repo is mainly for project management and product-related discussions. See 
 * Anthony Adegbemi, [@adibas03](https://github.com/adibas03) (Nigeria)
 * Daniel Onggunhao, [@onggunhao](https://github.com/onggunhao) (Singapore)
 * Faisal Amir, [@urmauur](https://github.com/urmauur) (Indonesia)
+
+## Workstreams
+
+In line with the open source ethos of decentralized finance, we are committed to building in public. See the contributor instructions in the individual repos.
+
+| Workstream                 | Github                                                    | Contributor Instructions                                          |
+| -------------------------- | --------------------------------------------------------- | ----------------------------------------------------------------- |
+| Enable Crowdloan Contracts | [repo](https://www.github.com/enabledao/enable-contracts) | [instructions](https://www.github.com/enabledao/enable-contracts) |
+| Enable Crowdloan UI        | [repo](https://www.github.com/enabledao/enable-ui)        | [instructions](https://www.github.com/enabledao/enable-ui)        |
+| Proof-of-concept fundraise | [Ines Fund](https://www.ines.fund)                        |                                                                   |
 
 ## Roadmap
 
@@ -30,15 +33,6 @@ This repo is mainly for project management and product-related discussions. See 
 ### Phase 2
 
 * Open to ideas - debt tokens, collateralized loans, interest rate auctions, social credit
-
-## Contributing
-
-In line with the open source ethos of decentralized finance, we are committed to building in public. See the contributor instructions in the individual repos.
-
-| Project                    | Contributor guide                                                 |
-| -------------------------- | ----------------------------------------------------------------- |
-| Enable Crowdloan Contracts | [instructions](https://www.github.com/enabledao/enable-contracts) |
-| Enable Crowdloan UI        | [instructions](https://www.github.com/enabledao/enable-ui)        |
 
 # About Enable
 
