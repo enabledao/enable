@@ -4,7 +4,9 @@ Enable is a “Kiva for Dai” that allows lenders to make peer-to-peer stableco
 
 We are an open source volunteer project that grew out of the [open finance hackathon](https://www.buildandship.it/) in May 2019. We are currently funded by a [3-month grant](https://twitter.com/onggunhao/status/1148140687327555584) from [Binance Labs](https://labs.binance.com/).
 
-## See our progress
+This repo is mainly for project management and product-related discussions. See our workstreams for development work.
+
+## Workstreams
 
 | Workstream                 | Github                                                    |
 | -------------------------- | --------------------------------------------------------- |
@@ -27,7 +29,7 @@ We are an open source volunteer project that grew out of the [open finance hacka
 
 ### Phase 2
 
-* Open to ideas - debt tokens, collateralized loans, interest rate auctions
+* Open to ideas - debt tokens, collateralized loans, interest rate auctions, social credit
 
 ## Contributing
 
@@ -42,33 +44,29 @@ In line with the open source ethos of decentralized finance, we are committed to
 
 [![image](https://user-images.githubusercontent.com/518024/56973331-35e9d600-6b9f-11e9-8e41-b88185cfdea7.png)](https://youtu.be/Xqu4cmHzTis?t=3289)
 
-> Credit is fundamentally broken when crossing borders - Cameron Stevens, Prodigy Finance
 
-Enable is a peer-to-peer stablecoin credit marketplace, that allows:
+Enable is a peer-to-peer "Kiva for Dai" that allows lenders to directly lend stablecoins to borrowers without any intermediaries.
 
-- Borrowers to access global loans marketplace
-- Lenders to access funding opportunities globally
+## Current status quo
 
-This solves a pain point in emerging markets, where loans are difficult to get and often come at high interest rates. This is even though some borrowers have high credit rating and scores.
+Loans
 
-#### Deploying to Heroku:
+* Loans currently flow through intermediaries. Banking system, company on the ground in country, before it reaches the intended recipient
+* As a result loan interest is very high, leading to major credit gaps
 
-As our repo is structured as a monorepo, the `/app` folder is the one that needs to be deployed to heroku.
+## Our value add
 
-##### Local machine
+* Stablecoins are borderless, peer-to-peer.
+* Loan management is fully automated, smart contract takes care of account balances, accounting, disbursement
+* Transparent ledger makes repayment very clear
+* Programmability means they can be packaged in the future, with clear value streams
 
-We need to tell git to push the `/app` subtree to Heroku.
-For more info: https://medium.com/@shalandy/deploy-git-subdirectory-to-heroku-ea05e95fce1f
+## Future Directions
 
-```
-git subtree push --prefix bloom-starter-react heroku master
-```
-
-##### Heroku Pipeline (CI / CD)
-
-We currently use Heroku pipelines, and utilize `subdir-heroku-buildpack` to configure automatic deployments.
-For more info: https://github.com/timanovsky/subdir-heroku-buildpack
-
-**Step 1**:
-
-**Step 2**: Add this to Heroku's config variables:
+* Debt Tokens
+* Marketplace
+* Collateralized loans: identity-collateralized loans
+* Sophisticated loan types: PMT
+* Sophisticated payment tracking
+* interest rate auctions
+* Derivative products (e.g. collateralized loan obligations) to try to create investment-grade products
