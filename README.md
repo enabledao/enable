@@ -7,14 +7,14 @@ We are an open source volunteer project that grew out of the [open finance hacka
 
 This repo is mainly for project management and product-related discussions. See our workstreams for development work.
 
-**Mailing List Signups**: https://www.enable.credit
+**Mailing List**: https://www.enable.credit
 
 ### Team
 
 * Thomas Spofford, [@tspoff](https://github.com/tspoff) (USA)
 * Anthony Adegbemi, [@adibas03](https://github.com/adibas03) (Nigeria)
-* Daniel Onggunhao, [@onggunhao](https://github.com/onggunhao) (Singapore)
 * Faisal Amir, [@urmauur](https://github.com/urmauur) (Indonesia)
+* Daniel Onggunhao, [@onggunhao](https://github.com/onggunhao) (Singapore)
 
 ## Workstreams
 
