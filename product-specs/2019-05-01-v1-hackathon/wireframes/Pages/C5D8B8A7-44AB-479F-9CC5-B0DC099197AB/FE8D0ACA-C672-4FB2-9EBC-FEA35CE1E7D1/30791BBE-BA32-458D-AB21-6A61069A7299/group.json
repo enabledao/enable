@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "30791BBE-BA32-458D-AB21-6A61069A7299",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 281,
+    "width": 384,
+    "x": 434,
+    "y": 0
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "group",
+      "id": "42D1F8F3-03B5-4D8E-98D1-634935263724"
+    },
+    {
+      "class": "text",
+      "id": "25A3F996-83EC-4DD7-90E5-A8886952C835"
+    },
+    {
+      "class": "text",
+      "id": "9DAD4BF9-9E2A-4831-9DF2-CDF49779B09D"
+    },
+    {
+      "class": "group",
+      "id": "341AC357-90E6-4BEF-A458-5E7E0B175390"
+    }
+  ],
+  "name": "Pages - Small Metric",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

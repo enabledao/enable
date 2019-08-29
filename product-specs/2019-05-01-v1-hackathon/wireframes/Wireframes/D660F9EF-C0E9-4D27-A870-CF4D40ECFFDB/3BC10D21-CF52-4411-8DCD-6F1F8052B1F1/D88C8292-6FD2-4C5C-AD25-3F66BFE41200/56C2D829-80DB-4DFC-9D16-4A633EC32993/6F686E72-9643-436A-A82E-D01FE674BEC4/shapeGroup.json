@@ -1,0 +1,97 @@
+{
+  "_class": "shapeGroup",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "6F686E72-9643-436A-A82E-D01FE674BEC4",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "5007E993-F03E-4283-AF78-4176DA799671",
+    "exportFormats": [
+      {
+        "_class": "exportFormat",
+        "absoluteSize": 0,
+        "fileFormat": "svg",
+        "name": "",
+        "namingScheme": 0,
+        "scale": 1,
+        "visibleScaleType": 0
+      }
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "98A01E4F-D224-4AAC-B524-9D3DD6530B80",
+    "height": 40,
+    "width": 39.99919445787014,
+    "x": 0,
+    "y": 3
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "54A4A73F-CB34-4E89-B87F-EFF8BB3527E6"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "shapePath",
+      "id": "EE5C1171-D571-4647-A789-E34EA4144178"
+    },
+    {
+      "class": "shapePath",
+      "id": "22647F04-0811-487B-B3B5-91608F3E26E9"
+    },
+    {
+      "class": "shapePath",
+      "id": "0096510C-34E7-4224-8374-5E9EC93384EC"
+    },
+    {
+      "class": "shapePath",
+      "id": "94FC72F8-6FD6-4D9C-A6FE-1A06F3847DCE"
+    }
+  ],
+  "name": "Logo Icon",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "78652396-0120-40DC-AB79-03C1DF84CC63",
+    "endMarkerType": 0,
+    "fills": [
+      {
+        "_class": "fill",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 1,
+          "green": 0.4823529411764707,
+          "red": 0
+        },
+        "fillType": 0,
+        "isEnabled": true,
+        "noiseIndex": 0,
+        "noiseIntensity": 0,
+        "patternFillType": 1,
+        "patternTileScale": 1
+      }
+    ],
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  },
+  "windingRule": 1
+}

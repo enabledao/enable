@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "B16EF0F4-A03F-4DA9-A986-C9ECEC79C1A9",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 292,
+    "width": 403,
+    "x": 1388,
+    "y": 0
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "layers": [
+    {
+      "class": "group",
+      "id": "7918A69A-9B58-48F4-80AC-7CB0A327F61C"
+    },
+    {
+      "class": "text",
+      "id": "E64A8663-EABF-46A5-91E4-74002CC3E918"
+    },
+    {
+      "class": "text",
+      "id": "745A02E0-6F1B-47C0-9F14-AB7F70470FB3"
+    },
+    {
+      "class": "group",
+      "id": "2E1504FB-A340-46BB-B8B0-7B81AA4204A8"
+    }
+  ],
+  "name": "Grace Period",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

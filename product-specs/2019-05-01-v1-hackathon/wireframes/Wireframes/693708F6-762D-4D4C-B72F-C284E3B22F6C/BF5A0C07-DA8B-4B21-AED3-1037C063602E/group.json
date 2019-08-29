@@ -1,0 +1,85 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "BF5A0C07-DA8B-4B21-AED3-1037C063602E",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "3E51EBAE-4443-4094-8D79-3F248AA82901",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "D9129E8D-6B5F-440B-A9E6-555839FA058F",
+    "height": 893,
+    "width": 2257,
+    "x": 297,
+    "y": 7159
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "9EF86E55-0475-4B62-AF76-8547AC389BF8"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "5FD8B2EB-AA3F-40C4-A737-FC9E266D1C1C"
+    },
+    {
+      "class": "group",
+      "id": "4E0E2DDC-72CC-4E41-BE21-7C46738BFADB"
+    },
+    {
+      "class": "group",
+      "id": "1899879E-D4F8-4532-8DA6-7A603D4158C1"
+    },
+    {
+      "class": "group",
+      "id": "54F88FF0-371C-4CA6-BD39-8A61366004BC"
+    },
+    {
+      "class": "group",
+      "id": "38E336E9-50D1-42F5-87B1-B13F8D17184A"
+    },
+    {
+      "class": "group",
+      "id": "E537643C-48B2-44A8-B47F-8DBEDC811D12"
+    },
+    {
+      "class": "group",
+      "id": "7BB89CD2-E0D2-488A-B948-1922246C7B49"
+    },
+    {
+      "class": "group",
+      "id": "3679CC99-E18A-4C56-B7D1-C143A9BD4F71"
+    }
+  ],
+  "name": "Discussions - Component",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "85A89A78-26FF-4C92-A09E-EE531D7E9C89",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

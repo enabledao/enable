@@ -1,0 +1,69 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "BC2CF67A-BD76-4976-A1A4-633BA7A21BFF",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "98E878EE-E135-478A-942B-F50A2029393C",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "A7AA2B3C-2993-477A-B312-8F12B812EB3C",
+    "height": 873,
+    "width": 665,
+    "x": 302.9999999999999,
+    "y": 7681
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "B6D0D6C0-94E1-479D-8D1B-2E9DBE0C9493"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "099DFD00-C27E-47BA-B9D4-354D439510C5"
+    },
+    {
+      "class": "text",
+      "id": "43FCBFC7-DA01-46D4-8F0A-0878B64C755A"
+    },
+    {
+      "class": "text",
+      "id": "FD22CB4D-6FE9-4762-9C53-53B38906A66B"
+    },
+    {
+      "class": "bitmap",
+      "id": "49A53E67-E52D-4CD1-B612-D54EE53F9FCD"
+    }
+  ],
+  "name": "Dharma",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "ECB8E122-A931-4DDA-B0A1-7C6D558E68B4",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

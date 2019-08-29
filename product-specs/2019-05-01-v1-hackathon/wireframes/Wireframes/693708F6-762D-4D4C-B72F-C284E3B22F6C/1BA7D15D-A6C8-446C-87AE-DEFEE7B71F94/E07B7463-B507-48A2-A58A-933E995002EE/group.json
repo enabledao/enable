@@ -1,0 +1,61 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "E07B7463-B507-48A2-A58A-933E995002EE",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "184B6515-13F5-416A-BEA4-19B9842ECB94",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "80E61667-336B-44C6-8DE9-6A508231F34D",
+    "height": 82,
+    "width": 262,
+    "x": 918,
+    "y": 273
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "0DE0F1D7-D949-4A74-9B5B-3DFEF13B81C5"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "4C652BFA-8EB4-4C8C-A918-7FF4BD4D162E"
+    },
+    {
+      "class": "text",
+      "id": "92FCCAF1-8997-488C-A488-1F53F8797171"
+    }
+  ],
+  "name": "Dashboard Button",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "52C3C806-829A-4A9D-9AAE-783D9457AAA6",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

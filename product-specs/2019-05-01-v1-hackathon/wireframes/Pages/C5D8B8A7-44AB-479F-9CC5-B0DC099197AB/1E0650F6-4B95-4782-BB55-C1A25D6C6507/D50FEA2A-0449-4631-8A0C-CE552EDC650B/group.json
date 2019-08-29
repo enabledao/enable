@@ -1,0 +1,60 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "D50FEA2A-0449-4631-8A0C-CE552EDC650B",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "FB849F2D-7557-4C93-A6AE-4367995C2C6E",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "4361B1E9-5CA8-4E52-9425-FADF8387DC92",
+    "height": 135,
+    "width": 570,
+    "x": 0,
+    "y": 0
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "20D8C7A3-9B95-4C7D-9FE0-1B1B9669DC70"
+    },
+    {
+      "class": "group",
+      "id": "21127B47-A320-41CC-8E35-891E64AADC24"
+    }
+  ],
+  "name": "Sidebar Header (Logo)",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "9889AF43-BBC1-41B1-BD6F-0CC742DC6686",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

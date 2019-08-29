@@ -1,0 +1,64 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "364917B7-1C73-453F-8C53-4A6D6789D73B",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "60A19505-C485-4332-93F4-4F9A623BE40D",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "CFB8E91B-4F96-42FD-A439-397456278F83",
+    "height": 99,
+    "width": 645,
+    "x": 41,
+    "y": 156
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "0211799E-7633-40BF-9658-1069FD209535"
+    },
+    {
+      "class": "text",
+      "id": "ECA2C7F3-1AB5-4698-BBAD-9F3EC328F91A"
+    },
+    {
+      "class": "text",
+      "id": "295C7FA2-E7FF-4EBF-9CB3-C13380312911"
+    }
+  ],
+  "name": "Input - Form Field - First Name",
+  "nameIsFixed": true,
+  "resizingConstraint": 15,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "CF9CAE06-39A5-47D3-91F1-011E5F0183AC",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

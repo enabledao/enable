@@ -1,0 +1,57 @@
+{
+  "_class": "group",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "6F1273AF-EA8B-4DAD-894C-DB1F24FEF8FF",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "C4DF5069-941D-49A5-B130-17C1DFF49CB3",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "A5DA1799-00A0-4BF5-A307-EA48F9807B23",
+    "height": 37,
+    "width": 88,
+    "x": 7.924203273040614,
+    "y": 101.8445453150017
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "22809AD0-BC71-4141-B3BA-A95E14491E22"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "shapeGroup",
+      "id": "C7E915EE-5158-40DE-AE74-026DC9F4463F"
+    }
+  ],
+  "name": "Legs skin",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "68779C9F-3D98-4DEE-B9DF-265D2F0A6362",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

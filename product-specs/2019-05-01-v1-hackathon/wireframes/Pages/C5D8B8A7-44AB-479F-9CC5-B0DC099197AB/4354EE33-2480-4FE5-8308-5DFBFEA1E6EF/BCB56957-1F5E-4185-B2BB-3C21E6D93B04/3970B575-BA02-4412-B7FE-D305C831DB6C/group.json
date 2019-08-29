@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "3970B575-BA02-4412-B7FE-D305C831DB6C",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 58,
+    "width": 603,
+    "x": 31,
+    "y": 25
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "87FE3DC2-1178-429B-98BB-93CAB7D71643"
+    },
+    {
+      "class": "shapeGroup",
+      "id": "5F08A58B-E0E2-419F-B5B3-8EEDBAB4B616"
+    },
+    {
+      "class": "group",
+      "id": "B563D69C-8A29-4A87-BE69-A533BC8F8781"
+    },
+    {
+      "class": "group",
+      "id": "14F8D945-F31F-471F-854E-1C688F53E7D4"
+    }
+  ],
+  "name": "Date Range - Input Group",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

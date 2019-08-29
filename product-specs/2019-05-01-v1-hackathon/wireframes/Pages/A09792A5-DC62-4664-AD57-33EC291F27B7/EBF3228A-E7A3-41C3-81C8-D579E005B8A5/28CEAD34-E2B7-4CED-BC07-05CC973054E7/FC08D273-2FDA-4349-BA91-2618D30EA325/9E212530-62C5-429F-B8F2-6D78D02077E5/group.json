@@ -1,0 +1,60 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "9E212530-62C5-429F-B8F2-6D78D02077E5",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "D50C8A96-9865-43F1-B8CF-75DF4543D802",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "1F2C2F68-C84E-46A9-A77E-8A27FABE3022",
+    "height": 29,
+    "width": 29,
+    "x": 53,
+    "y": 44
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "shapeGroup",
+      "id": "A2504BEE-6BB8-41DE-9348-138EBCC2C4BB"
+    },
+    {
+      "class": "shapePath",
+      "id": "6469FFD8-04AE-468D-85B6-4E3DDD0711C7"
+    }
+  ],
+  "name": "Blog Icon",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "0FD90217-8C9D-42C6-8F5B-1020A4736204",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

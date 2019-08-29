@@ -1,0 +1,60 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "311CE3D5-A8D3-42AE-A85C-C8B19BF67CA4",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "0C02FA24-9E37-4B88-A4C0-F181D61D2186",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "EBC3692D-5C9D-4E1C-A778-5282BAE02112",
+    "height": 26,
+    "width": 26,
+    "x": 56,
+    "y": 46
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "layers": [
+    {
+      "class": "shapePath",
+      "id": "03CB133D-644C-4A7C-B0F0-0EADE627F7AF"
+    },
+    {
+      "class": "shapeGroup",
+      "id": "2E1377DE-C37E-4F25-A39D-409FE054BC03"
+    }
+  ],
+  "name": "Forms & Components Icon",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "66557FF2-AB2B-4C44-99CB-36C8C7527A03",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

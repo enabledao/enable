@@ -1,0 +1,60 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "AB8E85FB-5FFD-445D-98CB-ED58F30602B5",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "A258448B-6604-450E-8284-BED9EFE0CD89",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "AB363AC0-E355-4E8B-84E0-0CEDFE901E31",
+    "height": 24,
+    "width": 24,
+    "x": 57,
+    "y": 47
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "shapePath",
+      "id": "CC80CC90-C9A2-461C-AFB9-7472A404DA37"
+    },
+    {
+      "class": "shapeGroup",
+      "id": "8C35B9F3-702E-4161-A2D1-C445B1A86125"
+    }
+  ],
+  "name": "Add New Post Icon",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "6E815DB5-7579-4B55-82F5-F5673D04F5A2",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

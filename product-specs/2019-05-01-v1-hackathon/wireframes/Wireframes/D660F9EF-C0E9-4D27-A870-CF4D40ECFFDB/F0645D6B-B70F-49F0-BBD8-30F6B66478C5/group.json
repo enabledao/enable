@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "F0645D6B-B70F-49F0-BBD8-30F6B66478C5",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 873,
+    "width": 665,
+    "x": 1077,
+    "y": 7681
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "E2C9D49A-AC1B-4349-8201-C62DB99C60C1"
+    },
+    {
+      "class": "text",
+      "id": "5DB1A3C4-8828-4E05-9BE9-81F264883F79"
+    },
+    {
+      "class": "text",
+      "id": "AEBAF1B0-F204-4725-807B-AACBFD1A36E5"
+    },
+    {
+      "class": "bitmap",
+      "id": "C1D03E3F-320A-4D36-86EE-40371129616A"
+    }
+  ],
+  "name": "Bloom",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

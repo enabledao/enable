@@ -1,0 +1,52 @@
+[2019-08-19 13:23:44.8570] - INFO - Reading from /Users/felix/Library/Mobile Documents/com~apple~CloudDocs/Documents/InesFund_var6-HaasUnica.framerfx (origin); preserving existing contents of project folder: true
+[2019-08-19 13:23:44.8600] - INFO - Done reading
+[2019-08-19 13:23:44.8610] - INFO - Marking changed: false
+[2019-08-19 13:23:44.8630] - INFO - Marking changed: false
+[2019-08-19 13:23:44.8730] - DEBUG - [Save session: 0] Completed super.save
+[2019-08-19 13:23:44.8810] - INFO - Marking changed: false
+[2019-08-19 13:23:44.9040] - ERROR - Cannot read script index.js { Error: ENOENT: no such file or directory, open '/Users/felix/Library/Mobile Documents/com~apple~CloudDocs/Documents/InesFund_var6-HaasUnica.framerfx/build/index.js'
+[2019-08-19 13:23:44.9040] - ERROR -     at Object.openSync (fs.js:436:3)
+[2019-08-19 13:23:44.9050] - ERROR -     at Object.readFileSync (fs.js:341:35)
+[2019-08-19 13:23:44.9050] - ERROR -     at getBuiltScript (/Applications/Framer X.app/Contents/Resources/Server/lib/project.js:1415:19)
+[2019-08-19 13:23:44.9050] - ERROR -     at readCachedBuildOutput (/Applications/Framer X.app/Contents/Resources/Server/lib/project.js:1403:21)
+[2019-08-19 13:23:44.9050] - ERROR -     at Project.sendScript (/Applications/Framer X.app/Contents/Resources/Server/lib/project.js:65:39)
+[2019-08-19 13:23:44.9050] - ERROR -     at Project.onServerStart (/Applications/Framer X.app/Contents/Resources/Server/lib/project.js:988:14)
+[2019-08-19 13:23:44.9050] - ERROR -     at Server.handleServerCommand (/Applications/Framer X.app/Contents/Resources/Server/lib/server.js:393:25)
+[2019-08-19 13:23:44.9050] - ERROR -     at Socket.socket.on.info (/Applications/Framer X.app/Contents/Resources/Server/lib/server.js:270:31)
+[2019-08-19 13:23:44.9050] - ERROR -     at Socket.emit (events.js:182:13)
+[2019-08-19 13:23:44.9050] - ERROR -     at /Applications/Framer X.app/Contents/Resources/Server/node_modules/socket.io/lib/socket.js:527:12
+[2019-08-19 13:23:44.9050] - ERROR -   errno: -2,
+[2019-08-19 13:23:44.9050] - ERROR -   syscall: 'open',
+[2019-08-19 13:23:44.9050] - ERROR -   code: 'ENOENT',
+[2019-08-19 13:23:44.9050] - ERROR -   path:
+[2019-08-19 13:23:44.9050] - ERROR -    '/Users/felix/Library/Mobile Documents/com~apple~CloudDocs/Documents/InesFund_var6-HaasUnica.framerfx/build/index.js' }
+[2019-08-19 13:23:44.9320] - ERROR - Unhandled Rejection at: Promise Promise {
+[2019-08-19 13:23:44.9320] - ERROR -   <rejected> Error: Error updating package.json Error: ENOENT: no such file or directory, open '/Users/felix/Library/Mobile Documents/com~apple~CloudDocs/Documents/InesFund_var6-HaasUnica.framerfx/package.json'
+[2019-08-19 13:23:44.9320] - ERROR -       at Project.<anonymous> (/Applications/Framer X.app/Contents/Resources/Server/lib/project.js:1132:23)
+[2019-08-19 13:23:44.9320] - ERROR -       at Generator.throw (<anonymous>)
+[2019-08-19 13:23:44.9320] - ERROR -       at rejected (/Applications/Framer X.app/Contents/Resources/Server/lib/project.js:5:65) } reason: Error: Error updating package.json Error: ENOENT: no such file or directory, open '/Users/felix/Library/Mobile Documents/com~apple~CloudDocs/Documents/InesFund_var6-HaasUnica.framerfx/package.json'
+[2019-08-19 13:23:44.9320] - ERROR -     at Project.<anonymous> (/Applications/Framer X.app/Contents/Resources/Server/lib/project.js:1132:23)
+[2019-08-19 13:23:44.9320] - ERROR -     at Generator.throw (<anonymous>)
+[2019-08-19 13:23:44.9320] - ERROR -     at rejected (/Applications/Framer X.app/Contents/Resources/Server/lib/project.js:5:65)
+[2019-08-19 13:23:44.9840] - INFO - GET 404 /node_modules/framer/build/framer.debug.js 180 B (4ms)
+[2019-08-19 13:23:47.2970] - INFO - Installing dependencies...
+[2019-08-19 13:23:47.4650] - INFO - GET 200 /node_modules/framer/build/framer.debug.js 0 B (4ms)
+[2019-08-19 13:23:47.5400] - ERROR - Cannot read script index.js { Error: ENOENT: no such file or directory, open '/Users/felix/Library/Mobile Documents/com~apple~CloudDocs/Documents/InesFund_var6-HaasUnica.framerfx/build/index.js'
+[2019-08-19 13:23:47.5400] - ERROR -     at Object.openSync (fs.js:436:3)
+[2019-08-19 13:23:47.5400] - ERROR -     at Object.readFileSync (fs.js:341:35)
+[2019-08-19 13:23:47.5400] - ERROR -     at getBuiltScript (/Applications/Framer X.app/Contents/Resources/Server/lib/project.js:1415:19)
+[2019-08-19 13:23:47.5400] - ERROR -     at readCachedBuildOutput (/Applications/Framer X.app/Contents/Resources/Server/lib/project.js:1403:21)
+[2019-08-19 13:23:47.5400] - ERROR -     at Project.sendScript (/Applications/Framer X.app/Contents/Resources/Server/lib/project.js:65:39)
+[2019-08-19 13:23:47.5400] - ERROR -     at Namespace.io.on.socket (/Applications/Framer X.app/Contents/Resources/Server/lib/server.js:280:42)
+[2019-08-19 13:23:47.5400] - ERROR -     at Namespace.emit (events.js:187:15)
+[2019-08-19 13:23:47.5400] - ERROR -     at Namespace.emit (/Applications/Framer X.app/Contents/Resources/Server/node_modules/socket.io/lib/namespace.js:213:10)
+[2019-08-19 13:23:47.5400] - ERROR -     at /Applications/Framer X.app/Contents/Resources/Server/node_modules/socket.io/lib/namespace.js:180:14
+[2019-08-19 13:23:47.5400] - ERROR -     at process._tickCallback (internal/process/next_tick.js:61:11)
+[2019-08-19 13:23:47.5400] - ERROR -   errno: -2,
+[2019-08-19 13:23:47.5400] - ERROR -   syscall: 'open',
+[2019-08-19 13:23:47.5410] - ERROR -   code: 'ENOENT',
+[2019-08-19 13:23:47.5410] - ERROR -   path:
+[2019-08-19 13:23:47.5410] - ERROR -    '/Users/felix/Library/Mobile Documents/com~apple~CloudDocs/Documents/InesFund_var6-HaasUnica.framerfx/build/index.js' }
+[2019-08-19 13:23:47.7550] - INFO - Installing dependencies - DONE. Took 458ms
+[2019-08-19 13:23:48.8000] - INFO - _handleWatch: build took 137ms
+[2019-08-19 13:23:49.0690] - INFO - _handleWatch: updated scripts - index.js

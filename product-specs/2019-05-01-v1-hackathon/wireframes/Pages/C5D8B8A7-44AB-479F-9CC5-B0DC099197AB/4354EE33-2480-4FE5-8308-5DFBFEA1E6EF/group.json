@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "4354EE33-2480-4FE5-8308-5DFBFEA1E6EF",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 832,
+    "width": 1395,
+    "x": 625,
+    "y": 656
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "4912B2A1-FAFD-4CA4-A895-A2BBC3DCA184"
+    },
+    {
+      "class": "group",
+      "id": "75E1249D-6C3A-4DC1-9D65-0ABE6C91D824"
+    },
+    {
+      "class": "group",
+      "id": "BCB56957-1F5E-4185-B2BB-3C21E6D93B04"
+    },
+    {
+      "class": "group",
+      "id": "52A5FC8D-2D22-4800-90E5-990832C0556D"
+    }
+  ],
+  "name": "Users - Component",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

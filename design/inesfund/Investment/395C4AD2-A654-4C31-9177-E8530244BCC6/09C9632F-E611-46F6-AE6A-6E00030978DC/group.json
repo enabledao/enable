@@ -1,0 +1,61 @@
+{
+  "_class": "group",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "09C9632F-E611-46F6-AE6A-6E00030978DC",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "5BE3BC78-86B6-4353-91F1-19438AA1707E",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "E2459033-4E91-49A9-B9C7-3AD7B6C851E0",
+    "height": 114,
+    "width": 1092,
+    "x": 168,
+    "y": 209
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "02FB9EBC-AD31-49D0-942A-6827B12350D1"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "group",
+      "id": "7FB699F0-BB59-4911-AC39-257A0DC830C5"
+    },
+    {
+      "class": "symbolInstance",
+      "id": "B23CFB7D-687F-4F93-9125-4A9AB4168EFF"
+    }
+  ],
+  "name": "Atoms/Card",
+  "nameIsFixed": false,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "E0BB0031-33D8-4691-B7CD-58522E598D3E",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

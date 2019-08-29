@@ -1,0 +1,60 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "3B986D3E-23F5-40EA-A60D-9B6F921CEA24",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "A999E8B2-9825-4427-8AE9-85E2F046950B",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "05B0A713-AB7D-4EAB-967E-9FCF1EFB9A3C",
+    "height": 58,
+    "width": 190,
+    "x": 40,
+    "y": 806
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "AC70306E-F7EF-4C28-9D7C-D0CB7ADC5D5A"
+    },
+    {
+      "class": "text",
+      "id": "13DCBE98-E5C1-41AE-A3AE-12A8EB6C30B2"
+    }
+  ],
+  "name": "Create Draft - Submit",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "AA68D0DE-8F6A-42F5-B72A-82919BD0B6CA",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

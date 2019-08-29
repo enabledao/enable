@@ -1,0 +1,61 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "BDD15B46-0A7D-4142-AD2A-3056AD42B6C1",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "D5DA5F0F-B389-46C2-9BC5-28F89D57FEE6",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "484C954F-1488-4B5A-87C4-E6B5DB6CB8BA",
+    "height": 100,
+    "width": 277,
+    "x": 526,
+    "y": 234
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "178CF751-8B01-49B4-A2E3-B56FC0E5475B"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "AA659893-7F84-4FF6-BA32-C83BA47F968E"
+    },
+    {
+      "class": "text",
+      "id": "924B0991-37F5-4179-80E6-095F8D75FA54"
+    }
+  ],
+  "name": "Funding Button",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "5CFD5C45-FBAB-41B3-A189-D0AEC9230499",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

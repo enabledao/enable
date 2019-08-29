@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "C4771420-E8AD-4108-8A9F-CD62C1F9D271",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 281,
+    "width": 384,
+    "x": 1737,
+    "y": 0
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "group",
+      "id": "F0E01B40-66DB-41BE-ACF6-9DF6D0605A33"
+    },
+    {
+      "class": "text",
+      "id": "DCEFCF5B-1054-41FD-8D43-AAF866E5AD1B"
+    },
+    {
+      "class": "text",
+      "id": "C247A40F-759E-4633-8D0F-73D8871E3AAB"
+    },
+    {
+      "class": "group",
+      "id": "047BCBE7-4F5B-4844-9E51-A3579099CB25"
+    }
+  ],
+  "name": "Subscribers - Small Metric",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "_class": "symbolInstance",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "42C8010B-5DD5-4E8B-BF9E-3D882305CFE1",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "4458FC5F-89F3-4A09-8E98-3665965B9388",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "A8F61B6E-81CD-4176-8341-748DEA5EE453",
+    "height": 77,
+    "width": 396,
+    "x": 312,
+    "y": 366
+  },
+  "hasClippingMask": false,
+  "horizontalSpacing": 0,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "name": "Atoms/Input",
+  "nameIsFixed": false,
+  "overrideValues": [
+    {
+      "_class": "overrideValue",
+      "do_objectID": "B31EC3B0-B056-4D7E-A57D-8D2D4E08DC5E",
+      "overrideName": "C77D0DE8-DF0C-4201-9694-E4C8EDDECE4E_stringValue",
+      "value": "Name"
+    },
+    {
+      "_class": "overrideValue",
+      "do_objectID": "695ACB23-DD84-4E5F-B952-1B55922DCAF1",
+      "overrideName": "DE3A3B90-00D1-4B5F-89BB-6D234B098D70_stringValue",
+      "value": "John Doe"
+    }
+  ],
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "scale": 1,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "1E8E6A8B-996D-41BF-8319-1BCF0CFEC35C",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  },
+  "symbolID": "2051002A-B37A-4BCA-B394-70F60BA03A92",
+  "verticalSpacing": 0
+}

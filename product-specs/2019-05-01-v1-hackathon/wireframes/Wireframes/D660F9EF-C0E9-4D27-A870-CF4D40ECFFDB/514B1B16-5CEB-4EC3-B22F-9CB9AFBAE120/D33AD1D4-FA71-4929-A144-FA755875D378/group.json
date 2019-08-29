@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "D33AD1D4-FA71-4929-A144-FA755875D378",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "ECADEC27-1BB0-400E-AEC2-05786293BAE2",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "02E3603D-FDAF-4696-A4CB-D43066EA8603",
+    "height": 633,
+    "width": 665,
+    "x": 774,
+    "y": 964
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "1429F96D-FFB5-469B-AC72-EB8476F6ADB0"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "B4253C0D-4AB8-4D34-A5E7-5C9F32658FED"
+    },
+    {
+      "class": "text",
+      "id": "F4E7A767-B42E-42CA-8EBE-5C16C4A2D05B"
+    },
+    {
+      "class": "text",
+      "id": "950B0482-062D-40BB-9D68-0074B439E6B3"
+    }
+  ],
+  "name": "Repayment Tracking",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "2ED30C4E-42E6-409E-B3DD-816776FDFCA2",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

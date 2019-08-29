@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "E5C3A2E8-57DC-4695-B514-2AD7A855A835",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "7DBBD39A-F278-4612-BB57-8FA040F21B2C",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "E33D447B-C677-4B06-9266-D0E6C5A2E6A7",
+    "height": 81,
+    "width": 559,
+    "x": 1215,
+    "y": 273
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "E9E27EA1-18AC-4F4E-8E48-FA29A32875FC"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "E5994FC2-A206-43DD-B5A3-D2D6602B89A4"
+    },
+    {
+      "class": "text",
+      "id": "2D7F9333-46E7-4C50-BEBA-ADC776C2D790"
+    },
+    {
+      "class": "group",
+      "id": "984AC923-5366-4922-87ED-3A733264E578"
+    }
+  ],
+  "name": "Cornell Admissions letter",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "2E22BB40-2F31-445F-B313-4800CB296E19",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

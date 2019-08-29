@@ -1,0 +1,71 @@
+{
+  "_class": "symbolInstance",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "984AF495-B68C-405B-BF83-F4349281A4F4",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "7213F6B2-9127-49B9-BB31-0220FE9D64A2",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "39E78DD9-F59D-4A7B-AD9B-D31E20AE22EA",
+    "height": 48,
+    "width": 376,
+    "x": 0,
+    "y": 137
+  },
+  "hasClippingMask": false,
+  "horizontalSpacing": 0,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "name": "Atoms/Avatar Copy",
+  "nameIsFixed": false,
+  "overrideValues": [
+    {
+      "_class": "overrideValue",
+      "overrideName": "CA2C28C6-8B77-4121-9042-113B9DDCFC9B_stringValue",
+      "value": "Daniel Ong"
+    },
+    {
+      "_class": "overrideValue",
+      "overrideName": "BE400845-94FB-45BE-B7B2-81C1BEAD7FBC_stringValue",
+      "value": "Colleague"
+    },
+    {
+      "_class": "overrideValue",
+      "overrideName": "3B46F09C-5652-4C3B-9FC4-A5E6E72D6CAC_image",
+      "value": {
+        "_class": "MSJSONFileReference",
+        "_ref": "images/7bad874d54451e17a7e84aefa8a375ea8c86c1e0.png",
+        "_ref_class": "MSImageData"
+      }
+    }
+  ],
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "scale": 1,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "1D24F520-F18B-4601-85DF-9177A715E621",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  },
+  "symbolID": "95186DC0-882C-4333-943B-5741E0B37A5C",
+  "verticalSpacing": 0
+}

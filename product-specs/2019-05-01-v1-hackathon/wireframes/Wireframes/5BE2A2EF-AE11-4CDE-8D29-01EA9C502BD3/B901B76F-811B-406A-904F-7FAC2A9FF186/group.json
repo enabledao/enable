@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "B901B76F-811B-406A-904F-7FAC2A9FF186",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 659,
+    "width": 1058,
+    "x": 1434,
+    "y": 905
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "B9F14507-C7C2-45B2-BDC8-5952E4B58602"
+    },
+    {
+      "class": "text",
+      "id": "45D53A94-B0D9-402E-A370-D8055F293DD3"
+    },
+    {
+      "class": "group",
+      "id": "53CD4DA1-A683-4FDC-AD9A-E0811A502A17"
+    },
+    {
+      "class": "group",
+      "id": "D07CD63D-A0FC-4003-81E3-B3C0125C078F"
+    }
+  ],
+  "name": "Social Attestation",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

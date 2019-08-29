@@ -1,0 +1,108 @@
+{
+  "_class": "artboard",
+  "backgroundColor": {
+    "_class": "color",
+    "alpha": 1,
+    "blue": 0.9686274509803922,
+    "green": 0.9686274509803922,
+    "red": 0.9686274509803922
+  },
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "634EC7F0-0126-4531-830B-18506B6D661D",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 640,
+    "width": 360,
+    "x": 2305,
+    "y": -2236
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasBackgroundColor": true,
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "horizontalRulerData": {
+    "_class": "rulerData",
+    "base": 0,
+    "guides": [
+    ]
+  },
+  "includeBackgroundColorInExport": true,
+  "includeInCloudUpload": true,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isFlowHome": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "EA31EECB-2568-4E8E-BD71-9795A33F1313"
+    },
+    {
+      "class": "group",
+      "id": "5EA493C3-D45A-44BF-B54C-E7874F72DAAF"
+    },
+    {
+      "class": "group",
+      "id": "3DE5CE2C-DE85-4205-942A-4102C4CAF167"
+    },
+    {
+      "class": "group",
+      "id": "EE459B11-49ED-4B9F-B24D-0A9E72C27312"
+    },
+    {
+      "class": "group",
+      "id": "14ECD87E-5DEF-4319-A3CC-A536686D3768"
+    },
+    {
+      "class": "group",
+      "id": "97F9EA17-905B-434D-88B9-45BFD322CA9A"
+    },
+    {
+      "class": "group",
+      "id": "453C3348-13CD-44CE-B946-B851C4360A61"
+    }
+  ],
+  "name": "Mobile_Investment_2",
+  "nameIsFixed": true,
+  "presetDictionary": {
+    "allowResizedMatching": 0,
+    "height": 640,
+    "name": "Android",
+    "offersLandscapeVariant": 1,
+    "width": 360
+  },
+  "resizesContent": false,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": true,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  },
+  "verticalRulerData": {
+    "_class": "rulerData",
+    "base": 0,
+    "guides": [
+    ]
+  }
+}
