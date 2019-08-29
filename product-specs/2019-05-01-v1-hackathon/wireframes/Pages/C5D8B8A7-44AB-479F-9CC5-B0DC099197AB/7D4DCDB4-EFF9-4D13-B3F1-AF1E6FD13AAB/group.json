@@ -1,0 +1,73 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "7D4DCDB4-EFF9-4D13-B3F1-AF1E6FD13AAB",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 893,
+    "width": 850,
+    "x": 1351,
+    "y": 1528
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "D37A0431-0C75-4DFE-9381-06B6B35D6532"
+    },
+    {
+      "class": "group",
+      "id": "369BDB14-046A-48CB-A8C6-365125F39059"
+    },
+    {
+      "class": "group",
+      "id": "9AEEF03D-9941-4840-BA24-FD2AAC3BCF9F"
+    },
+    {
+      "class": "group",
+      "id": "5E2E6E00-C327-424E-94E1-23B5BA068483"
+    },
+    {
+      "class": "group",
+      "id": "31DB51E4-7F61-4A9F-8182-57CDD00CD9B2"
+    },
+    {
+      "class": "group",
+      "id": "C1450D3B-873D-4F8C-B876-629ED2719833"
+    }
+  ],
+  "name": "Discussions - Component",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

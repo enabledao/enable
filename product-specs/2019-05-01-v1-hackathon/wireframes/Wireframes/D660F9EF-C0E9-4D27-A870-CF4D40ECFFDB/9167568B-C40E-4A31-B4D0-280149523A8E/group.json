@@ -1,0 +1,61 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "9167568B-C40E-4A31-B4D0-280149523A8E",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "B8EB9C7E-188E-4089-B278-35610AEF6DCA",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "14C76206-F266-43A4-A7F5-3C0C35504F01",
+    "height": 931,
+    "width": 1650,
+    "x": 575,
+    "y": 712
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "40FA7AB7-CC9B-46E5-B71B-10CB23B8395A"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "group",
+      "id": "9B500715-5618-4431-BF7B-F9E9D6B39936"
+    },
+    {
+      "class": "group",
+      "id": "CA88AB29-5384-4BAB-A279-9A9F41151415"
+    }
+  ],
+  "name": "World dotted map",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "B8DB936E-5AF9-455A-BB80-F725370C9B51",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

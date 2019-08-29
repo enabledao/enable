@@ -1,0 +1,60 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "F67D4578-F776-4A97-864A-CFB9EC0191E0",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "CC8620EF-3DCC-4E47-81E2-8CFA9F56203D",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "E06EE362-D9AB-4855-931F-5E5775EC9BD1",
+    "height": 117,
+    "width": 1395,
+    "x": 0,
+    "y": 0
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "51C6D70B-D1F7-4F8C-AE31-E2D60A39DB29"
+    },
+    {
+      "class": "text",
+      "id": "476A7190-B8A9-4BDE-908D-15CFCE206AEF"
+    }
+  ],
+  "name": "Card Header",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "DFD726C9-9F45-439C-A1E0-FAE4463871F5",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

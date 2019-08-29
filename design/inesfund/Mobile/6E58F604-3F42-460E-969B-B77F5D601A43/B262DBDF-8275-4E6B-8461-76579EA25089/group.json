@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "B262DBDF-8275-4E6B-8461-76579EA25089",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 151,
+    "width": 396,
+    "x": 16,
+    "y": 1090
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "text",
+      "id": "196FDCC1-1D16-4035-AF84-DB43C9CD1A26"
+    },
+    {
+      "class": "text",
+      "id": "39B00388-A41C-48E1-95B7-D32DA3E3D694"
+    },
+    {
+      "class": "group",
+      "id": "83410AB6-FC61-424D-A502-BE8BBE35BB82"
+    },
+    {
+      "class": "group",
+      "id": "FC76AC80-6811-497A-848E-1E65B5287B3D"
+    }
+  ],
+  "name": "Social Credits",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

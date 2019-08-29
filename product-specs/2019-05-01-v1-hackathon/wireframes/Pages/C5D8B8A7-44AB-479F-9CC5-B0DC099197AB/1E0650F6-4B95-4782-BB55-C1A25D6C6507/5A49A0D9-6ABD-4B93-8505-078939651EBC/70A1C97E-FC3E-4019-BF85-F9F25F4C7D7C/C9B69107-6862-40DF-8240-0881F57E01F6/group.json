@@ -1,0 +1,60 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "C9B69107-6862-40DF-8240-0881F57E01F6",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "B4695C19-EE14-45EE-86FF-7E35FCCED5CD",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "70EF46F6-3843-4B17-B32C-85EF178B5F62",
+    "height": 36,
+    "width": 36,
+    "x": 52,
+    "y": 42
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "layers": [
+    {
+      "class": "shapeGroup",
+      "id": "E9A00F8D-2D8D-46E9-985E-625C80BB4F20"
+    },
+    {
+      "class": "shapePath",
+      "id": "9BA3A52C-A1C9-4463-A934-543A7B7B113A"
+    }
+  ],
+  "name": "Overview (Components) Icon",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "930DE6DF-96C7-4007-A739-0D1BF4830FD6",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

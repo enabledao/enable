@@ -1,0 +1,60 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "2A78904C-2B38-4889-8E7C-6BDA78C4FAA4",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "16E1F5AB-55B5-49BD-8DF3-5D4221EC5398",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "A8E60A90-F601-4EDD-8269-93C68577EA5C",
+    "height": 28,
+    "width": 28,
+    "x": 55,
+    "y": 45
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "shapePath",
+      "id": "8F86E03B-5F29-4D0F-8C8B-21E9CDCA75F8"
+    },
+    {
+      "class": "shapeGroup",
+      "id": "8A0E16A6-9B72-4574-8077-EBA430F5A62B"
+    }
+  ],
+  "name": "Error Icon",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "6D403DF7-6D6D-4E96-9043-B4DA2561E17F",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

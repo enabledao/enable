@@ -1,0 +1,197 @@
+{
+  "_class": "document",
+  "assets": {
+    "_class": "assetCollection",
+    "colorAssets": [
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.192156862745098,
+          "green": 0.1058823529411765,
+          "red": 0.08627450980392157
+        }
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.3803921568627451,
+          "green": 0.2941176470588235,
+          "red": 0.2745098039215687
+        }
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.4784313725490196,
+          "green": 0.4274509803921568,
+          "red": 0.4235294117647059
+        }
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.2862745098039216,
+          "green": 0.7098039215686275,
+          "red": 0.1294117647058823
+        }
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.8470588235294118,
+          "green": 0.8470588235294118,
+          "red": 0.8470588235294118
+        }
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.9686274509803922,
+          "green": 0.9686274509803922,
+          "red": 0.9686274509803922
+        }
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 1,
+          "green": 1,
+          "red": 1
+        }
+      },
+      {
+        "_class": "MSImmutableColorAsset",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 0.8274509803921568,
+          "green": 0.231372549019608,
+          "red": 0.211764705882353
+        }
+      }
+    ],
+    "colors": [
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.192156862745098,
+        "green": 0.1058823529411765,
+        "red": 0.08627450980392157
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.3803921568627451,
+        "green": 0.2941176470588235,
+        "red": 0.2745098039215687
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.4784313725490196,
+        "green": 0.4274509803921568,
+        "red": 0.4235294117647059
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.2862745098039216,
+        "green": 0.7098039215686275,
+        "red": 0.1294117647058823
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.8470588235294118,
+        "green": 0.8470588235294118,
+        "red": 0.8470588235294118
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.9686274509803922,
+        "green": 0.9686274509803922,
+        "red": 0.9686274509803922
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 1,
+        "green": 1,
+        "red": 1
+      },
+      {
+        "_class": "color",
+        "alpha": 1,
+        "blue": 0.8274509803921568,
+        "green": 0.231372549019608,
+        "red": 0.211764705882353
+      }
+    ],
+    "gradientAssets": [
+    ],
+    "gradients": [
+    ],
+    "imageCollection": {
+      "_class": "imageCollection",
+      "images": {
+      }
+    },
+    "images": [
+    ]
+  },
+  "colorSpace": 0,
+  "do_objectID": "EBA7DF6F-57C8-44D2-8D86-DF9889FAF4EC",
+  "foreignLayerStyles": [
+  ],
+  "foreignSymbols": [
+  ],
+  "foreignTextStyles": [
+  ],
+  "layerSymbols": {
+    "_class": "symbolContainer",
+    "objects": [
+    ]
+  },
+  "meta": {
+    "appVersion": "57.1",
+    "build": 83088,
+    "version": 119
+  },
+  "pages": [
+    "Campaign",
+    "Mobile",
+    "Investment",
+    "Thank You",
+    "Checkout",
+    "Symbols"
+  ],
+  "userInfo": {
+    "com.invision.dsm": {
+      "libraryMetadata": {
+        "5d5ffee11604a4b179019331": {
+          "name": "Enable UI",
+          "styleguideId": "5d5ffee11604a4b179019331",
+          "updatedOn": "2019-08-23 14:59:53 +0000"
+        }
+      }
+    },
+    "com.invisionlabs.sync": {
+      "metadata": "{\"hasSynced\":0,\"hasProjectIdChanged\":0,\"projectId\":0,\"publicLink\":\"\",\"resolution\":2,\"syncAll\":1}"
+    }
+  }
+}

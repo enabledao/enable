@@ -1,0 +1,58 @@
+{
+  "_class": "symbolInstance",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "0D64550F-6A98-4D84-90CA-06AB9A0F8672",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "D610670D-5661-4904-AA9D-3006FA18DCBF",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "546463FD-03DD-41D9-9979-8A59618A8BBB",
+    "height": 48,
+    "width": 328,
+    "x": 16,
+    "y": 14
+  },
+  "hasClippingMask": false,
+  "horizontalSpacing": 0,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "name": "Atoms/Buttons",
+  "nameIsFixed": false,
+  "overrideValues": [
+    {
+      "_class": "overrideValue",
+      "do_objectID": "DFFBE5DC-B83B-4101-AE0A-1703E5C96ED9",
+      "overrideName": "A1120CE1-F211-44BC-A273-3EB54FEA1141_stringValue",
+      "value": "Withdraw"
+    }
+  ],
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "scale": 1,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "1FD2861C-BFA3-47F2-B6F2-667720EC242B",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  },
+  "symbolID": "81AA26A7-FA53-4BB4-8989-10F26714C65F",
+  "verticalSpacing": 0
+}

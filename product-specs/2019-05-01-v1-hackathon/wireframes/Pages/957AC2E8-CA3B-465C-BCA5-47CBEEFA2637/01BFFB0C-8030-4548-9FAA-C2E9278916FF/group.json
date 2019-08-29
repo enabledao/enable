@@ -1,0 +1,64 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "01BFFB0C-8030-4548-9FAA-C2E9278916FF",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "05BAEA7B-7966-4319-BB9C-9D3DC81555BA",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "ECE4E513-4B34-4A10-BFFD-B4A3211C2498",
+    "height": 1885,
+    "width": 570,
+    "x": 0,
+    "y": 0
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "0844AE5C-9E9A-48A9-B47B-784EDDE8289B"
+    },
+    {
+      "class": "group",
+      "id": "1602F4E5-2781-43AF-B7E7-F29706E9A15A"
+    },
+    {
+      "class": "group",
+      "id": "0219C133-2B08-4953-8230-409479091989"
+    }
+  ],
+  "name": "Sidebar Copy",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "B93F1E7B-1C89-4BA4-999D-E09D0580B889",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

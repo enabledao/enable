@@ -1,0 +1,105 @@
+{
+  "_class": "group",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "2C00EEF9-A1D4-4336-B812-229A77301907",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 510,
+    "width": 521,
+    "x": 0,
+    "y": 61
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "shapePath",
+      "id": "FAD9DBF4-123D-4199-BECC-37BAAF6BA8D3"
+    },
+    {
+      "class": "symbolInstance",
+      "id": "3332EE56-8D39-47D6-8BE9-EFFE63BD7385"
+    },
+    {
+      "class": "symbolInstance",
+      "id": "04CA9CE8-BEE5-4AAE-995F-B4A604B1693A"
+    },
+    {
+      "class": "symbolInstance",
+      "id": "5E5260A8-55B1-4308-9478-0EC6B8D19B91"
+    },
+    {
+      "class": "text",
+      "id": "B5F2A165-D407-40CF-B5C2-53A581B966EF"
+    },
+    {
+      "class": "text",
+      "id": "A314CC2C-4162-428D-A14E-88BCED71DF3F"
+    },
+    {
+      "class": "text",
+      "id": "948C2E5E-7E85-4D8D-9AE4-94D815887862"
+    },
+    {
+      "class": "text",
+      "id": "B9BD35B6-D8C8-4B06-8403-DCF327A340DE"
+    },
+    {
+      "class": "text",
+      "id": "E11AE350-7595-457C-9F71-5389931AF371"
+    },
+    {
+      "class": "text",
+      "id": "E6C92775-BB6F-4B0E-8DA7-385B89396370"
+    },
+    {
+      "class": "rectangle",
+      "id": "78AAFA03-553A-4FEB-9E45-E4DAC402DA99"
+    },
+    {
+      "class": "text",
+      "id": "16EDD9D3-B2AD-4765-B434-03C2BE53AF29"
+    },
+    {
+      "class": "rectangle",
+      "id": "E151297F-F051-4276-B892-282AE472CEE1"
+    },
+    {
+      "class": "shapePath",
+      "id": "FC5D907B-D37A-491B-BF2F-FB8F06591F2B"
+    }
+  ],
+  "name": "Group 23",
+  "nameIsFixed": false,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

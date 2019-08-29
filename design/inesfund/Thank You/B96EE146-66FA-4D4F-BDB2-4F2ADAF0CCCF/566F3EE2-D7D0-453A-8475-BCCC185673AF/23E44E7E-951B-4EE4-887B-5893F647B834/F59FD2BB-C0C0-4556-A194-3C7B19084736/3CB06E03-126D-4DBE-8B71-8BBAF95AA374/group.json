@@ -1,0 +1,57 @@
+{
+  "_class": "group",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "3CB06E03-126D-4DBE-8B71-8BBAF95AA374",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "C02616A3-AD59-49F2-BEF5-D6B1C3AB8E8D",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "4EE0E6B8-75A9-45C7-BC19-717C31EF6C9A",
+    "height": 137,
+    "width": 88,
+    "x": 9.22063122923567,
+    "y": 0
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "01968A98-8081-4346-81D4-17CE2FD5A3FC"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "shapePath",
+      "id": "A5FF1446-EC66-4EEA-BA7D-14D05FE968F7"
+    }
+  ],
+  "name": "Pants",
+  "nameIsFixed": false,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "7126DA21-DBED-4D5D-AD56-573DCC1A51FC",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

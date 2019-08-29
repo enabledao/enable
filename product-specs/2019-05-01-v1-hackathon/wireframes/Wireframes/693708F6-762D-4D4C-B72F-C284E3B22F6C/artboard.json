@@ -1,0 +1,175 @@
+{
+  "_class": "artboard",
+  "backgroundColor": {
+    "_class": "color",
+    "alpha": 1,
+    "blue": 1,
+    "do_objectID": "D97A1060-43AD-463A-987A-756FE71E1D3D",
+    "green": 1,
+    "red": 1
+  },
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "693708F6-762D-4D4C-B72F-C284E3B22F6C",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "23E31ACC-B40C-40AE-9CD4-EC016898D79D",
+    "exportFormats": [
+      {
+        "_class": "exportFormat",
+        "absoluteSize": 0,
+        "fileFormat": "png",
+        "name": "",
+        "namingScheme": 0,
+        "scale": 0.5,
+        "visibleScaleType": 0
+      }
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "014AE80A-A7E2-4723-8EF6-8A52220ED749",
+    "height": 10000,
+    "width": 2800,
+    "x": 2442,
+    "y": -1307
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "5EBA3043-8890-49EF-8F16-594C0CCA104B"
+  },
+  "hasBackgroundColor": true,
+  "hasClickThrough": true,
+  "hasClippingMask": false,
+  "horizontalRulerData": {
+    "_class": "rulerData",
+    "base": 0,
+    "do_objectID": "3AFB32C0-CF76-40D1-8CA7-093F7963F707",
+    "guides": [
+    ]
+  },
+  "includeBackgroundColorInExport": true,
+  "includeInCloudUpload": true,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isFlowHome": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "group",
+      "id": "034E9A03-6966-4DDD-8910-AE5D91CB501C"
+    },
+    {
+      "class": "group",
+      "id": "D51F89D7-C199-48EB-9F7D-96CEC671EC56"
+    },
+    {
+      "class": "group",
+      "id": "E40B7E76-7566-4930-89EF-43C3ACF28890"
+    },
+    {
+      "class": "group",
+      "id": "B7E3CE6C-4BE4-4722-8A73-60195B6B676F"
+    },
+    {
+      "class": "group",
+      "id": "D9C46514-BA4C-49FB-8EF3-FC85D8B4D655"
+    },
+    {
+      "class": "group",
+      "id": "57971EFC-FFA2-4E96-B50F-3629220A3166"
+    },
+    {
+      "class": "group",
+      "id": "6CB4C419-5D4F-4C2E-8649-FB691B3C59EE"
+    },
+    {
+      "class": "group",
+      "id": "1BA7D15D-A6C8-446C-87AE-DEFEE7B71F94"
+    },
+    {
+      "class": "group",
+      "id": "2A5CCFDF-62FE-4994-BFB9-52AF6D6590DB"
+    },
+    {
+      "class": "text",
+      "id": "808D5B6C-8752-4C9C-B7D4-DD0F3A11D1A0"
+    },
+    {
+      "class": "group",
+      "id": "E032BFAB-301D-4992-B7C1-0B022CE07202"
+    },
+    {
+      "class": "group",
+      "id": "429A68AB-5833-47F6-BBF1-4B87F6F6ABE4"
+    },
+    {
+      "class": "group",
+      "id": "BF5A0C07-DA8B-4B21-AED3-1037C063602E"
+    }
+  ],
+  "layout": {
+    "_class": "layoutGrid",
+    "columnWidth": 126.25,
+    "do_objectID": "76E3EEEC-7791-4F65-911F-CA35EBC4B79A",
+    "drawHorizontal": false,
+    "drawHorizontalLines": true,
+    "drawVertical": true,
+    "gutterHeight": 23,
+    "gutterWidth": 55,
+    "guttersOutside": false,
+    "horizontalOffset": 625,
+    "isEnabled": false,
+    "numberOfColumns": 12,
+    "rowHeightMultiplication": 1,
+    "totalWidth": 2120
+  },
+  "name": "Loan Request Funding Phase",
+  "nameIsFixed": true,
+  "resizesContent": false,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": true,
+  "style": {
+    "_class": "style",
+    "do_objectID": "D0F6E886-540B-4310-86E8-367AC5B603A2",
+    "endMarkerType": 0,
+    "fills": [
+      {
+        "_class": "fill",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 1,
+          "green": 1,
+          "red": 1
+        },
+        "fillType": 0,
+        "isEnabled": true,
+        "noiseIndex": 0,
+        "noiseIntensity": 0,
+        "patternFillType": 1,
+        "patternTileScale": 1
+      }
+    ],
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  },
+  "verticalRulerData": {
+    "_class": "rulerData",
+    "base": 0,
+    "do_objectID": "A2195237-1019-49F5-83E2-504B501A5F36",
+    "guides": [
+    ]
+  }
+}

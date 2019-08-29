@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "04F9C26B-74B3-4FD3-8BDD-3EFC6FEC14E6",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 602,
+    "width": 376,
+    "x": 24,
+    "y": 640
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "4698FE2F-6348-4A57-A676-38CD7ABEA7B6"
+    },
+    {
+      "class": "text",
+      "id": "B294AD24-123D-4311-B47F-D7E5C91AB38E"
+    },
+    {
+      "class": "group",
+      "id": "46099BF3-AFB9-4E96-8D29-EDBE4C78CDAE"
+    },
+    {
+      "class": "text",
+      "id": "78ADCD04-61EF-479D-A4A6-A2FA902E128E"
+    }
+  ],
+  "name": "Simulation",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

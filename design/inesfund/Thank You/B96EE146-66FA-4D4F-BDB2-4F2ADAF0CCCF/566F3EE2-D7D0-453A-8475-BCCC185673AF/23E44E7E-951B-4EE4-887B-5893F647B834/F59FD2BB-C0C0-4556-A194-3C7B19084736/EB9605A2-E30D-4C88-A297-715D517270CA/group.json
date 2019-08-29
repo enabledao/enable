@@ -1,0 +1,57 @@
+{
+  "_class": "group",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "EB9605A2-E30D-4C88-A297-715D517270CA",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "25D895C6-0F20-48EC-8318-02DB19BC86AE",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "8910DB35-0640-4646-976E-5A1B528DADD6",
+    "height": 46,
+    "width": 119,
+    "x": 0,
+    "y": 101.8520635868383
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "7F5B2E7A-5529-42E6-A000-1949F81722A8"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "shapeGroup",
+      "id": "B36269FE-9435-44E2-8580-040D358EA5CA"
+    }
+  ],
+  "name": "Shoes",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "110DB09A-B9A2-49BF-A20C-AA428499E011",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

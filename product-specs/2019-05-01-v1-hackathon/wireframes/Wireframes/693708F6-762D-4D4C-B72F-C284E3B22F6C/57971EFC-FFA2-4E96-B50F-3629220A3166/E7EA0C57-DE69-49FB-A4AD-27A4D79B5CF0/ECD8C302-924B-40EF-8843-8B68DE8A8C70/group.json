@@ -1,0 +1,70 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "ECD8C302-924B-40EF-8843-8B68DE8A8C70",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "2D808118-4545-4943-B5B7-999CAB917B13",
+    "exportFormats": [
+      {
+        "_class": "exportFormat",
+        "absoluteSize": 0,
+        "fileFormat": "svg",
+        "name": "",
+        "namingScheme": 0,
+        "scale": 1,
+        "visibleScaleType": 0
+      }
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "5C34DB6C-742C-4D81-839E-E0D40FF7E5CB",
+    "height": 72,
+    "width": 72,
+    "x": 327,
+    "y": 57
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "DF61E596-41B8-40E8-A659-59816E7F10D4"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "FCAB63F6-581E-4ABC-A4EE-5EF19587B164"
+    },
+    {
+      "class": "shapeGroup",
+      "id": "A8B97677-5F9B-4DF4-8BA9-A466E0AB6C51"
+    }
+  ],
+  "name": "instagram",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "F7450C4F-51FD-4475-B307-16216B751D0B",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

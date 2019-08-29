@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "23E44E7E-951B-4EE4-887B-5893F647B834",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "D44897F2-D620-4E6F-B708-A723C29CE4BF",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "F9C04387-E88C-46DB-88E3-B8BFC95AC8F1",
+    "height": 252,
+    "width": 126,
+    "x": 40,
+    "y": 66
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "FB476147-3C49-4739-881A-F1DEA658BB5C"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "layers": [
+    {
+      "class": "group",
+      "id": "FD6B8161-0085-4B8A-9F4D-FD0F28A97E0C"
+    },
+    {
+      "class": "group",
+      "id": "F59FD2BB-C0C0-4556-A194-3C7B19084736"
+    },
+    {
+      "class": "group",
+      "id": "CA9A316C-AC71-43CE-BF9B-B6DE3EC40B43"
+    }
+  ],
+  "name": "Person / Man / 2",
+  "nameIsFixed": false,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "A4B7C837-B467-4698-9E57-20F7391CF23C",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

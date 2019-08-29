@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "DE6783EE-D594-4A4C-BFB0-28A0AF891144",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 100,
+    "width": 490,
+    "x": 0,
+    "y": 386
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "0BBD4F52-2A46-42D7-87ED-F6778E152A09"
+    },
+    {
+      "class": "symbolInstance",
+      "id": "749E918C-FF54-48F1-8AEB-43B355F9060C"
+    },
+    {
+      "class": "text",
+      "id": "E5E7F2C1-1B31-4F72-AE45-2563161C2205"
+    },
+    {
+      "class": "group",
+      "id": "C34523C5-5E4A-4966-8E0B-C93B4A3CA67E"
+    }
+  ],
+  "name": "Card Footer",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

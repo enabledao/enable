@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "DCCAFE85-7349-4EC0-B344-81B544C1BDA6",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 873,
+    "width": 665,
+    "x": 1852,
+    "y": 7681
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "F00EE570-C720-4805-82D1-8050CB5F8337"
+    },
+    {
+      "class": "text",
+      "id": "A40E5F8D-A6F1-4A18-B201-F0AC98E1B5F6"
+    },
+    {
+      "class": "text",
+      "id": "E19C741C-6039-4E98-A564-5FCE0D5D2F2D"
+    },
+    {
+      "class": "bitmap",
+      "id": "F782258C-577B-4ECC-BC6C-3CFECB10A7BE"
+    }
+  ],
+  "name": "USD Stablecoin",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "D0562FC8-094B-429D-AE19-492E6958D9A6",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 281,
+    "width": 384,
+    "x": 869,
+    "y": 0
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "group",
+      "id": "02F91E00-1898-4175-845C-396C99B73640"
+    },
+    {
+      "class": "text",
+      "id": "BEF071FF-3823-4EEA-8DAF-B004E2B5E39B"
+    },
+    {
+      "class": "text",
+      "id": "3ED62A46-4C08-4AEC-A6E0-4495A68E50DF"
+    },
+    {
+      "class": "group",
+      "id": "2E19B527-38E7-4531-BC34-168F9C6CC71D"
+    }
+  ],
+  "name": "Comments - Small Metric",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

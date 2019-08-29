@@ -1,0 +1,69 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "48F45A19-344C-4F2C-A988-B14D6FE73CDB",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 33,
+    "width": 587,
+    "x": 55,
+    "y": 52
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "text",
+      "id": "4157B440-6340-4830-9E1D-BE1B16D26CE5"
+    },
+    {
+      "class": "text",
+      "id": "BC5F9B3B-FBFA-482B-8705-1EB2E9327262"
+    },
+    {
+      "class": "text",
+      "id": "CD3A514C-2B76-4123-BE93-F8BFFA06D65E"
+    },
+    {
+      "class": "text",
+      "id": "A1FB1840-7ADE-4B6E-865D-2D2DE520B8DA"
+    },
+    {
+      "class": "text",
+      "id": "B39D99C6-B894-493F-897A-3A0C73E2FCBA"
+    }
+  ],
+  "name": "Footer Menu",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

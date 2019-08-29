@@ -1,0 +1,167 @@
+{
+  "_class": "artboard",
+  "backgroundColor": {
+    "_class": "color",
+    "alpha": 1,
+    "blue": 1,
+    "green": 1,
+    "red": 1
+  },
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "5BE2A2EF-AE11-4CDE-8D29-01EA9C502BD3",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+      {
+        "_class": "exportFormat",
+        "absoluteSize": 0,
+        "fileFormat": "png",
+        "name": "",
+        "namingScheme": 0,
+        "scale": 0.5,
+        "visibleScaleType": 0
+      }
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 10000,
+    "width": 2800,
+    "x": 5802,
+    "y": -1307
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasBackgroundColor": true,
+  "hasClickThrough": true,
+  "hasClippingMask": false,
+  "horizontalRulerData": {
+    "_class": "rulerData",
+    "base": 0,
+    "guides": [
+    ]
+  },
+  "includeBackgroundColorInExport": true,
+  "includeInCloudUpload": true,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isFlowHome": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "group",
+      "id": "29E02AF9-E24E-46EA-97C1-DEE21F9811D9"
+    },
+    {
+      "class": "group",
+      "id": "3836E9E4-336A-4213-B366-EC6A1C143101"
+    },
+    {
+      "class": "group",
+      "id": "E5A112BD-ECFB-4DCD-859D-9310EC14E9CD"
+    },
+    {
+      "class": "group",
+      "id": "4C92C798-0E8E-4261-B5BD-7DBAC1DC3831"
+    },
+    {
+      "class": "group",
+      "id": "15C94D20-6E1A-4085-AAA0-5C3291147333"
+    },
+    {
+      "class": "group",
+      "id": "BF0B9A72-EB03-40A4-BF26-1C0E68995058"
+    },
+    {
+      "class": "group",
+      "id": "B901B76F-811B-406A-904F-7FAC2A9FF186"
+    },
+    {
+      "class": "group",
+      "id": "63B9E745-F8E8-4A47-A6E8-D73A5E72BA1D"
+    },
+    {
+      "class": "group",
+      "id": "56A4694D-5965-46BF-A273-A7CA0434E51D"
+    },
+    {
+      "class": "text",
+      "id": "635077BD-453D-4776-A4A3-3DC2B6CFD161"
+    },
+    {
+      "class": "group",
+      "id": "81EFF595-F37D-4D68-A3AB-E2DEB078BDBB"
+    },
+    {
+      "class": "group",
+      "id": "00E4B870-33FD-4A35-9884-7C65D39266FF"
+    },
+    {
+      "class": "group",
+      "id": "7C5E869F-0098-49C5-9272-5681632BA5E5"
+    }
+  ],
+  "layout": {
+    "_class": "layoutGrid",
+    "columnWidth": 126.25,
+    "drawHorizontal": false,
+    "drawHorizontalLines": true,
+    "drawVertical": true,
+    "gutterHeight": 23,
+    "gutterWidth": 55,
+    "guttersOutside": false,
+    "horizontalOffset": 625,
+    "isEnabled": false,
+    "numberOfColumns": 12,
+    "rowHeightMultiplication": 1,
+    "totalWidth": 2120
+  },
+  "name": "Loan Request Funding Phase (Borrower View)",
+  "nameIsFixed": true,
+  "resizesContent": false,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": true,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "fills": [
+      {
+        "_class": "fill",
+        "color": {
+          "_class": "color",
+          "alpha": 1,
+          "blue": 1,
+          "green": 1,
+          "red": 1
+        },
+        "fillType": 0,
+        "isEnabled": true,
+        "noiseIndex": 0,
+        "noiseIntensity": 0,
+        "patternFillType": 1,
+        "patternTileScale": 1
+      }
+    ],
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  },
+  "verticalRulerData": {
+    "_class": "rulerData",
+    "base": 0,
+    "guides": [
+    ]
+  }
+}

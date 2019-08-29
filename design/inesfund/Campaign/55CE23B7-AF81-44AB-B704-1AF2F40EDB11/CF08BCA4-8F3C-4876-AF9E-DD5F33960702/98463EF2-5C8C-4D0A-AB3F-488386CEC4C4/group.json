@@ -1,0 +1,73 @@
+{
+  "_class": "group",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "98463EF2-5C8C-4D0A-AB3F-488386CEC4C4",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 264,
+    "width": 424,
+    "x": 0,
+    "y": 0
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "F4B31406-DA61-455A-8626-FB0653624CEB"
+    },
+    {
+      "class": "bitmap",
+      "id": "528EDE02-E852-4655-B8E5-213D761AA993"
+    },
+    {
+      "class": "bitmap",
+      "id": "42C9A8CA-73F6-4C66-B31E-C2056376C383"
+    },
+    {
+      "class": "text",
+      "id": "32221801-89F3-4D23-8977-B91D388B8E69"
+    },
+    {
+      "class": "group",
+      "id": "98304C48-F60D-4E87-8CD0-C63B2D087883"
+    },
+    {
+      "class": "group",
+      "id": "FCF7B9B3-AF5D-4A13-AA3C-8AD292B28198"
+    }
+  ],
+  "name": "Card",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

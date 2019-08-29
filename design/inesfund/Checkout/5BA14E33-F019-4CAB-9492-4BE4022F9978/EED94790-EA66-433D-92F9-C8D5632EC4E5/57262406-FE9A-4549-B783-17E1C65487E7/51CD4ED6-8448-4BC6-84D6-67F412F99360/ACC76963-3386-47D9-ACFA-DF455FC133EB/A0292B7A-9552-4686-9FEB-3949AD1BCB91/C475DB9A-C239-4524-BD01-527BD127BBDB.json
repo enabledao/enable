@@ -1,0 +1,75 @@
+{
+  "_class": "bitmap",
+  "booleanOperation": -1,
+  "clippingMask": "{{0, 0}, {1, 1}}",
+  "clippingMaskMode": 0,
+  "do_objectID": "C475DB9A-C239-4524-BD01-527BD127BBDB",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "6BFA4CB8-357A-422C-986A-2D6EE1048D8C",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "fillReplacesImage": false,
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": true,
+    "do_objectID": "795B21FC-0EAF-4ACB-A29A-BB05DA0BF9BB",
+    "height": 94,
+    "width": 126,
+    "x": -36,
+    "y": -20
+  },
+  "hasClippingMask": false,
+  "image": {
+    "_class": "MSJSONFileReference",
+    "_ref": "images/2cdeeb312e3b40777641e746fb5c7c11c202c5c0.png",
+    "_ref_class": "MSImageData"
+  },
+  "intendedDPI": 72,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "name": "Bitmap",
+  "nameIsFixed": false,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "AE55DF33-0E85-494E-B920-30808429F98F",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  },
+  "userInfo": {
+    "com.animaapp.stc-sketch-plugin": {
+      "kModelPropertiesKey": {
+        "constraints": {
+          "aspectRatio": {
+            "constant": 336,
+            "enabled": 1,
+            "modelID": "constraint_8b62b52a-145f-46aa-b478-9a07913367e1",
+            "model_class": "ADModelConstraint",
+            "model_version": 0,
+            "multiplier": 448
+          },
+          "automatic": 1,
+          "modelID": "viewConstraints_af43659c-d502-4f8f-a498-5e9a0ea15113",
+          "model_class": "ADModelViewConstraints",
+          "model_version": 0,
+          "scaleFactor": 1
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "_class": "group",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "B7F5F7B4-FEA6-4D32-A06C-F2184C4CFA9D",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 736,
+    "width": 376,
+    "x": 24,
+    "y": 640
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "BB813EC2-5BB2-4828-8A29-E993E1DC03C9"
+    },
+    {
+      "class": "symbolInstance",
+      "id": "2B84E244-8D11-4852-8F2B-8A8060C0A72D"
+    },
+    {
+      "class": "symbolInstance",
+      "id": "3E47EFE9-CEBC-4C56-BCBA-179C0F5855D0"
+    },
+    {
+      "class": "group",
+      "id": "38FF9682-B1AD-42D2-B62E-2A103B810FE5"
+    },
+    {
+      "class": "group",
+      "id": "205B169B-8EE1-4529-8104-553CC813DF81"
+    },
+    {
+      "class": "symbolInstance",
+      "id": "76E17694-88EB-4E2E-B93D-ED20C92F3763"
+    },
+    {
+      "class": "text",
+      "id": "96A0BECA-1A0A-491C-81B8-0ED6D35D1ECD"
+    },
+    {
+      "class": "group",
+      "id": "7079C64C-BF3E-4C55-8E97-B7F721A124B2"
+    },
+    {
+      "class": "symbolInstance",
+      "id": "43B17203-CDDD-4554-B792-E7A157BFF58C"
+    },
+    {
+      "class": "group",
+      "id": "80694D25-C781-432F-BB5D-D92D6B6C8747"
+    },
+    {
+      "class": "text",
+      "id": "5B4FA5D6-5E5E-4E2E-A0F8-A118C10A4CF4"
+    },
+    {
+      "class": "shapePath",
+      "id": "22BFC517-9FED-4374-8ADF-E72935B8F6E9"
+    },
+    {
+      "class": "shapePath",
+      "id": "DA59AD41-8C76-4234-ABDC-EECE601084AA"
+    },
+    {
+      "class": "text",
+      "id": "7964FC32-640F-4BA4-8FE7-7D4742F3A8BB"
+    }
+  ],
+  "name": "Simulation",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

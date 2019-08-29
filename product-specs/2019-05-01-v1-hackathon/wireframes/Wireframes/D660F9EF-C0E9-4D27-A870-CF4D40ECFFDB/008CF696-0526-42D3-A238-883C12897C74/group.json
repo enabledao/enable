@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "008CF696-0526-42D3-A238-883C12897C74",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 1116,
+    "width": 927,
+    "x": 1464,
+    "y": 2155
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "rectangle",
+      "id": "509B9E4E-E445-4A16-831A-4114D8759CB3"
+    },
+    {
+      "class": "text",
+      "id": "D97CFA80-7356-4B51-9F10-65E8C17F8764"
+    },
+    {
+      "class": "text",
+      "id": "48C91104-2A90-4786-97DF-885A801B7C74"
+    },
+    {
+      "class": "text",
+      "id": "7ADED9F6-C030-4F02-B84C-D82E0EC001F8"
+    }
+  ],
+  "name": "For Lenders",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

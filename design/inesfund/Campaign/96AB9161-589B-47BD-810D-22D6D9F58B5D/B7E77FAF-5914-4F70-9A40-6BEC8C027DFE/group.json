@@ -1,0 +1,85 @@
+{
+  "_class": "group",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "B7E77FAF-5914-4F70-9A40-6BEC8C027DFE",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "9EF3EC87-B651-4024-8F8C-70F71EE9DAF3",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "235C35A1-3518-433D-B6EE-6239F2E2A423",
+    "height": 3035,
+    "width": 424,
+    "x": 546,
+    "y": 189
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "70A3B5C0-DC9A-42F0-A161-C0418AA77633"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 2,
+  "layers": [
+    {
+      "class": "group",
+      "id": "6D5145D5-E84B-4BD8-978C-D502690084B6"
+    },
+    {
+      "class": "group",
+      "id": "1725543B-91A7-425C-9381-149B48764FD7"
+    },
+    {
+      "class": "group",
+      "id": "DE1C9BCC-88C9-41C3-9A7A-F09EA708FF6C"
+    },
+    {
+      "class": "group",
+      "id": "17C2EADD-DC6E-4516-BF75-7ED1AE73FA11"
+    },
+    {
+      "class": "group",
+      "id": "BBA4A074-1556-44B1-9AB2-13F70CE9E527"
+    }
+  ],
+  "name": "Sidebar",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "D0955EB7-4658-464A-B369-5CADFFD75607",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  },
+  "userInfo": {
+    "com.animaapp.stc-sketch-plugin": {
+      "kModelPropertiesKey": {
+        "align": 0,
+        "isCollapsing": 1,
+        "resizesContainer": 1,
+        "spacing": 50,
+        "stackType": 0
+      },
+      "kViewTypeKey": "ADModelStackView"
+    }
+  }
+}

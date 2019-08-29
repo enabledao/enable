@@ -1,0 +1,57 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "10A9A287-E2E2-4577-931E-29E9C42A9204",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "8F406361-4E75-4A85-827F-CD5777DD2BF3",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "A361DCCF-CA94-4455-A62B-810A38A94DA2",
+    "height": 30,
+    "width": 400,
+    "x": 0.9375,
+    "y": 206.481440741939
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout",
+    "do_objectID": "7CB025BA-2B80-4175-82B0-729F56508027"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "layers": [
+    {
+      "class": "text",
+      "id": "2C8ACCA9-8D39-446C-B703-6598082437C4"
+    }
+  ],
+  "name": "Percentage Increase",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "0A8CE287-224A-4CA3-A414-F2F9DDA9A844",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

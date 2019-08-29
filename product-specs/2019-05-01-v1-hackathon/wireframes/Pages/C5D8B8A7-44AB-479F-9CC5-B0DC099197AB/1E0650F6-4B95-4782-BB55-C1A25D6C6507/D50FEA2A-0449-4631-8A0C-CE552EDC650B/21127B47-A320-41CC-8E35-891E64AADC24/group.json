@@ -1,0 +1,60 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "21127B47-A320-41CC-8E35-891E64AADC24",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "27A14D09-48E1-410F-B8DA-8E3E1AACFFED",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "224AC223-3B8F-4581-922C-C0682DF96A7C",
+    "height": 45,
+    "width": 376,
+    "x": 98,
+    "y": 49
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "layers": [
+    {
+      "class": "text",
+      "id": "9E1BCE20-A136-4905-AA0C-A9261F1D8B47"
+    },
+    {
+      "class": "shapeGroup",
+      "id": "618C115B-0F18-415C-BD83-E7F6DC8D00F4"
+    }
+  ],
+  "name": "Logo",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "73F2E57B-2ED0-48C8-9015-16BB354E32C9",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

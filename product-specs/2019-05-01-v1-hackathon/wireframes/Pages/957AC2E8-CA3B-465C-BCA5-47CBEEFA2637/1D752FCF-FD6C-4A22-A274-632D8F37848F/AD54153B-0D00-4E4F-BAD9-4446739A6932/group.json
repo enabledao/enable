@@ -1,0 +1,65 @@
+{
+  "_class": "group",
+  "booleanOperation": 0,
+  "clippingMaskMode": 0,
+  "do_objectID": "AD54153B-0D00-4E4F-BAD9-4446739A6932",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "height": 98,
+    "width": 328,
+    "x": 711,
+    "y": 543
+  },
+  "groupLayout": {
+    "_class": "MSImmutableFreeformGroupLayout"
+  },
+  "hasClickThrough": false,
+  "hasClippingMask": false,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 1,
+  "layers": [
+    {
+      "class": "symbolInstance",
+      "id": "9E8FFB48-9EBD-4AA9-BBA6-3CE244262B22"
+    },
+    {
+      "class": "symbolInstance",
+      "id": "52AE34FD-7862-4BC9-9544-DAB190695949"
+    },
+    {
+      "class": "text",
+      "id": "15FB6D8A-E887-4AD9-A678-F8F2AF90712E"
+    },
+    {
+      "class": "symbolInstance",
+      "id": "FA0A83D7-B622-4142-89CF-F6DA2B999831"
+    }
+  ],
+  "name": "Input - Form Field - State",
+  "nameIsFixed": true,
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+	"main": "dist/index.js",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/react": "^16.8"
+	},
+	"peerDependencies": {
+		"framer": "^1.0",
+		"react": "^16.8"
+	},
+	"framer": {
+		"id": "961ea24d-1193-4b7e-9746-22369ba61ba5"
+	},
+	"author": "Felix Yuniar",
+	"dependencies": {
+		"@framer/clayton.form-input": "^1.2.0",
+		"@framer/janvanwtf.youtube": "^1.4.0",
+		"@framer/lada.simple-avatars-wip": "^1.3.0",
+		"@framer/unsplash.unsplash": "^1.0.0"
+	}
+}

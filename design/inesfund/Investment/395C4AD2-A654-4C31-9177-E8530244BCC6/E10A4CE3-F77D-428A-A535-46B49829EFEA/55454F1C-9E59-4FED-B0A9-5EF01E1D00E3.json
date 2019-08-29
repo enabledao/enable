@@ -1,0 +1,64 @@
+{
+  "_class": "symbolInstance",
+  "booleanOperation": -1,
+  "clippingMaskMode": 0,
+  "do_objectID": "55454F1C-9E59-4FED-B0A9-5EF01E1D00E3",
+  "exportOptions": {
+    "_class": "exportOptions",
+    "do_objectID": "A43C5E5C-9951-457D-9CD5-66C06E19B232",
+    "exportFormats": [
+    ],
+    "includedLayerIds": [
+    ],
+    "layerOptions": 0,
+    "shouldTrim": false
+  },
+  "frame": {
+    "_class": "rect",
+    "constrainProportions": false,
+    "do_objectID": "D7E3C6C0-97FA-4E67-B7DA-20A68265D5EB",
+    "height": 48,
+    "width": 190,
+    "x": 40,
+    "y": 94
+  },
+  "hasClippingMask": false,
+  "horizontalSpacing": 0,
+  "isFixedToViewport": false,
+  "isFlippedHorizontal": false,
+  "isFlippedVertical": false,
+  "isLocked": false,
+  "isVisible": true,
+  "layerListExpandedType": 0,
+  "name": "Atoms/Buttons",
+  "nameIsFixed": false,
+  "overrideValues": [
+    {
+      "_class": "overrideValue",
+      "do_objectID": "026A5234-7AD0-49F8-A942-72A3A14E8F0A",
+      "overrideName": "A1120CE1-F211-44BC-A273-3EB54FEA1141_stringValue",
+      "value": "Withdraw"
+    },
+    {
+      "_class": "overrideValue",
+      "do_objectID": "383E0905-AAF2-47C2-9AB1-16ECCEDAF67E",
+      "overrideName": "FB891EB3-5E0D-42A2-8223-528D7E557BE0_layerStyle",
+      "value": "273C916C-F0AE-41E1-9621-F923866937E4"
+    }
+  ],
+  "resizingConstraint": 63,
+  "resizingType": 0,
+  "rotation": 0,
+  "scale": 1,
+  "shouldBreakMaskChain": false,
+  "style": {
+    "_class": "style",
+    "do_objectID": "1F43BFE4-7FE8-4DA9-AC5C-CF89CA42C3F0",
+    "endMarkerType": 0,
+    "miterLimit": 10,
+    "startMarkerType": 0,
+    "windingRule": 1
+  },
+  "symbolID": "81AA26A7-FA53-4BB4-8989-10F26714C65F",
+  "verticalSpacing": 0
+}
