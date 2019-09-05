@@ -39,6 +39,10 @@ September funds will be allocated according to contributions during the month on
 * Design multi-currency funding UX
 
 ##### Deployment / Final Testing
+* Setup upgradability procedure
+  * Use Gnosis Safe as contract admin account
+  * Determine how to distribute ownership among team
+
 * Full Kovan testnet deployment + e2e crowdfund flow test
   * Deploy contracts
   * Setup contract monitoring
