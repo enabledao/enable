@@ -24,7 +24,7 @@ This roadmap shows the path to Ines' official crowdfund, and beyond.
 ## Resource Allocation
 September funds will be allocated according to contributions during the month on an hourly basis, to maintain consistency with how we've been operating.
 
-## Tasks
+## Tasks: Mainnet Deployment
 
 ##### Smart Contracts
 * Remove extraneous functionailty from smart contracts
